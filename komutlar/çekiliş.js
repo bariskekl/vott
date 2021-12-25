@@ -3,7 +3,7 @@ module.exports = {
 
   code: `
 
-$editMessage[$getServerVar[cekilis];{title:Çekiliş Bitti 🎉}{description:Ödül : \`$messageSlice[1]\` 
+$editMessage[$getServerVar[cekilis];{title:Çekiliş Bitti 🎉}{description:🎉Ödül : \`$messageSlice[1]\` 
 
 🎉 | Yapan Kişi : **$userTag[$authorID]**
 
