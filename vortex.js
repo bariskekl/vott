@@ -359,3 +359,8 @@ bot.variables({
   req: "250 ",
   Rankcard: "0"
 });
+bot.variables({
+kod:"0",
+kodm:"0",
+oy:"0",
+}) 
