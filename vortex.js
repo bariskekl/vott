@@ -354,7 +354,7 @@ $addTimestamp 
   `
 });
 bot.variables({
-  level: "1",
+  level: "0",
   talk: "0",
   req: "250 ",
   Rankcard: "0"
