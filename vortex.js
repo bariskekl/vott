@@ -353,3 +353,30 @@ $addTimestamp 
   
   `
 });
+
+bot.command({
+  name: "ekle",
+  code: `
+  
+  $useChannel[923355420599418891]
+  
+  $message
+  $author[Sunucuya Yeni Bir Kod Eklendi;$serverIcon]
+  $color[RANDOM]
+  $description[
+  
+<:emoji_72:917309261661491241> | Eklendiği Kanal | $message
+
+<:emoji_72:917309261661491241> | Ekleyen Yetkili | <@$authorID>
+]
+
+$footer[$serverName[$guildID];$serverIcon;$addTimestamp]
+
+$argsCheck[>1;]
+
+$deletecommand
+
+$onlyPerms[admin;]
+
+`
+});
