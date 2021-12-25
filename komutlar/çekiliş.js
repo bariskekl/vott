@@ -7,15 +7,15 @@ $editMessage[$getServerVar[cekilis];{title:Çekiliş Bitti 🎉}{description:Öd
 
 🎉 | Yapan Kişi : **$userTag[$authorID]**
 
-🎉 | Kazanan : $replaceText[$replaceText[$checkCondition[$getTextSplitLength==1];true;hiçbiri, yeterli katılımcı yoktu.];false;<@$randomText[$joinSplitText[;]]>.]}{color:RANDOM}{footer: Çekiliş Sona Erdi.: $authorAvatar}]
+🎉 | Kazanan : $replaceText[$replaceText[$checkCondition[$getTextSplitLength==1];true;Yeterli Katılımcı Yoktu.];false;<@$randomText[$joinSplitText[;]]>.]}{color:RANDOM}{footer: Çekiliş Sona Erdi.: $authorAvatar}]
 
-$channelSendMessage[$channelID;$replaceText[$replaceText[$checkCondition[$getTextSplitLength==1];true;Yeterli katılımcı yoktu.];false;Ödülün sahibi : \`$messageSlice[1]\` is: <@$randomText[$joinSplitText[;]]>, Tebrikler!]]
+$channelSendMessage[$channelID;$replaceText[$replaceText[$checkCondition[$getTextSplitLength==1];true;Yeterli katılımcı yoktu.];false;Kazanan : <@$randomText[$joinSplitText[;]]>, Tebrikler!]]
 
 $textSplit[$replaceText[$getReactions[$channelID;$getServerVar[cekilis];🎉;id];$clientID,;];,]
 
 $wait[$message[1]]
 
-$setServerVar[cekilis;$sendMessage[{title: Çekilişe Katılmak için  🎉 Emojisine Tıkla !.}{description: 🎉 Ödül : \`$messageSlice[1]\` 🎉
+$setServerVar[cekilis;$sendMessage[{title: Çekilişe Katılmak için  🎉 Emojisine Tıkla !.}{description: 🎉 | Ödül : \`$messageSlice[1]\` 
 
 🎉 | Yapan Kişi : **$userTag[$authorID]**
 
@@ -45,7 +45,7 @@ $onlyIf[$isNumber[$replaceText[$replaceText[$replaceText[$replaceText[$message[1
 
 \`\`\`}{color:RED}]
 
-$onlyPerms[admin;{title:Yetkin Yok}{description:Senin \`Yönetici\` Yetkin Yok.}{color:RED}]
+$onlyPerms[managechannels;{title:Yetkin Yok}{description:Senin \`Kanalları Yönet\` Yetkin Yok.}{color:RED}]
 
 `
 };
