@@ -1,5 +1,4 @@
 module.exports = {
-
   name: "moderasyon",
 
   aliases: "moderasyon",
@@ -36,6 +35,8 @@ __Moderasyon Menüsü__
 
 » | \`?saas-kapat\` → Saas Sistemini Kapatırsınız.
 
+» | \`?banlist\` → Sunucuda Banlı Olan Kişileri Gösterir.
+
 ]
 
 $thumbnail[$authorAvatar]
@@ -45,5 +46,4 @@ $footer[Komut,$username Tarafından Kullanıldı $addTimesTamp]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
 `
-
 };

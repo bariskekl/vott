@@ -265,8 +265,8 @@ bot.command({
 });
 
 bot.command({
-name:"istatistik",
-code:`
+  name: "istatistik",
+  code: `
 $color[RANDOM]
 $title[$userTag[$clientID] in İstatistikleri]
 $description[
@@ -302,4 +302,54 @@ $description[
 $footer[Komut,$userTag[$authorID] Tarafından Kullanıldı $addTimestamp]
 $thumbnail[$userAvatar[$clientID]]
 `
-})
+});
+
+bot.command({
+  name: "test",
+  code: `
+
+$httpGet[https://api.soumalyaplayz.repl.co/fun/discord?userid=$mentioned[1;yes]]
+
+$var[bannerLink;$httpResult[banner]]
+
+ $onlyIf[$guildID!=; ]
+
+$thumbnail[$userAvatar[$mentioned[1;yes]]]
+
+$title[$username[$mentioned[1;yes]] Info!]
+
+$addField[🏷️ **Tag**;$username[$mentioned[1;yes]]#$discriminator[$mentioned[1;yes]]]
+
+$addField[🆔 **Kullanıcı ID**;$userID[$username[$mentioned[1;yes]]]]
+
+$addField[📮 **Discorda Katılma Tarihi**;$cretionDate[$mentioned[1;yes]]]
+
+$addField[❔**Sunucuya Katılma Tarihi**;$memberJoinedDate[$mentioned[1;yes]]
+
+]
+
+$addField[💬 **En Düşuk Rolü Role**;<@&$lowestRole[$mentioned[1;yes]]>]
+
+$addField[💬 Rolleri Role**;<@&$highestRole[$mentioned[1;yes]]>]
+
+$addField[🤖 **Botmu**;$replaceText[$replaceText[$isBot[$mentioned[1;yes]];true;✅;1];false;❌;1]]
+
+$if[$var[bannerLink]==https://cdn.icon-icons.com/icons2/317/PNG/512/sign-error-icon_34362.png]
+
+$addField[**Banner**;❌]
+
+$else
+
+$addField[**Banner**;✅]
+
+ $image[$var[bannerLink]]
+
+$endif
+
+$color[$getRoleColor[$highestRole[$mentioned[1;yes]]]]
+
+$addTimestamp 
+ $onlyForIDs[$botOwnerID;] 
+  
+  `
+});

@@ -1,5 +1,5 @@
 module.exports = {
-  name: "sunucubilgi",
+  name: "sunucu-bilgi",
 
   code: ` $thumbnail[$serverIcon]
 
@@ -8,7 +8,7 @@ module.exports = {
   $description[
 $addField[**Sunucu Bilgileri**;**Kanal Sayısı** \`[$channelCount]\`
 
-\`:loud_sound: $channelCount[voice] | :speech_balloon: $channelCount[text]\`
+:loud_sound: $channelCount[voice] | :speech_balloon: $channelCount[text]
 
 Rol Sayısı - \`$roleCount\`
 

@@ -20,6 +20,8 @@ __Eğlence Menüsü__
 
 » | \`?türk\` → Türk Ölçersiniz.
 
+» | \`?sahte-mesaj\` → Etiketlediğiniz Kişiye Sahte Mesaj Yazdırırsınız.
+
 ]
 
 $thumbnail[$authorAvatar]

@@ -1,8 +1,6 @@
 module.exports = {
   name: "sahte-mesaj",
 
-  aliases: "sahtemesaj",
-
   code: ` 
 
    $deleteCommand
