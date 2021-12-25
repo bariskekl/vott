@@ -63,3 +63,205 @@ $thumbnail[$userAvatar[$clientID]]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
 `
 });
+
+bot.variables({
+  invite: "",
+  gmesaj:
+    "📥 -gçüye- sunucunuya katıldı onu -daveteden- davet etti toplam davet sayısı -davetsayısı-",
+  çmesaj:
+    "📤 -gçüye- sunucundan ayrıldı onu -daveteden- davet etti toplam davet sayısı -davetsayısı-",
+  asaat: "0",
+  param: "0",
+  banka: "0",
+  bilgisiyar: "0",
+  telefon: "0",
+  tablet: "0",
+  cban: "",
+  çıkışban: "0",
+  status: "",
+  oy: "0",
+  sayıkanal: "",
+  sayısayma: "0",
+  popurlerlik: "0",
+  tlog: "",
+  asebep: "",
+  asebeb: "",
+  kengel: "kapalı",
+  populerlik: "0",
+  hgbb: "",
+  color: "",
+  karaliste: "hayır",
+  klsebep: "Kara Listede Değilsin",
+  ksebep: "",
+  karaliste: "$authorID",
+  afk: "",
+  afkl: "",
+  prefix: "?",
+  saas: "no",
+  mrol: "",
+  modlog: "",
+  arol: "",
+  ayetkili: "",
+  prefix: "?",
+  otorol: "",
+  otorollog: "",
+  meslek: "Yok",
+  maaş: "0"
+});
+
+
+bot.readyCommand({
+
+  channel: "922002749804118036",
+
+  code: `
+
+$author[⭐・Yeniden Aktifim;$userAvatar[$clientID]]
+
+$description[
+
+🟢・Tekrardan Aktifim:
+
+🖥・Sunucu Sayım : \`$serverCount\`
+
+✨・Kullanıcı Sayım : \`$allMembersCount\`
+
+🌲・Komut Sayım : \`$commandsCount\`
+
+🏛・Değişken Sayım : \`$variablesCount\` 
+
+👑・Geliştircim : \`$userTag[$botOwnerID]\`
+
+♾・Pingim : \`$ping\`]
+
+$footer[;$userAvatar[$clientID]]
+
+$thumbnail[$userAvatar[$clientID]]
+
+$color[RANDOM]
+
+`
+
+});
+
+bot.joinCommand({
+  channel: "$getServerVar[hgbb]",
+  code: `
+$description[📥・[$userTag[$authorID]](https://discord.com/users/$authorID) Sunucumuza Hoşgeldin Kuralları Okumayı Unutma]
+$footer[]
+$thumbnail[$authorAvatar]
+$color[RANDOM]
+`
+});
+
+bot.leaveCommand({
+  channel: "$getServerVar[hgbb]",
+  code: `
+$description[📤・[$userTag[$authorID]](https://discord.com/users/$authorID) Adlı Üye Ayrıldı Umarım Güzel Zaman Geçirmiştir]
+$thumbnail[$authorAvatar]
+$color[RANDOM] 
+  `
+});
+bot.command({
+  name: "davet",
+  code: `
+$description[
+<:developer:909920582223687700> | Botumuzu Davet Etmek İçin : [Tıkla](https://discord.com/oauth2/authorize?client_id=908704907983482881&scope=bot+applications.commands&permissions=8)
+
+<:developer:909920582223687700> | Destek Sunucumuza Gelmek İçin : [Tıkla](https://discord.gg/YSr5Wq86bW)
+
+<:developer:909920582223687700> | Kurucum İle İletişime Geçmek İçin : [$userTag[754320168469135440]](https://discord.com/users/754320168469135440)
+]
+$color[RANDOM]
+$thumbnail[$authorAvatar]
+$onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
+    
+
+`
+});
+
+bot.botJoinCommand({
+  channel: "922002749804118036",
+
+  code: `
+
+$author[Bir Sunucuya Eklendim]
+
+$description[
+
+**🎉・Sunucu Adı : ** _\`$serverName\`_
+
+**🎉・Sunucu ID : ** _\`$guildID\`_
+
+**🎉・Üye Sayısı : ** _\`$membersCount\`_
+
+**🎉・Davet Linki : ** **[TIKLA]($getServerInvite)**
+
+]
+
+$color[RANDOM]
+
+`
+});
+
+bot.botLeaveCommand({
+  channel: "922002749804118036",
+
+  code: `
+
+$author[Bir Sunucudan Atıldım]
+
+$description[
+
+**🎉・Sunucu Adı : ** _\`$serverName\`_
+
+**🎉・Sunucu ID : ** _\`$guildID\`_
+
+**🎉・Üye Sayısı : ** _\`$membersCount\`_
+
+]
+
+$color[RANDOM]
+
+`
+});
+
+bot.command({
+  name: "abone-rol",
+  code: `
+  $onlyIf[$checkContains[$message[1];ayarla;sıfırla]==true;<:emoji_71:917309220687314966> | <@$authorID> Ayarla ve ya sıfırla ile belirtmelisin]
+  $onlyIf[$message!=;<:emoji_71:917309220687314966> | Ayarla ve ya sıfırla yazmalısın]
+  $if[$message[1]==ayarla]
+  <:emoji_70:917309183341236244> | <@$authorID> Abone rol $mentionedRoles[1] ID li rol olarak ayarlandı
+  $setServerVar[aboner;$mentionedRoles[1]]
+  $onlyIf[$mentionedRoles[1]!=;<:emoji_71:917309220687314966> | <@$authorID> Bir rol etiketlemelisin]
+  $endif
+  $if[$message[1]==sıfırla]
+  <:emoji_70:917309183341236244> | Abone rol sıfırlandı
+  $setServerVar[aboner;]
+  $onlyIf[$getServerVar[aboner]!=;<:emoji_71:917309220687314966> | <@$authorID> Zaten ayarlanmamış]
+  $endif
+  $onlyBotPerms[manageroles;<:emoji_71:917309220687314966> | <@$authorID> Botun **Rolleri Yönet** yetkisi bulunmamakta]
+  $onlyPerms[admin;<:emoji_71:917309220687314966> | <@$authorID> Bu komutu sadece **Yönetici** yetkisine sahip kişiler kullanabilir]
+ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
+ `
+});
+
+bot.command({
+  name: "abone",
+  code: `
+  $title[]
+  $description[
+  
+ <:emoji_70:917309183341236244> | Abone Rolü Verilen = <@$mentioned[1]>
+
+ <:emoji_70:917309183341236244> | Abone Rolü Veren = <@$authorID>
+  ]
+  $giveRole[$mentioned[1];$getServerVar[aboner]]
+  $color[RANDOM]
+  $argsCheck[>1;<:emoji_71:917309220687314966> | Birini etiketlemelisin]
+  $onlyBotPerms[manageroles;<:emoji_71:917309220687314966> | Botun **Rolleri Yönet** İznine Sahip Olmam Gerek]
+  $onlyPerms[managesrole;
+  
+  `
+  })
