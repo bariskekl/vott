@@ -106,12 +106,11 @@ bot.variables({
   otorol: "",
   otorollog: "",
   meslek: "Yok",
-  maaş: "0"
+  maaş: "0",
+  kl: ""
 });
 
-
 bot.readyCommand({
-
   channel: "922002749804118036",
 
   code: `
@@ -141,7 +140,6 @@ $thumbnail[$userAvatar[$clientID]]
 $color[RANDOM]
 
 `
-
 });
 
 bot.joinCommand({
@@ -264,4 +262,24 @@ bot.command({
   $onlyPerms[managesrole;
   
   `
-  })
+});
+
+bot.command({
+name:"istatistik",
+code:`
+$description[
+<:emoji_72:917309261661491241> | Bot Sahibi / Geliştirici
+[$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
+
+<:emoji_72:917309261661491241> | Bot Verileri
+
+<:developerr:910821172877344778>  | Sunucu Sayısı | $serverCount
+
+<:developerr:910821172877344778> | Kullanıcı Sayısı | $allMembersCount
+
+<:developerr:910821172877344778>  | Toplam Kanal Sayısı | $allChannelsCount
+
+<:developerr:910821172877344778> | Kullanılan Ram | $ram
+
+`
+})
