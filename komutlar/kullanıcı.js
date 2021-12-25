@@ -16,7 +16,7 @@ __Kullanıcı Menüsü__
 
 » | \`?davetal\` → ID Girdiğiniz Botun Davetini Alır.
 
-» | \`?i\` → Botun İstatistiklerini Gösterir.
+» | \`?istatistik\` → Botun İstatistiklerini Gösterir.
 
 » | \`?avatar\` → Etiketlediğiniz Kişinin Avatarını Gösterir.
 

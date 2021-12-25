@@ -267,6 +267,8 @@ bot.command({
 bot.command({
 name:"istatistik",
 code:`
+$color[RANDOM]
+$title[$userTag[$clientID] in İstatistikleri]
 $description[
 <:emoji_72:917309261661491241> | Bot Sahibi / Geliştirici
 [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
@@ -293,6 +295,11 @@ $description[
 
 <:emoji_72:917309261661491241> | Linkler
 
-<:developerr:910821172877344778> | Destek Sunucusu İçin [Tıkla]
+<:developerr:910821172877344778> | Beni Davet İçin [Tıkla]($getBotInvite[admin])
+
+<:developerr:910821172877344778> | Destek Sunucuma Gelmek İçin [Tıkla](https://discord.gg/HNsxyat5Fp)
+]
+$footer[Komut,$userTag[$authorID] Tarafından Kullanıldı $addTimestamp]
+$thumbnail[$userAvatar[$clientID]]
 `
 })
