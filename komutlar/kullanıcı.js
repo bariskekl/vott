@@ -22,6 +22,13 @@ __Kullanıcı Menüsü__
 
 » | \`?user\` → Sunucuya Ve Discorda Katılma Tarihine Bakarsınız.
 
+» | \`?kullanıcı-bilgi\` → Kullanıcının Bilgilerine Görüntülersiniz.
+
+» | \`?sunucu-bilgi\` → Sunuc Bilgilerini Görüntülersiniz.
+
+» | \`?yetkilerim\` → Sunucuda Olan Yetkilerinize Bakarsınız.
+
+
 ]
 
 $thumbnail[$authorAvatar]
