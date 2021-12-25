@@ -12,4 +12,3 @@ $onlyForServers[$getUserVar[level];]]  
 
 } 
 
-p
