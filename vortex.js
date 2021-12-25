@@ -107,7 +107,8 @@ bot.variables({
   otorollog: "",
   meslek: "Yok",
   maaş: "0",
-  kl: ""
+  kl: "",
+  cekilis: "undefined"
 });
 
 bot.readyCommand({
@@ -389,28 +390,4 @@ bot.status({
   status: "online", //buraya status kısmı dnd idle online şeklinde yapabilirsiniz
 
   time: 12 //buraya ellemeyin
-});
-
-bot.command({
-  name: "çekiliş",
-  code: `
-**🎉 Çekiliş 🎉**
-$description[
-🎉 | Çekiliş Ödülü : $message[2] $message[3] $message[4] $message[5] $message[6] $message[7] $message[8] 
-
-🎉 | Süre : $message[1]
-
-$description[$editIn[$message[1];🎉 | Kazanan : [$userTag[$randomUserID]](https://discord.com/users/$randomUserID)]
-]]
-$color[$random[0;999999]] 
-$onlyPerms[admin;❌ Yönetici Yetkiniz Yok!] 
-$argsCheck[>1;Çekiliş Ödülü Ne Olacak?] 
-$addReactions[🎉]
-$deletecommand 
-
-
-$suppressErrors 
-
-  
-  `
 });
