@@ -281,5 +281,18 @@ $description[
 
 <:developerr:910821172877344778> | Kullanılan Ram | $ram
 
+<:developerr:910821172877344778> | Kullanılan Cpu | $cpu
+
+<:emoji_72:917309261661491241> | Gecikmeler
+
+<:developerr:910821172877344778> | Bot Pingi | $botPing
+
+<:developerr:910821172877344778> | Uptime Süresi | $replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$parseDate[$djseval[client.uptime;yes];time];hours;saat;-1];minutes;dakika;-1];seconds;saniye;-1];hour;saat;-1];minute;dakika;-1];second;saniye;-1];and;ve;-1]
+
+<:developerr:910821172877344778> | Database Ping | $dbPing
+
+<:emoji_72:917309261661491241> | Linkler
+
+<:developerr:910821172877344778> | Destek Sunucusu İçin [Tıkla]
 `
 })
