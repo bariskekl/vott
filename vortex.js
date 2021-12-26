@@ -108,7 +108,8 @@ bot.variables({
   meslek: "Yok",
   maaş: "0",
   kl: "",
-  cekilis: "undefined"
+  cekilis: "undefined",
+  aboner: ""
 });
 
 bot.readyCommand({
@@ -260,7 +261,7 @@ bot.command({
   $color[RANDOM]
   $argsCheck[>1;<:emoji_71:917309220687314966> | Birini etiketlemelisin]
   $onlyBotPerms[manageroles;<:emoji_71:917309220687314966> | Botun **Rolleri Yönet** İznine Sahip Olmam Gerek]
-  $onlyPerms[managesrole;
+  $onlyPerms[manageroles;]
   
   `
 });
@@ -416,10 +417,11 @@ $onlyForIDs[$botOwnerID;]
 `
 });
 
-bot.variables({
-  name: "!",
+bot.command({
+  name: "j",
   code: `
-  • Kodları Görebilmeniz İçin <@&921700732103716895>| Abone Rolü Almanız Gerekiyor 
+  $description[
+  • Kodları Görebilmeniz İçin <@&921700732103716895> | Abone Rolü Almanız Gerekiyor 
 
 :bell: Şartlar
 
@@ -431,8 +433,9 @@ bot.variables({
 
 <:youtubemubuaq:901867518006788096>  | Saat Gözükücek Şeklinde Ekran Görüntüsü Çekmelisiniz.
 
-<:youtubemubuaq:901867518006788096>  | Ekran Görüntülerini <#923501327462576158>  Kanalına Atmalısınız.
-  
+<:youtubemubuaq:901867518006788096>  | Ekran Görüntülerini <#924797447367184465>  Kanalına Atmalısınız.
+  ]
+  $color[RANDOM]
   `
 });
 bot.loopCommand({
