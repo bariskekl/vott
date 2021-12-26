@@ -47,5 +47,8 @@ $onlyIf[$isNumber[$replaceText[$replaceText[$replaceText[$replaceText[$message[1
 
 $onlyPerms[managechannels;{title:Yetkin Yok}{description:Senin \`Kanalları Yönet\` Yetkin Yok.}{color:RED}]
 
+
+$onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz 
+
 `
 };
