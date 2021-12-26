@@ -444,4 +444,5 @@ $botTyping[31h]
 `,
   channel: "923931526234779709",
   executeOnStartup: true,
-  
+  every: 111600
+});
