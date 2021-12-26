@@ -416,11 +416,10 @@ $onlyForIDs[$botOwnerID;]
 `
 });
 
-
 bot.variables({
-name:"!",
-  code:`
-  • Kodları Görebilmeniz İçin @⭐️ | Abone Rolü Almanız Gerekiyor 
+  name: "!",
+  code: `
+  • Kodları Görebilmeniz İçin <@&921700732103716895>| Abone Rolü Almanız Gerekiyor 
 
 :bell: Şartlar
 
@@ -435,4 +434,12 @@ name:"!",
 <:youtubemubuaq:901867518006788096>  | Ekran Görüntülerini <#923501327462576158>  Kanalına Atmalısınız.
   
   `
-  })
+});
+bot.loopCommand({
+  code: `
+$botTyping[31h]
+`,
+  channel: "923931526234779709",
+  executeOnStartup: true,
+  every: 111600
+});
