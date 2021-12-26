@@ -11,6 +11,8 @@ module.exports = {
 
   $argsCheck[>1;**:negative_squared_cross_mark:  | <@$authorID> Bir Sebep Belirtmelisiniz.**]
 
+
+
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz 
 
 `
