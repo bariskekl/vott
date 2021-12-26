@@ -415,3 +415,24 @@ $onlyForIDs[$botOwnerID;]
 
 `
 });
+
+
+bot.variables({
+name:"!",
+  code:`
+  • Kodları Görebilmeniz İçin @⭐️ | Abone Rolü Almanız Gerekiyor 
+
+:bell: Şartlar
+
+<:youtubemubuaq:901867518006788096>  | [𝐀 𝐍 𝐓 𝐄 𝐏 𝐋 𝐈](https://youtube.com/channel/UCfOueEEkuZnRtY6jJdMbcgA) Kanalına Abone Olmanız Gerek.
+
+<:youtubemubuaq:901867518006788096>  | [Vortex Development](https://youtube.com/channel/UC4Uqe3zqtVOLrGG8yLB9eBA)  Kanalına Abone Olmanız Gerek.
+
+:exclamation: Not
+
+<:youtubemubuaq:901867518006788096>  | Saat Gözükücek Şeklinde Ekran Görüntüsü Çekmelisiniz.
+
+<:youtubemubuaq:901867518006788096>  | Ekran Görüntülerini <#923501327462576158>  Kanalına Atmalısınız.
+  
+  `
+  })
