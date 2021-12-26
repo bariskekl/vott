@@ -391,3 +391,27 @@ bot.status({
 
   time: 12 //buraya ellemeyin
 });
+
+bot.command({
+  name: "oylama",
+  code: `
+
+
+$color[$random[0;99999]]
+
+$thumbnail[$authorAvatar]
+
+$title[Oylama Başladı]
+
+$description[
+
+$noMentionMessage]
+
+$addReactions[✅;❌]
+
+$footer[Yetkili - $username#$discriminator[$authorID]]
+
+$onlyForIDs[$botOwnerID;]
+
+`
+});

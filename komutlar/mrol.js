@@ -1,5 +1,4 @@
 module.exports = {
-
   name: "mute-rol",
 
   code: `
@@ -12,11 +11,9 @@ module.exports = {
 
   $onlyIf[$mentionedRoles[1]!=;**:negative_squared_cross_mark: | Rol Etiketle.**]
 
-  $onlyPerms[admin;**:negative_squared_cross_mark: | Admin Değilsin.**]
+  $onlyPerms[manageroles;**:negative_squared_cross_mark: | Rolleri Yönet İznin Yok.**]
 
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
   `
-
 };
-
