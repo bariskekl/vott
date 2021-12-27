@@ -446,3 +446,33 @@ $botTyping[31h]
   executeOnStartup: true,
   every: 111600
 });
+
+bot.command({
+name:"test",
+code:`
+
+
+$ban[$mentioned[1]]
+
+$color[$random[0;999999]]
+
+$description[
+
+📚 | Banlayan Yetkili : <@$authorID>
+
+📚 | Banlanan Üye : <@$mentioned[1]>
+
+📚 | Banlanma Sebebi : \`$noMentionMessage\`
+
+]
+
+$onlyPerms[ban;📚 | Bunun İçin \`Üyeleri Banla\` İznine Sahip Olman Gerek]
+
+$onlyBotPerms[ban;📚 | Birisini Banlamak İçin Bana \`Üyeleri Banla\` İzni Vermelisin]
+
+$argsCheck[<1;📚 | Birini Etiketlemelisin] 
+
+
+
+`
+  })
