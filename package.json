@@ -1,7 +1,6 @@
 {
   "name": "vortex",
   "version": "1.0.0",
-  
   "description": "",
   "main": "vortex.js",
   "scripts": {
@@ -18,5 +17,3 @@
     "aws-signature-v4": "^1.4.0"
   }
 }
-
-npm install aoi.js@lates
