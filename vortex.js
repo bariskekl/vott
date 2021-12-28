@@ -462,6 +462,9 @@ $description[
 <a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\`
 
 <a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\`
+
+<a:charonspara:895970693332758548> | Toplam Paran : \`$calculate[$getGlobalUserVar[banka;$authorID]+$getGlobalUserVar[param;$authorID]]\`
+
 ]
 $thumbnail[$userAvatar[$authorID]]
 $onlyForIDs[$botOwnerID;]
