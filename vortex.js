@@ -104,7 +104,8 @@ bot.variables({
   maaş: "0",
   kl: "",
   cekilis: "undefined",
-  aboner: ""
+  aboner: "",
+  meslek:"boşta"
 });
 
 bot.readyCommand({
@@ -492,3 +493,87 @@ $onlyForIDs[$botOwnerID;]
 
 `
 });
+
+bot.command({
+
+  name: "meslek-seç",
+
+  code:`
+
+  $onlyIf[$checkContains[$message[1];doktor;katil;hemşire;polis;bırak]==true;bırak ve ya !meslekler deki mesleklerle belirtmelisin]
+
+  $onlyIf[$message[1]!=;Doktor katil hemşire polis ve ya bırak yazmalısın]
+
+  $if[$message[1]==polis]
+
+  Mesleğin polis olarak belirlendi
+
+  $setGlobalUserVar[meslek;polis]
+
+  $endif
+
+  $if[$message[1]==hemşire]
+
+  Mesleğin hemşire olarak belirlendi
+
+  $setGlobalUserVar[meslek;hemşire]
+
+  $endif
+
+  $if[$message[1]==doktor]
+
+  Mesleğin doktor olarak belirlendi
+
+  $setGlobalUserVar[meslek;doktor]
+
+  $endif
+
+  $if[$message[1]==katil]
+
+  Mesleğin katil olarak belirlendi
+
+  $setGlobalUserVar[meslek;katil]
+
+  $endif
+
+  $if[$message[1]==bırak]
+
+  İşini bıraktın
+
+  $setGlobalUserVar[meslek;boşta]
+
+  $onlyIf[$getGlobalUserVar[meslek;$authorID]!=boşta;Zaten bir işin yok]
+
+  $endif
+
+  `
+
+})
+
+
+bot.command({
+  name: "çalış",
+  code:`
+  $if[$getGlobalUserVar[meslek;$authorID]==boşta]
+  Bir mesleğin olmadığı için $random[10;40] para kazandın
+  $setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$authorID];$random[10;40]];$authorID]
+  $endif
+$if[$getGlobalUserVar[meslek;$authorID]==doktor]
+  Mesleğin doktor olduğu için $random[2000;20000] para kazandın
+  $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[20;40]];$authorID]
+  $endif
+$if[$getGlobalUserVar[meslek;$authorID]==polis]
+  Mesleğin polis olduğu için $random[500;9000] para kazandın
+  $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[20;40]];$authorID]
+  $endif
+$if[$getGlobalUserVar[meslek;$authorID]==hemşire]
+  Mesleğin hemşire olduğu için $random[20;40] para kazandın
+  $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[20;40]];$authorID]
+  $endif
+$if[$getGlobalUserVar[meslek;$authorID]==katil]
+  Mesleğin katil olduğu için $random[20;40] para kazandın
+  $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[20;40]];$authorID]
+  $endif
+
+  `
+})
