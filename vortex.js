@@ -105,7 +105,8 @@ bot.variables({
   kl: "",
   cekilis: "undefined",
   aboner: "",
-  meslek: "boşta"
+  meslek: "boşta",
+  meslek: "Boşta"
 });
 
 bot.readyCommand({
@@ -461,6 +462,8 @@ $description[
 
 <a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\`
 
+<a:charonspara:895970693332758548> | Mesleğin : \`$getGlobalUserVar[meslek;$mentioned[1]]\`
+
 ]
 $thumbnail[$userAvatar[$authorID]]
 $onlyForIDs[$botOwnerID;]
@@ -486,6 +489,8 @@ $description[
 
 <a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\`
 
+<a:charonspara:895970693332758548> | Mesleğin : \`$getGlobalUserVar[meslek;$mentioned[1]]\`
+
 ]
 $thumbnail[$userAvatar[$mentioned[1]]]
 $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
@@ -499,39 +504,39 @@ bot.command({
 
   code: `
 
-  $onlyIf[$checkContains[$message[1];doktor;katil;hemşire;polis;bırak]==true;bırak ve ya !meslekler deki mesleklerle belirtmelisin]
+  $onlyIf[$checkContains[$message[1];Doktor;Katil;Hemşire;Polis]==true; ?meslek-sistemi'nde Mesleklerle Belirtmelisin]
 
-  $onlyIf[$message[1]!=;Doktor katil hemşire polis ve ya bırak yazmalısın]
+  $onlyIf[$message[1]!=;]
 
-  $if[$message[1]==polis]
+  $if[$message[1]==Polis]
 
   Mesleğin polis olarak belirlendi
 
-  $setGlobalUserVar[meslek;polis]
+  $setGlobalUserVar[meslek;Polis]
 
   $endif
 
-  $if[$message[1]==hemşire]
+  $if[$message[1]==Hemşire]
 
   Mesleğin hemşire olarak belirlendi
 
-  $setGlobalUserVar[meslek;hemşire]
+  $setGlobalUserVar[meslek;Hemşire]
 
   $endif
 
-  $if[$message[1]==doktor]
+  $if[$message[1]==Doktor]
 
   Mesleğin doktor olarak belirlendi
 
-  $setGlobalUserVar[meslek;doktor]
+  $setGlobalUserVar[meslek;Doktor]
 
   $endif
 
-  $if[$message[1]==katil]
+  $if[$message[1]==Katil]
 
   Mesleğin katil olarak belirlendi
 
-  $setGlobalUserVar[meslek;katil]
+  $setGlobalUserVar[meslek;Katil]
 $endif
 
   `
@@ -540,23 +545,23 @@ $endif
 bot.command({
   name: "çalış",
   code: `
-  $if[$getGlobalUserVar[meslek;$authorID]==boşta]
+  $if[$getGlobalUserVar[meslek;$authorID]==Boşta]
   Bir mesleğin olmadığı için $random[1000;40000] para kazandın
   $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[1000;4000]];$authorID]
   $endif
-$if[$getGlobalUserVar[meslek;$authorID]==doktor]
+$if[$getGlobalUserVar[meslek;$authorID]==Doktor]
   Mesleğin doktor olduğu için $random[2000;20000] para kazandın
   $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[200;20000]];$authorID]
   $endif
-$if[$getGlobalUserVar[meslek;$authorID]==polis]
+$if[$getGlobalUserVar[meslek;$authorID]==Polis]
   Mesleğin polis olduğu için $random[500;9000] para kazandın
   $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[500;9000]];$authorID]
   $endif
-$if[$getGlobalUserVar[meslek;$authorID]==hemşire]
+$if[$getGlobalUserVar[meslek;$authorID]==Hemşire]
   Mesleğin hemşire olduğu için $random[2000;9500] para kazandın
   $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[2000;9500]];$authorID]
   $endif
-$if[$getGlobalUserVar[meslek;$authorID]==katil]
+$if[$getGlobalUserVar[meslek;$authorID]==Katil]
   Mesleğin katil olduğu için $random[9990;99999] para kazandın
   $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[20;40]];$authorID]
   $endif
@@ -576,29 +581,12 @@ $title[Meslek Sistemi]
 __Meslek Sistemi__
 » | \`?meslek-seç\` <:emoji_83:917308699524079637> Meslek Seçersiniz.
 » | \`?çalış\` <:emoji_83:917308699524079637>  Meslekte Çalışarak Para Kazanırsınız.
-» | \`?meslek-seç doktor\` <:emoji_83:917308699524079637>  Doktor Olarak İşe Başlarsınız.
-» | \`?meslek-seç polis\` <:emoji_83:917308699524079637>  Polis Olarak İşe Başlarsınız.
-» | \`?meslek-seç hemşire\` <:emoji_83:917308699524079637>  Hemşire Olarak İşe Başlarsınız.
-» | \`?meslek-seç katil \` <:emoji_83:917308699524079637>  Katil Olarak İşe Başlarsınız.
-» | \`?istifa\` <:emoji_83:917308699524079637>  Meslekten İstifa Edersiniz.
-
+» | \`?meslek-seç Doktor\` <:emoji_83:917308699524079637>  Doktor Olarak İşe Başlarsınız.
+» | \`?meslek-seç Polis\` <:emoji_83:917308699524079637>  Polis Olarak İşe Başlarsınız.
+» | \`?meslek-seç Hemşire\` <:emoji_83:917308699524079637>  Hemşire Olarak İşe Başlarsınız.
+» | \`?meslek-seç Katil \` <:emoji_83:917308699524079637>  Katil Olarak İşe Başlarsınız.
 ]
 $thumbnail[$userAvatar[$clientID]]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
-`
-});
-
-bot.command({
-  name: "istifa",
-  code: `
-  $if[$message[1]==bırak]
-$color[RANDOM]
-  $description[<:emoji_70:917309183341236244> | <@$authorID>,Başarıyla İşini bıraktın]
-
-  $setGlobalUserVar[meslek;boşta]
-
-  $onlyIf[$getGlobalUserVar[meslek;$authorID]!=boşta;<:emoji_71:917309220687314966> | Zaten bir işin yok]
-
-  $endif
 `
 });

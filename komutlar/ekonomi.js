@@ -1,5 +1,4 @@
 module.exports = {
-
   name: "ekonomi",
 
   aliases: "ekonomi",
@@ -42,6 +41,9 @@ __Ekonomi Menüsü__
 
 » | \`?kazı-kazan\` → Kazı Kazan İle Para Kazanırsınız.
 
+» | \`?meslek-sistemi\` → Meslek Sistemi İle Meslek Edinip Para Kazanırsınız.
+
+
 ]
 
 $thumbnail[$authorAvatar]
@@ -51,6 +53,4 @@ $footer[Bu Komut,$username Tarafından Kullanıldı $addTimesTamp]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
 `
-
 };
-
