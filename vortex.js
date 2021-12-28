@@ -65,11 +65,6 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 });
 
 bot.variables({
-  invite: "",
-  gmesaj:
-    "📥 -gçüye- sunucunuya katıldı onu -daveteden- davet etti toplam davet sayısı -davetsayısı-",
-  çmesaj:
-    "📤 -gçüye- sunucundan ayrıldı onu -daveteden- davet etti toplam davet sayısı -davetsayısı-",
   asaat: "0",
   param: "0",
   banka: "0",
