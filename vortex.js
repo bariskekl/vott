@@ -443,7 +443,7 @@ $botTyping[31h]
 });
 
 bot.command({
-  name: "test",
+  name: "param",
   code: `
 $color[RANDOM]
 $description[
@@ -458,9 +458,35 @@ $description[
 
 <a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\`
 
-<a:charonspara:895970693332758548> | Toplam Paran : \`$getGlobalUserVar[param;$authorID]$getGlobalUserVar[banka;$authorID]\`
+<a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\`
 
 ]
+$thumbnail[$userAvatar[$authorID]]
+$onlyForIDs[$botOwnerID;]
+
+`
+});
+
+bot.command({
+  name: "cüzdan",
+  code: `
+$color[RANDOM]
+$description[
+
+<a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$mentioned[1]\`
+
+<a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$mentioned[1]]\`
+
+<a:charonspara:895970693332758548> | Hesap ID'si : \`$mentioned[1]\`
+
+<a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\`
+
+<a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\`
+
+<a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\`
+
+]
+$onlyIf[$mentioned
 $thumbnail[$userAvatar[$authorID]]
 $onlyForIDs[$botOwnerID;]
 
