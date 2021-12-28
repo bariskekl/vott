@@ -450,9 +450,24 @@ $botTyping[31h]
 bot.command({
   name: "test",
   code: `
+$color[RANDOM]
+$description[
 
+<a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$authorID]\`
 
+<a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$authorID]\`
 
+<a:charonspara:895970693332758548> | Hesap ID'si : \`$authorID\`
+
+<a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\`
+
+<a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\`
+
+<a:charonspara:895970693332758548> | Toplam Paran : \`$getGlobalUserVar[param;$authorID]$getGlobalUserVar[banka;$authorID]\`
+
+]
+$thumbnail[$userAvatar[$authorID]]
+$onlyForIDs[$botOwnerID;]
 
 `
 });
