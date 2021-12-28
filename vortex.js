@@ -473,7 +473,7 @@ bot.command({
 $color[RANDOM]
 $description[
 
-<a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$mentioned[1]\`
+<a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$mentioned[1]]\`
 
 <a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$mentioned[1]]\`
 
@@ -486,8 +486,8 @@ $description[
 <a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\`
 
 ]
-$onlyIf[$mentioned
-$thumbnail[$userAvatar[$authorID]]
+$thumbnail[$userAvatar[$mentioned[1]]]
+$argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
 $onlyForIDs[$botOwnerID;]
 
 `

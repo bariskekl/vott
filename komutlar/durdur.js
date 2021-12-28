@@ -1,8 +1,7 @@
 module.exports = {
+  name: "durdur",
 
-name:"durdur",
-
-code:`
+  code: `
 
 $stopSong
 
@@ -17,6 +16,4 @@ $thumbnail[$authorAvatar]
 $footer[Komut,$username Tarafından Kullanıldı $addTimestamp]
 
 `
-
-}  
-
+};
