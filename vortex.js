@@ -307,56 +307,6 @@ $thumbnail[$userAvatar[$clientID]]
 });
 
 bot.command({
-  name: "test",
-  code: `
-
-$httpGet[https://api.soumalyaplayz.repl.co/fun/discord?userid=$mentioned[1;yes]]
-
-$var[bannerLink;$httpResult[banner]]
-
- $onlyIf[$guildID!=; ]
-
-$thumbnail[$userAvatar[$mentioned[1;yes]]]
-
-$title[$username[$mentioned[1;yes]] Info!]
-
-$addField[🏷️ **Tag**;$username[$mentioned[1;yes]]#$discriminator[$mentioned[1;yes]]]
-
-$addField[🆔 **Kullanıcı ID**;$userID[$username[$mentioned[1;yes]]]]
-
-$addField[📮 **Discorda Katılma Tarihi**;$cretionDate[$mentioned[1;yes]]]
-
-$addField[❔**Sunucuya Katılma Tarihi**;$memberJoinedDate[$mentioned[1;yes]]
-
-]
-
-$addField[💬 **En Düşuk Rolü Role**;<@&$lowestRole[$mentioned[1;yes]]>]
-
-$addField[💬 Rolleri Role**;<@&$highestRole[$mentioned[1;yes]]>]
-
-$addField[🤖 **Botmu**;$replaceText[$replaceText[$isBot[$mentioned[1;yes]];true;✅;1];false;❌;1]]
-
-$if[$var[bannerLink]==https://cdn.icon-icons.com/icons2/317/PNG/512/sign-error-icon_34362.png]
-
-$addField[**Banner**;❌]
-
-$else
-
-$addField[**Banner**;✅]
-
- $image[$var[bannerLink]]
-
-$endif
-
-$color[$getRoleColor[$highestRole[$mentioned[1;yes]]]]
-
-$addTimestamp 
- $onlyForIDs[$botOwnerID;] 
-  
-  `
-});
-
-bot.command({
   name: "ekle",
   code: `
   
@@ -437,37 +387,4 @@ bot.command({
   ]
   $color[RANDOM]
   `
-});
-bot.loopCommand({
-  code: `
-$botTyping[31h]
-`,
-  channel: "923931526234779709",
-  executeOnStartup: true,
-  every: 111600
-});
-
-bot.command({
-  name: "test",
-  code: `
-$color[RANDOM]
-$description[
-
-<a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$authorID]\`
-
-<a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$authorID]\`
-
-<a:charonspara:895970693332758548> | Hesap ID'si : \`$authorID\`
-
-<a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\`
-
-<a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\`
-
-<a:charonspara:895970693332758548> | Toplam Paran : \`$calculate[$getGlobalUserVar[banka;$authorID]+$getGlobalUserVar[param;$authorID]]\`
-
-]
-$thumbnail[$userAvatar[$authorID]]
-$onlyForIDs[$botOwnerID;]
-
-`
 });
