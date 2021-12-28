@@ -1,7 +1,5 @@
 dependencies:
   aoi.js: 3.0.0
-  aws-signature-v4: 1.4.0
-  v4: 0.0.1
 packages:
   /@babel/runtime/7.16.5:
     dependencies:
@@ -184,10 +182,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=
-  /aws-signature-v4/1.4.0:
-    dev: false
-    resolution:
-      integrity: sha512-OpL4svs8b7ENRoC0DJzwXW7JTDSp+PkYD1sOWT47CsDxHFtmDaydK9zkLwl4LXNHKXnlzbNCvbOwP7lqgFEE2Q==
   /axios/0.21.4:
     dependencies:
       follow-redirects: 1.14.6
@@ -567,10 +561,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-HoBFQlABjbrUw/6USX1uZ7YmnHc=
-  /lodash/3.10.1:
-    dev: false
-    resolution:
-      integrity: sha1-W/Rejkm6QYnhfUgnid/RW9FAt7Y=
   /lru-cache/6.0.0:
     dependencies:
       yallist: 4.0.0
@@ -971,12 +961,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
-  /v4/0.0.1:
-    dependencies:
-      lodash: 3.10.1
-    dev: false
-    resolution:
-      integrity: sha1-0pH2zJcbayJrQTzG49Lsd6dg1Bs=
   /webidl-conversions/3.0.1:
     dev: false
     resolution:
@@ -1040,5 +1024,3 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   aoi.js: ^3.0.0
-  aws-signature-v4: ^1.4.0
-  v4: ^0.0.1
