@@ -108,38 +108,6 @@ bot.variables({
   meslek: "İşsiz"
 });
 
-bot.readyCommand({
-  channel: "922002749804118036",
-
-  code: `
-
-$author[⭐・Yeniden Aktifim;$userAvatar[$clientID]]
-
-$description[
-
-🟢・Tekrardan Aktifim:
-
-🖥・Sunucu Sayım : \`$serverCount\`
-
-✨・Kullanıcı Sayım : \`$allMembersCount\`
-
-🌲・Komut Sayım : \`$commandsCount\`
-
-🏛・Değişken Sayım : \`$variablesCount\` 
-
-👑・Geliştircim : \`$userTag[$botOwnerID]\`
-
-♾・Pingim : \`$ping\`]
-
-$footer[;$userAvatar[$clientID]]
-
-$thumbnail[$userAvatar[$clientID]]
-
-$color[RANDOM]
-
-`
-});
-
 bot.joinCommand({
   channel: "$getServerVar[hgbb]",
   code: `
@@ -476,5 +444,22 @@ $description[$thumbnail[$userAvatar[$authorID]]
   
 
 
+`
+});
+
+bot.status({
+  text:
+    "$serverCount Sunucu | $allMembersCount Kişi | Geliştiricim : $userTag[$botOwnerID]",
+  type: "PLAYING",
+  status: "online",
+  time: 12
+});
+
+bot.readyCommand({
+  channel: "922002749804118036",
+  code: ` 
+$joinVc[925759055832690718] 
+$log[$userTag[$clientID] İsmiyle Giriş Yapıldı 
+Toplam $commandsCount Komutum Var Toplam $serverCount Sunucuya Hizmet Veriyorum
 `
 });
