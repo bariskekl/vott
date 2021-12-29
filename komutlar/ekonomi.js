@@ -41,8 +41,6 @@ __Ekonomi Menüsü__
 
 » | \`?kazı-kazan\` → Kazı Kazan İle Para Kazanırsınız.
 
-» | \`?meslek-sistemi\` → Meslek Sistemi İle Meslek Edinip Para Kazanırsınız.
-
 
 ]
 
