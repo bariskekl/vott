@@ -486,3 +486,22 @@ $endif
 
  `
 });
+
+bot.readyCommand({
+  channel: "922002749804118036",
+  code: `
+$djsEval[client.channels.cache.get('925759055832690718').join();no]
+$suppressErrors
+$description[
+
+💭 | $userTag[$clientID] İsimiyle Başarıyla Giriş Yaptın
+
+💭 | Sunucu Sayım : \`$serverCount\`
+
+💭 | Kullanıcı Sayım : \`$allMembersCount\`
+
+💭 | Toplam Kanal Sayım : \`$allChannelsCount\`
+]
+$color[45EE00]
+`
+});
