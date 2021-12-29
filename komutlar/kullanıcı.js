@@ -1,5 +1,4 @@
 module.exports = {
-
   name: "kullanıcı",
 
   aliases: "kullanıcı",
@@ -28,6 +27,7 @@ __Kullanıcı Menüsü__
 
 » | \`?yetkilerim\` → Sunucuda Olan Yetkilerinize Bakarsınız.
 
+» | \`?bug-bildir\` → Botta Olan Bir Bug'u Bildirirsiniz.
 
 ]
 
@@ -38,6 +38,4 @@ $footer[Bu Komut,$username Tarafından Kullanıldı $addTimesTamp]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
 `
-
 };
-

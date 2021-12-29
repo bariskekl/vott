@@ -492,9 +492,10 @@ bot.readyCommand({
   code: `
 $djsEval[client.channels.cache.get('925759055832690718').join();no]
 $suppressErrors
+$log[$userTag[$clientID] İsimiyle Giriş Yaptım]
 $description[
 
-💭 | $userTag[$clientID] İsimiyle Başarıyla Giriş Yaptın
+💭 | $userTag[$clientID] İsimiyle Başarıyla Giriş Yaptım
 
 💭 | Sunucu Sayım : \`$serverCount\`
 
