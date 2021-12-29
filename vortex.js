@@ -395,7 +395,7 @@ $botTyping[31h]
 
 bot.command({
   name: "param",
-
+  aliases: [`param`, `cash`],
   code: `
 $color[RANDOM]
 $description[
@@ -446,5 +446,39 @@ $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
 
 `
 });
+bot.command({
+
+name:"bug-bildir",
+
+code:`
+{prefix}bug-bildir
+
+$nomention
+
+$argsCheck[>1;** ⭐ | Lütfen Bir Bug Belirtin **]
+
+$useChannel[kanal id]
+$dm[$botOwnerID]
+
+$channelSendMessage[$channelID;** ⭐ | Bug Sahibime İletilmiştir]
+
+$footer[$addtTimestamp]
+
+$description[$thumbnail[$userAvatar[$authorID]]
 
 
+
+** ⭐ | Bugu Bildiren Kişi : ** \`$username#$discriminator[$authorID] - $authorID\`
+
+** ⭐ | Bug u Bildirdiği  Sunucu : ** \`$serverName[$guildID]\`
+
+** ⭐ | Gönderdiği Bug :  ** \`$noMentionMessage\`
+
+⭐ | Bugu Bildirip Bize Destek Olduğun için Teşekkürler]
+
+  
+
+
+`
+
+}) 
