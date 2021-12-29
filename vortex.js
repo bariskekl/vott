@@ -447,38 +447,34 @@ $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
 `
 });
 bot.command({
+  name: "bug-bildir",
 
-name:"bug-bildir",
+  code: `
 
-code:`
-{prefix}bug-bildir
-
-$nomention
 
 $argsCheck[>1;** ⭐ | Lütfen Bir Bug Belirtin **]
 
-$useChannel[kanal id]
-$dm[$botOwnerID]
+$useChannel[925742444270714880]
 
-$channelSendMessage[$channelID;** ⭐ | Bug Sahibime İletilmiştir]
 
-$footer[$addtTimestamp]
+$channelSendMessage[$channelID;** ⭐ | Bug Sahibime İletilmiştir **]
+
+$footer[$addTimestamp]
 
 $description[$thumbnail[$userAvatar[$authorID]]
 
 
 
-** ⭐ | Bugu Bildiren Kişi : ** \`$username#$discriminator[$authorID] - $authorID\`
+** ⭐ | Bug 'u Bildiren Kişi : ** \`$username#$discriminator[$authorID] - $authorID\`
 
-** ⭐ | Bug u Bildirdiği  Sunucu : ** \`$serverName[$guildID]\`
+** ⭐ | Bug'u Bildirdiği  Sunucu : ** \`$serverName[$guildID]\`
 
 ** ⭐ | Gönderdiği Bug :  ** \`$noMentionMessage\`
 
-⭐ | Bugu Bildirip Bize Destek Olduğun için Teşekkürler]
+** ⭐ | Bugu Bildirip Bize Destek Olduğun için Teşekkürler **]
 
   
 
 
 `
-
-}) 
+});
