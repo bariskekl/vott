@@ -449,7 +449,7 @@ $description[$thumbnail[$userAvatar[$authorID]]
 
 bot.status({
   text:
-    "$serverCount Sunucu | $allMembersCount Kişi | Geliştiricim : $userTag[$botOwnerID]",
+    "$serverCount Sunucu | $allMembersCount Kullanıcı | Geliştiricim : $userTag[$botOwnerID]",
   type: "PLAYING",
   status: "online",
   time: 12
