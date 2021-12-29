@@ -395,6 +395,7 @@ $botTyping[31h]
 
 bot.command({
   name: "param",
+
   code: `
 $color[RANDOM]
 $description[
