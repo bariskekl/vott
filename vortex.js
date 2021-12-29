@@ -369,17 +369,17 @@ $color[RANDOM]
 $description[
 
 <a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$authorID]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$authorID]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Hesap ID'si : \`$authorID\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\`
-
+-----------------------------------------
 
 ]
 $thumbnail[$userAvatar[$authorID]]
@@ -395,17 +395,17 @@ $color[RANDOM]
 $description[
 
 <a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$mentioned[1]]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$mentioned[1]]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Hesap ID'si : \`$mentioned[1]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\`
-
+-----------------------------------------
 <a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\`
-
+-----------------------------------------
 
 ]
 $thumbnail[$userAvatar[$mentioned[1]]]
@@ -453,13 +453,4 @@ bot.status({
   type: "PLAYING",
   status: "online",
   time: 12
-});
-
-bot.readyCommand({
-  channel: "922002749804118036",
-  code: ` 
-$joinVc[925759055832690718] 
-$log[$userTag[$clientID] İsmiyle Giriş Yapıldı 
-Toplam $commandsCount Komutum Var Toplam $serverCount Sunucuya Hizmet Veriyorum
-`
 });
