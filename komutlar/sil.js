@@ -17,8 +17,6 @@ $onlyBotPerms[managemessages; 🧭 | Kullanman İçin Bana \`Mesajları Yönet �
 
 $globalCooldown[30s;🧭 | <@$authorID> Yavaş Ol Kanka Bunu Kullanmak İçin %time% Beklemelisin]
 
-$footer[Komut,$userTag[$authorID] Tarafından Kullanıldı $addTimestamp]
-
 $thumbnail[$userAvatar[$authorID]]
 
 $argsCheck[>1;🧭 | Bi Miktar Girmelisin]
