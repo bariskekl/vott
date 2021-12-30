@@ -43,6 +43,7 @@ bot.command({
   name: "yardım",
   alises: "yardım",
   code: `
+  $reply[$messageID;
 $color[RANDOM]
 $description[
 $title[Yardım Menüsü]
@@ -61,6 +62,7 @@ __Kategoriler__
 ]
 $thumbnail[$userAvatar[$clientID]]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
+]
 `
 });
 
