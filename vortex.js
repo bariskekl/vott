@@ -512,9 +512,9 @@ bot.command({
 
 $color[RANDOM]
 
-$author[Sunucu Ayarları]
+$author[Sunucu Ayarları;$serverIcon]
 
-$authorIcon[$serverIcon]
+
 
 $description[
 
