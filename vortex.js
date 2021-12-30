@@ -505,3 +505,31 @@ $description[
 $color[45EE00]
 `
 });
+
+bot.command({
+  name: "ayarlar",
+  code: `
+
+$color[RANDOM]
+
+$author[Sunucu Ayarları]
+
+$authorIcon[$serverIcon]
+
+$description[
+
+Gelen Giden Kanalı : $replaceText[<#$getServerVar[hgbb]>
+
+;<#>;  Sistem Kapalı.;-1]
+
+ Abone Rol : $replaceText[<@&$getServerVar[aboner]>
+
+;<&>; Sistem Kapalı.;-1]
+]
+
+
+
+
+
+`
+});
