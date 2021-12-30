@@ -494,7 +494,7 @@ $djsEval[client.channels.cache.get('925759055832690718').join();no]
 $suppressErrors
 $description[
 
-💭 | $userTag[$clientID] İsimiyle Başarıyla Giriş Yaptım
+💭 | $userTag[$clientID] İsmiyle Başarıyla Giriş Yaptım
 
 💭 | Sunucu Sayım : \`$serverCount\`
 
