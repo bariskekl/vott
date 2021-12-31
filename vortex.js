@@ -342,7 +342,7 @@ bot.command({
 
 :bell: Şartlar
 
-<:youtubemubuaq:901867518006788096>  | [𝐀 𝐍 𝐓 𝐄 𝐏 𝐋 𝐈](https://youtube.com/channel/UCfOueEEkuZnRtY6jJdMbcgA) Kanalına Abone Olmanız Gerek.
+<:youtubemubuaq:901867518006788096>  | [Ardaa](https://youtube.com/channel/UCeNt3YcM_pXpasLAVrMd0gA) Kanalına Abone Olmanız Gerek.
 
 <:youtubemubuaq:901867518006788096>  | [Vortex Development](https://youtube.com/channel/UC4Uqe3zqtVOLrGG8yLB9eBA)  Kanalına Abone Olmanız Gerek.
 
