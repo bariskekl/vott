@@ -6,7 +6,7 @@ const bot = new vortex.Bot({
   token: process.env.token, //.env dosyasında token yazan variablenin değerine tokeninizi yazın
 
   prefix: "?",
-
+  mobile: true,
   fetchInvites: true
 });
 
@@ -34,7 +34,8 @@ for (const file of reader) {
 
   bot.command({
     name: command.name,
-
+    aliases: command.aliases,
+    bkz: command.bkz,
     code: command.code
   });
 }
