@@ -149,7 +149,7 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 });
 
 bot.botJoinCommand({
-  channel: "922002749804118036",
+  channel: "926570792962097222",
 
   code: `
 
@@ -173,7 +173,7 @@ $color[RANDOM]
 });
 
 bot.botLeaveCommand({
-  channel: "922002749804118036",
+  channel: "926570792962097222",
 
   code: `
 
