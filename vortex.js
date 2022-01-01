@@ -544,7 +544,7 @@ bot.command({
   code: `
 
 $reply[$messageID;<a:mavitac:909921555692261397> | Aleyküm Selam Hoşgeldin]
-  $onlyIf[$getServerVar[saas]!=no;]
+  $onlyIf[$getServerVar[saas]!=kapalı;]
 
   `,
 
@@ -557,7 +557,7 @@ bot.command({
   code: `
 
 $reply[$messageID;<a:mavitac:909921555692261397> | Aleyküm Selam Hoşgeldin]
-  $onlyIf[$getServerVar[saas]!=no;]
+  $onlyIf[$getServerVar[saas]!=kapalı;]
 
   `,
 
