@@ -42,9 +42,9 @@ for (const file of reader) {
 
 bot.command({
   name: "yardım",
-  alises: "yardım",
+  aliases: [`yardım`, `help`],
   code: `
-$reply[$messageID[$clientID]]
+
 $color[RANDOM]
 $description[
 $title[Yardım Menüsü]
@@ -537,4 +537,3 @@ Gelen Giden Kanalı : $replaceText[<#$getServerVar[hgbb]>
 
 `
 });
-
