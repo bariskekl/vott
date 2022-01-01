@@ -537,3 +537,20 @@ Gelen Giden Kanalı : $replaceText[<#$getServerVar[hgbb]>
 
 `
 });
+
+bot.command({
+  name: "herkese-rol-ver",
+  code: `
+**\`$roleName[$mentionedRoles[1]]\`** Adlı Rol Herkese Veriliyor Bu İşlem Biraz Sürebilir
+$forEachMember[rolver]
+$onlyIf[$rolePosition[$mentionedRoles[1]]>=$rolePosition[$highestRole[$clientID]];Rolümden Üstte Bir Rolü Herkese Veremem]
+$onlyIf[$mentionedRoles[1]!=;Bir Rol Etiketle]
+$onlyIf[$authorID==$ownerID;Sadece Sunucu Sahibi Herkese Rol Verebilir]
+`
+});
+bot.awaitedCommand({
+  name: "rolver",
+  code: `
+$giveRole[$authorID;$mentionedRoles[1]]
+`
+});
