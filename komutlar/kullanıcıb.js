@@ -27,9 +27,10 @@ $description[
 
 🚀 | Oynuyor Kısmı : \`$replaceText[$getCustomStatus[$mentioned[1;yes]];none;Bir Şey Oynamıyor;-1]\`
 
+🚀 | Aktiflik Durumu : $replaceText[$replaceText[$replaceText[$replaceText[$status[$mentioned[1]];dnd; \`Rahatsız Etmeyin\`;-1];idle; \`Boşta\`;-1];online; \`Çevrimiçi\`;-1];offline; \`Çevrimdışı\`;-1]
+
 🚀 | Rolleri : \`$userRoles[$mentioned[1]]\`
 
-🚀 | Aktiflik Durumu : $replaceText[$replaceText[$replaceText[$replaceText[$status[$mentioned[1]];dnd; \`Rahatsız Etmeyin\`;-1];idle;🌜 \`Boşta\`;-1];online; \`Çevrimiçi\`;-1];offline; \`Çevrimdışı\`;-1]
 ]
 
 $else
@@ -56,9 +57,9 @@ $description[
 
 🚀 | Oynuyor Kısmı : \`$replaceText[$getCustomStatus[$authorID];none;Bir Şey Oynamıyor;-1]\`
 
-🚀 | Rolleri : \`$userRoles[$authorID]\`
+🚀 | Aktiflik Durumu : $replaceText[$replaceText[$replaceText[$replaceText[$status[$authorID];dnd; \`Rahatsız Etmeyin\`;-1];idle; \`Boşta\`;-1];online; \`Çevrimiçi\`;-1];offline; \`Çevrimdışı\`;-1]
 
-🚀 | Aktiflik Durumu : \`$replaceText[$replaceText[$replaceText[$replaceText[$status[$authorID];dnd; \`Rahatsız Etmeyin\`;-1];idle;🌜 \`Boşta\`;-1];online; \`Çevrimiçi\`;-1];offline; \`Çevrimdışı\`;-1]\`
+🚀 | Rolleri : \`$userRoles[$authorID]\`
 
 ]
 
