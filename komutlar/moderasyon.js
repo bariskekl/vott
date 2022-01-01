@@ -31,10 +31,6 @@ __Moderasyon Menüsü__
 
 » | \`?unmute\` → Etiketlediğiniz Kişinin Mutesini Açarsınız.
 
-» | \`?saas-aç\` → Saas Sistemini Açarsınız.
-
-» | \`?saas-kapat\` → Saas Sistemini Kapatırsınız.
-
 » | \`?banlist\` → Sunucuda Banlı Olan Kişileri Gösterir.
 
 ]

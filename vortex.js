@@ -538,15 +538,3 @@ Gelen Giden Kanalı : $replaceText[<#$getServerVar[hgbb]>
 `
 });
 
-bot.command({
-  name: "sa",
-
-  code: `
-
-$reply[$messageID;<a:mavitac:909921555692261397> | Aleyküm Selam Hoşgeldin]
-  $onlyIf[$getServerVar[saas]!=kapalı;]
-
-  `,
-
-  nonPrefixed: true
-});
