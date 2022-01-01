@@ -95,7 +95,7 @@ bot.variables({
   afk: "",
   afkl: "",
   prefix: "?",
-  saas: "no",
+  saas: "kapalı",
   mrol: "",
   modlog: "",
   arol: "",
@@ -109,7 +109,7 @@ bot.variables({
   cekilis: "undefined",
   aboner: "",
   meslek: "İşsiz",
-  saas: "no"
+  saas: "kapalı"
 });
 
 bot.joinCommand({
