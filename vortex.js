@@ -550,16 +550,3 @@ $reply[$messageID;<a:mavitac:909921555692261397> | Aleyküm Selam Hoşgeldin]
 
   nonPrefixed: true
 });
-
-bot.command({
-  name: "Selam",
-
-  code: `
-
-$reply[$messageID;<a:mavitac:909921555692261397> | Aleyküm Selam Hoşgeldin]
-  $onlyIf[$getServerVar[saas]!=kapalı;]
-
-  `,
-
-  nonPrefixed: true
-});
