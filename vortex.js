@@ -109,7 +109,7 @@ bot.variables({
   cekilis: "undefined",
   aboner: "",
   meslek: "İşsiz",
-  saas: "kapalı"
+  saas: "no"
 });
 
 bot.joinCommand({
@@ -544,7 +544,7 @@ bot.command({
   code: `
 
 $reply[$messageID;<a:mavitac:909921555692261397> | Aleyküm Selam Hoşgeldin]
-  $onlyIf[$getServerVar[saas]!=kapalı;]
+  $onlyIf[$getServerVar[saas]!=no;]
 
   `,
 
@@ -557,7 +557,7 @@ bot.command({
   code: `
 
 $reply[$messageID;<a:mavitac:909921555692261397> | Aleyküm Selam Hoşgeldin]
-  $onlyIf[$getServerVar[saas]!=kapalı;]
+  $onlyIf[$getServerVar[saas]!=no;]
 
   `,
 
