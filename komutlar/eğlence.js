@@ -1,5 +1,4 @@
 module.exports = {
-
   name: "eğlence",
 
   aliases: "eğlence",
@@ -32,6 +31,8 @@ __Eğlence Menüsü__
 
 » | \`?trump\` → Trump Tweet Atar.
 
+» | \`?hackle\` → Etiketlediğiniz Kişiyi Hacklersiniz.
+
 ]
 
 $thumbnail[$authorAvatar]
@@ -41,6 +42,4 @@ $footer[Bu Komut,$username Tarafından Kullanıldı $addTimesTamp]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
 `
-
 };
-
