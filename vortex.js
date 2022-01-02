@@ -339,7 +339,7 @@ bot.command({
   name: "j",
   code: `
   $description[
-  • Kodları Görebilmeniz İçin <@&921700732103716895> | Abone Rolü Almanız Gerekiyor 
+  • Kodları Görebilmeniz İçin <@&926951177181077585> | Abone Rolü Almanız Gerekiyor 
 
 :bell: Şartlar
 
@@ -351,9 +351,11 @@ bot.command({
 
 <:youtubemubuaq:901867518006788096>  | Saat Gözükücek Şeklinde Ekran Görüntüsü Çekmelisiniz.
 
-<:youtubemubuaq:901867518006788096>  | Ekran Görüntülerini <#924797447367184465>  Kanalına Atmalısınız.
+<:youtubemubuaq:901867518006788096>  | Ekran Görüntülerini <#926969817876004905>  Kanalına Atmalısınız.
   ]
   $color[RANDOM]
+  $deletecommand
+  $onlyForIDs[$botOwnerID;]
   `
 });
 bot.loopCommand({
