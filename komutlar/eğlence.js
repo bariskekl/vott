@@ -22,6 +22,16 @@ __Eğlence Menüsü__
 
 » | \`?sahte-mesaj\` → Etiketlediğiniz Kişiye Sahte Mesaj Yazdırırsınız.
 
+» | \`?kaçcm\` →Aletinizi Ölçersiniz.
+
+» | \`?wasted\` → Profilinize Wasted Efekti Verir.
+
+» | \`?öp\` → Etiketlediğiniz Kişiyi Gifli Öper.
+
+» | \`?yt-ara\` → Youtube da Arama Yaparsınız.
+
+» | \`?trump\` → Trump Tweet Atar.
+
 ]
 
 $thumbnail[$authorAvatar]
