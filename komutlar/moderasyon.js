@@ -33,6 +33,14 @@ __Moderasyon Menüsü__
 
 » | \`?banlist\` → Sunucuda Banlı Olan Kişileri Gösterir.
 
+» | \`?bancount\` → Sunucuda Banlı Olan Kişi Sayısını Gösterir.
+
+» | \`?oylama\ → Sunucuda Oylama Yaparsınız.
+
+» | \`?abone-rol\ → Abone Rolünü Ayarlarsınız.
+
+» | \`?abone\` → Etiket Attığınız Kişiye Abone Verirsiniz.
+
 ]
 
 $thumbnail[$authorAvatar]

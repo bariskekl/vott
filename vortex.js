@@ -136,7 +136,7 @@ bot.command({
 $description[
 <:developer:909920582223687700> | Botumuzu Davet Etmek İçin : [Tıkla](https://discord.com/oauth2/authorize?client_id=908704907983482881&scope=bot+applications.commands&permissions=8)
 
-<:developer:909920582223687700> | Destek Sunucumuza Gelmek İçin : [Tıkla](https://discord.gg/YSr5Wq86bW)
+<:developer:909920582223687700> | Destek Sunucumuza Gelmek İçin : [Tıkla](https://discord.gg/NNpYhyrzEx)
 
 <:developer:909920582223687700> | Kurucum İle İletişime Geçmek İçin : [$userTag[754320168469135440]](https://discord.com/users/754320168469135440)
 ]
@@ -267,7 +267,7 @@ $description[
 
 <:developerr:910821172877344778> | Beni Davet İçin [Tıkla]($getBotInvite[admin])
 
-<:developerr:910821172877344778> | Destek Sunucuma Gelmek İçin [Tıkla](https://discord.gg/HNsxyat5Fp)
+<:developerr:910821172877344778> | Destek Sunucuma Gelmek İçin [Tıkla](https://discord.gg/NNpYhyrzEx)
 ]
 $footer[Komut,$userTag[$authorID] Tarafından Kullanıldı $addTimestamp]
 $thumbnail[$userAvatar[$clientID]]
@@ -330,7 +330,7 @@ $addReactions[✅;❌]
 
 $footer[Yetkili - $username#$discriminator[$authorID]]
 
-$onlyForIDs[$botOwnerID;]
+$onlyPerms[manageroles;]
 
 `
 });
@@ -358,14 +358,7 @@ bot.command({
   $onlyForIDs[$botOwnerID;]
   `
 });
-bot.loopCommand({
-  code: `
-$botTyping[31h]
-`,
-  channel: "923931526234779709",
-  executeOnStartup: true,
-  every: 111600
-});
+
 
 bot.command({
   name: "param",
@@ -374,17 +367,17 @@ bot.command({
 $color[RANDOM]
 $description[
 
-<a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$authorID]\`
+<a:emoji_45:927001644971995166> | Hesap İsmi : \`$userTag[$authorID]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$authorID]\`
+<a:emoji_45:927001644971995166> | Hesap Kuruluş Tarihi : \`$creationDate[$authorID]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Hesap ID'si : \`$authorID\`
+<a:emoji_45:927001644971995166> | Hesap ID'si : \`$authorID\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\`
+<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\`
+<a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\`
+<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\`
 -----------------------------------------
 
 ]
@@ -400,17 +393,17 @@ bot.command({
 $color[RANDOM]
 $description[
 
-<a:charonspara:895970693332758548> | Hesap İsmi : \`$userTag[$mentioned[1]]\`
+<a:emoji_45:927001644971995166> | Hesap İsmi : \`$userTag[$mentioned[1]]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Hesap Kuruluş Tarihi : \`$creationDate[$mentioned[1]]\`
+<a:emoji_45:927001644971995166> | Hesap Kuruluş Tarihi : \`$creationDate[$mentioned[1]]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Hesap ID'si : \`$mentioned[1]\`
+<a:emoji_45:927001644971995166> | Hesap ID'si : \`$mentioned[1]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\`
+<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\`
+<a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\`
 -----------------------------------------
-<a:charonspara:895970693332758548> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\`
+<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\`
 -----------------------------------------
 
 ]
