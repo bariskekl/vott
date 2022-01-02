@@ -278,7 +278,7 @@ bot.command({
   name: "ekle",
   code: `
   
-  $useChannel[923355420599418891]
+  $useChannel[926993163162378250]
   
   $message
   $author[Sunucuya Yeni Bir Kod Eklendi;$serverIcon]
@@ -554,5 +554,32 @@ bot.awaitedCommand({
   name: "rolver",
   code: `
 $giveRole[$authorID;$mentionedRoles[1]]
+`
+});
+
+bot.command({
+  name: "aekle",
+  code: `
+  
+  $useChannel[926993163162378250]
+  
+  $message
+  $author[Sunucuya Yeni Bir Altyapı Eklendi;$serverIcon]
+  $color[RANDOM]
+  $description[
+  
+<:emoji_72:917309261661491241> | Eklendiği Kanal | $message
+
+<:emoji_72:917309261661491241> | Ekleyen Yetkili | <@$authorID>
+]
+
+$footer[$serverName[$guildID];$serverIcon;$addTimestamp]
+
+$argsCheck[>1;]
+
+$deletecommand
+
+$onlyPerms[admin;]
+
 `
 });
