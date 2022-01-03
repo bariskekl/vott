@@ -109,7 +109,8 @@ bot.variables({
   cekilis: "undefined",
   aboner: "",
   meslek: "İşsiz",
-  saas: "kapalı"
+  saas: "kapalı",
+  
 });
 
 bot.joinCommand({
@@ -576,3 +577,4 @@ $onlyPerms[admin;]
 
 `
 });
+
