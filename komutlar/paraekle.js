@@ -1,26 +1,24 @@
 module.exports = {
 
-  name: "para-ekle",
+name:"para-ekle",
 
-  aliases: "para-ekle",
-
-  code: `
+code:`
 
 $color[RANDOM]
+$dm[$botOwnerID]
+$onlyForIDs[$botOwnerID; <@$authorID>, bu komut sahibime özeldir.]
+$author[$userAvatar[$mentioned[1]]]
+$description[
 
-$onlyForIDs[754320168469135440;<:emoji_71:917309220687314966> | <@$authorID>, bu komut sahibime özeldir.]
+** | Kurucum Bir Kişiye Para Ekledi **
+--------------------------------------------
+** | Eklenen Miktar ** : \`$noMentionMessage\`
+--------------------------------------------
+** | Para Ekleyen Developer** : <@$authorID>
+--------------------------------------------
+** | Para Eklenen Kişi** : <@$mentioned[1]>]
 
-$description[<:emoji_70:917309183341236244> | <@$message[1]> kullanıcının cüzdanına $message[2] 💵 eklendi.]
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$mentioned[1]];$noMentionMessage];$mentioned[1]]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$message[1]];$message[2]];$message[1]]  
-
-$argsCheck[>1;<:emoji_71:917309220687314966> | <@$authorID>, ID yazmalısın.]
-
-$argsCheck[>2;<:emoji_71:917309220687314966> | <@$authorID>, miktar yaz.]
-
-$onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
-
-`
-
-};
-
+` 
+  }
