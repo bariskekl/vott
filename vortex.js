@@ -579,3 +579,22 @@ $onlyPerms[admin;]
 
 `
 });
+
+bot.command({
+  name: "yaş-hesapla",
+  code: `
+
+$color[RANDOM]
+
+$title[Yaş Hesaplama İşlemi]
+
+$description[<@$authorID>, sen $sub[$year;$message[1]] yaşındasın.]
+
+$footer[$username[$authorID]]
+
+$addTimestamp
+
+$argsCheck[>1; <@$authorID>, doğum yılını yaz.] 
+
+`
+});
