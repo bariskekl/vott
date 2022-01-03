@@ -10,7 +10,7 @@ $description[
 
 ** <a:emoji_45:927001644971995166> | Geliştiricim Bir Kişiye Para Ekledi **
 --------------------------------------------
-** <a:emoji_45:927001644971995166> | Eklenen Miktar ** : [$getBotInvite[admin]]($noMentionMessage)
+** <a:emoji_45:927001644971995166> | Eklenen Miktar ** : [$noMentionMessage]($getBotInvite[admin])
 --------------------------------------------
 ** <a:emoji_45:927001644971995166> | Para Ekleyen Geliştirici** : [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
 --------------------------------------------
