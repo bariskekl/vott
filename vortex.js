@@ -110,9 +110,9 @@ bot.variables({
   aboner: "",
   meslek: "İşsiz",
   saas: "kapalı",
-  dboteklemesayı:"0",
-  dbotlistsistemdurum:"0",
-  dbotlistsistemaktifsayı:"0",
+  dboteklemesayı: "0",
+  dbotlistsistemdurum: "0",
+  dbotlistsistemaktifsayı: "0"
 });
 
 bot.joinCommand({
@@ -406,9 +406,9 @@ $description[
 <a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\`
 
 <a:emoji_45:9270016449719911 Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\`
------------------------------------------
+
 <a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\`
------------------------------------------
+
 
 ]
 $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
@@ -579,4 +579,3 @@ $onlyPerms[admin;]
 
 `
 });
-
