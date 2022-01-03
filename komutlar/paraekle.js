@@ -12,7 +12,7 @@ $description[
 --------------------------------------------
 ** <a:emoji_45:927001644971995166> | Eklenen Miktar ** : [$getBotInvite[admin]]($noMentionMessage)
 --------------------------------------------
-** <a:emoji_45:927001644971995166> | Para Ekleyen Developer** : [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
+** <a:emoji_45:927001644971995166> | Para Ekleyen Geliştirici** : [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
 --------------------------------------------
 ** <a:emoji_45:927001644971995166> | Para Eklenen Kişi** : [$userTag[$mentioned[1]]](https://discord.com/users/$mentioned[1])
 ]
