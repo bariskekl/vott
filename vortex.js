@@ -110,7 +110,9 @@ bot.variables({
   aboner: "",
   meslek: "İşsiz",
   saas: "kapalı",
-  
+  dboteklemesayı:"0",
+  dbotlistsistemdurum:"0",
+  dbotlistsistemaktifsayı:"0",
 });
 
 bot.joinCommand({
