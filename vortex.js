@@ -359,12 +359,12 @@ bot.command({
   `
 });
 
-
 bot.command({
   name: "param",
   aliases: [`param`, `cash`],
   code: `
 $color[RANDOM]
+$author[$userTag[$authorID];$userAvatar[$authorID]]
 $description[
 
 <a:emoji_45:927001644971995166> | Hesap İsmi : \`$userTag[$authorID]\`
@@ -381,7 +381,7 @@ $description[
 -----------------------------------------
 
 ]
-$thumbnail[$userAvatar[$authorID]]
+
 
 
 `
@@ -391,6 +391,7 @@ bot.command({
   name: "cüzdan",
   code: `
 $color[RANDOM]
+$author[$userTag[$mentioned[1]];$userAvatar[$mentioned[1]]]
 $description[
 
 <a:emoji_45:927001644971995166> | Hesap İsmi : \`$userTag[$mentioned[1]]\`
@@ -407,7 +408,6 @@ $description[
 -----------------------------------------
 
 ]
-$thumbnail[$userAvatar[$mentioned[1]]]
 $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
 
 

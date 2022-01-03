@@ -1,24 +1,24 @@
 module.exports = {
+  name: "para-ekle",
 
-name:"para-ekle",
-
-code:`
+  code: `
 
 $color[RANDOM]
-$dm[$botOwnerID]
-$onlyForIDs[$botOwnerID; <@$authorID>, bu komut sahibime özeldir.]
-$author[$userAvatar[$mentioned[1]]]
+$onlyForIDs[$botOwnerID; <@$authorID>, Bu Komut $userTag[$botOwnerID]'a Özeldir.]
+$author[$userTag[$mentioned[1]];$userAvatar[$mentioned[1]]]
 $description[
 
-** | Kurucum Bir Kişiye Para Ekledi **
+** <a:emoji_45:927001644971995166> | Geliştiricim Bir Kişiye Para Ekledi **
 --------------------------------------------
-** | Eklenen Miktar ** : \`$noMentionMessage\`
+** <a:emoji_45:927001644971995166> | Eklenen Miktar ** : [$getBotInvite[admin]]($noMentionMessage)
 --------------------------------------------
-** | Para Ekleyen Developer** : <@$authorID>
+** <a:emoji_45:927001644971995166> | Para Ekleyen Developer** : [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
 --------------------------------------------
-** | Para Eklenen Kişi** : <@$mentioned[1]>]
+** <a:emoji_45:927001644971995166> | Para Eklenen Kişi** : [$userTag[$mentioned[1]]](https://discord.com/users/$mentioned[1])
+]
 
 $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$mentioned[1]];$noMentionMessage];$mentioned[1]]
+$footer[$addTimestamp]
 
-` 
-  }
+`
+};
