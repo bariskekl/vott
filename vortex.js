@@ -363,15 +363,15 @@ $author[$userTag[$authorID];$userAvatar[$authorID]]
 $description[
 
 <a:emoji_45:927001644971995166> | Hesap İsmi : \`$userTag[$authorID]\`
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap Kuruluş Tarihi : \`$creationDate[$authorID]\`
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap ID'si : \`$authorID\`
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\` TL
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\` TL
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\` TL
 
 
@@ -390,15 +390,15 @@ $author[$userTag[$mentioned[1]];$userAvatar[$mentioned[1]]]
 $description[
 
 <a:emoji_45:927001644971995166> | Hesap İsmi : \`$userTag[$mentioned[1]]\`
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap Kuruluş Tarihi : \`$creationDate[$mentioned[1]]\`
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap ID'si : \`$mentioned[1]\`
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\` TL
-
+--------------------------------------------
 <a:emoji_45:9270016449719911 Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
-
+--------------------------------------------
 <a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` TL
 
 
