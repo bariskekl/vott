@@ -1,12 +1,12 @@
 module.exports = {
   name: "ban",
   code: `
-$dm[$mentioned[1]]
-$ban[$noMentionMessage;$mentioned[1]] 
+  $dm[$mentioned[1]]
+$author[$userTag[$mentioned[1]];$userAvatar[$mentioned[1]]]
+$ban[$mentioned[1];$noMentionMessage]
+$description[\`$userTag[$mentioned[1]]\`  İsimli Kullanıcı \`$noMentionMessage\` Sebebi İle Banlandı]
 $color[RANDOM]
-$description[
-<@$mentioned[1]> \`$serverName\` İsimli Sunucudan \`$noMentionMessage\` Sebebi İle \` Banlandın]
-$channelSendMessage[$channelID;
-<@$mentioned[1]> Başarıyla \`$noMentionMessage\` Sebebi İle Banlandı]
+$footer[$addTimestamp]
+$onlyPerms[ban;<:emoji_71:917309220687314966> | Bu Komutu Kullanamazsın Bunu Kullanmak İçin \`Üyeleri Banla\` Yetkin Olmalı]
 `
 };
