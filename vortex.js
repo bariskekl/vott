@@ -137,11 +137,11 @@ bot.command({
   name: "davet",
   code: `
 $description[
-<:developer:909920582223687700> | Botumuzu Davet Etmek İçin : [Tıkla](https://discord.com/oauth2/authorize?client_id=908704907983482881&scope=bot+applications.commands&permissions=8)
+<:developerr:910821172877344778> | Botumuzu Davet Etmek İçin : [Tıkla](https://discord.com/oauth2/authorize?client_id=908704907983482881&scope=bot+applications.commands&permissions=8)
 
-<:developer:909920582223687700> | Destek Sunucumuza Gelmek İçin : [Tıkla](https://discord.gg/NNpYhyrzEx)
+<:developerr:910821172877344778> | Destek Sunucumuza Gelmek İçin : [Tıkla](https://discord.gg/NNpYhyrzEx)
 
-<:developer:909920582223687700> | Kurucum İle İletişime Geçmek İçin : [$userTag[754320168469135440]](https://discord.com/users/754320168469135440)
+<:developerr:910821172877344778> | Kurucum İle İletişime Geçmek İçin : [$userTag[754320168469135440]](https://discord.com/users/754320168469135440)
 ]
 $color[RANDOM]
 $thumbnail[$authorAvatar]
@@ -220,7 +220,6 @@ bot.command({
   $description[
   
  <:emoji_70:917309183341236244> | Abone Rolü Verilen = <@$mentioned[1]>
-
  <:emoji_70:917309183341236244> | Abone Rolü Veren = <@$authorID>
   ]
   $giveRole[$mentioned[1];$getServerVar[aboner]]
@@ -282,9 +281,7 @@ bot.command({
   $author[Sunucuya Yeni Bir Kod Eklendi;$serverIcon]
   $color[RANDOM]
   $description[
-  
 <:emoji_72:917309261661491241> | Eklendiği Kanal | $message
-
 <:emoji_72:917309261661491241> | Ekleyen Yetkili | <@$authorID>
 ]
 
@@ -431,11 +428,8 @@ $description[$thumbnail[$userAvatar[$authorID]]
 
 
 ** ⭐ | Bug 'u Bildiren Kişi : ** \`$username#$discriminator[$authorID] - $authorID\`
-
 ** ⭐ | Bug'u Bildirdiği  Sunucu : ** \`$serverName[$guildID]\`
-
 ** ⭐ | Gönderdiği Bug :  ** \`$noMentionMessage\`
-
 ** ⭐ | Bugu Bildirip Bize Destek Olduğun için Teşekkürler **]
 
   
