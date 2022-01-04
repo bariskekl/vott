@@ -3,25 +3,14 @@ module.exports = {
   name: "unban",
 
   code: `
-
+$author[$userTag[$message[1];$userAvatar[$message[1]]]]
+$color[RANDOM]
 $unban[$message[1]]
-
-$description[$userTag[$message[1]] adlı kullanıcının banı kaldırıldı]
-
-$color[GREEN]
-
-$onlyIf[$isNumber[$message[1]]==true;⚠️ | Bu bir kullanıcı id'sine benzemiyor]
-
-$onlyIf[$message[1]!=;⚠️ | Bir kullanıcı id'si girmelisin]
-
-$onlyBotPerms[ban;⚠️ | Ban yetkim yok]
-
-$onlyPerms[ban;⚠️ | Bunun için yetkin yok]
-
-$suppressErrors[⚠️ | Böyle bir üye zaten banlı değil]
-
-$onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
-
+$description[
+\`$userTag[$message[1]]\` İsimli Kullanıcın Banı Başarıyla Kaldırıldı Banlanma Sebebi İse \`$getBanReason[$message[1]]\`
+]
+$footer[$addTimestamp]
+$onlyPerms[ban;<:emoji_71:917309220687314966> | Bu Komutu Kullanamazsın Kullanmak İçin \°
 `
 
 };
