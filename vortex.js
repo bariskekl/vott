@@ -152,7 +152,7 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 });
 
 bot.botJoinCommand({
-  channel: "926570792962097222",
+  channel: "922002749804118036",
 
   code: `
 
@@ -160,13 +160,10 @@ $author[Bir Sunucuya Eklendim]
 
 $description[
 
-**🎉・Sunucu Adı : ** _\`$serverName\`_
-
-**🎉・Sunucu ID : ** _\`$guildID\`_
-
-**🎉・Üye Sayısı : ** _\`$membersCount\`_
-
-**🎉・Davet Linki : ** **[TIKLA]($getServerInvite)**
+**・Sunucu Adı : ** _\`$serverName\`_
+**・Sunucu ID : ** _\`$guildID\`_
+**・Üye Sayısı : ** _\`$membersCount\`_
+**・Davet Linki : ** **[TIKLA]($getServerInvite)**
 
 ]
 
@@ -176,7 +173,7 @@ $color[RANDOM]
 });
 
 bot.botLeaveCommand({
-  channel: "926570792962097222",
+  channel: "922002749804118036",
 
   code: `
 
@@ -184,11 +181,9 @@ $author[Bir Sunucudan Atıldım]
 
 $description[
 
-**🎉・Sunucu Adı : ** _\`$serverName\`_
-
-**🎉・Sunucu ID : ** _\`$guildID\`_
-
-**🎉・Üye Sayısı : ** _\`$membersCount\`_
+**・Sunucu Adı : ** _\`$serverName\`_
+**・Sunucu ID : ** _\`$guildID\`_
+**・Üye Sayısı : ** _\`$membersCount\`_
 
 ]
 
@@ -424,7 +419,7 @@ bot.command({
 
 $argsCheck[>1;** ⭐ | Lütfen Bir Bug Belirtin **]
 
-$useChannel[925742444270714880]
+$useChannel[922002749804118036]
 
 
 $channelSendMessage[$channelID;** ⭐ | Bug Sahibime İletilmiştir **]
