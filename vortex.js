@@ -487,17 +487,13 @@ $endif
 bot.readyCommand({
   channel: "922002749804118036",
   code: `
-$djsEval[client.channels.cache.get('925759055832690718').join();no]
+$joinVc[$voiceID]
 $suppressErrors
 $description[
-
-💭 | $userTag[$clientID] İsmiyle Başarıyla Giriş Yaptım
-
-💭 | Sunucu Sayım : \`$serverCount\`
-
-💭 | Kullanıcı Sayım : \`$allMembersCount\`
-
-💭 | Toplam Kanal Sayım : \`$allChannelsCount\`
+・ $userTag[$clientID] İsmiyle Başarıyla Giriş Yaptım
+・ Sunucu Sayım : \`$serverCount\`
+・ Kullanıcı Sayım : \`$allMembersCount\`
+・ Toplam Kanal Sayım : \`$allChannelsCount\`
 ]
 $color[45EE00]
 `
