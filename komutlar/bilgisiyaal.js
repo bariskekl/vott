@@ -12,7 +12,7 @@ $title[✅・Satın Aldın]
 
 $description[✅・Satın alma işlemi başarılı.]
 
-$onlyIf[$getVar[param;$authorID]>10000; <@$authorID>, cüzdanın da yeterli miktarda para yok.]
+$onlyIf[$getGlobalUserVar[param;$authorID]>10000; <@$authorID>, cüzdanın da yeterli miktarda para yok.]
 
 $setGlobalUserVar[param;$sub[$getGlobalUserVar[param;$authorID];10000];$authorID] 
 
