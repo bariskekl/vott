@@ -15,5 +15,5 @@ module.exports = {
 
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz 
 
-`
+`,
 };
