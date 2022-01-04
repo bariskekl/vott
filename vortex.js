@@ -225,6 +225,7 @@ bot.command({
   $description[
   
  <:emoji_70:917309183341236244> | Abone Rolü Verilen = <@$mentioned[1]>
+ 
  <:emoji_70:917309183341236244> | Abone Rolü Veren = <@$authorID>
   ]
   $giveRole[$mentioned[1];$getServerVar[aboner]]
@@ -286,7 +287,9 @@ bot.command({
   $author[Sunucuya Yeni Bir Kod Eklendi;$serverIcon]
   $color[RANDOM]
   $description[
+
 <:emoji_72:917309261661491241> | Eklendiği Kanal | $message
+
 <:emoji_72:917309261661491241> | Ekleyen Yetkili | <@$authorID>
 ]
 
@@ -402,7 +405,7 @@ $description[
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\` TL
 --------------------------------------------
-<a:emoji_45:9270016449719911 Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
+<a:emoji_45:9270016449719916 | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` TL
 
@@ -433,8 +436,11 @@ $description[$thumbnail[$userAvatar[$authorID]]
 
 
 ** ⭐ | Bug 'u Bildiren Kişi : ** \`$username#$discriminator[$authorID] - $authorID\`
+
 ** ⭐ | Bug'u Bildirdiği  Sunucu : ** \`$serverName[$guildID]\`
+
 ** ⭐ | Gönderdiği Bug :  ** \`$noMentionMessage\`
+
 ** ⭐ | Bugu Bildirip Bize Destek Olduğun için Teşekkürler **]
 
   
