@@ -156,46 +156,8 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 `
 });
 
-bot.botJoinCommand({
-  channel: "922002749804118036",
 
-  code: `
 
-$author[Bir Sunucuya Eklendim]
-
-$description[
-
-**・Sunucu Adı : ** _\`$serverName\`_
-**・Sunucu ID : ** _\`$guildID\`_
-**・Üye Sayısı : ** _\`$membersCount\`_
-**・Davet Linki : ** **[TIKLA]($getServerInvite)**
-
-]
-
-$color[RANDOM]
-
-`
-});
-
-bot.botLeaveCommand({
-  channel: "922002749804118036",
-
-  code: `
-
-$author[Bir Sunucudan Atıldım]
-
-$description[
-
-**・Sunucu Adı : ** _\`$serverName\`_
-**・Sunucu ID : ** _\`$guildID\`_
-**・Üye Sayısı : ** _\`$membersCount\`_
-
-]
-
-$color[RANDOM]
-
-`
-});
 
 bot.command({
   name: "abone-rol",
@@ -532,22 +494,7 @@ Gelen Giden Kanalı : $replaceText[<#$getServerVar[hgbb]>
 `
 });
 
-bot.command({
-  name: "herkese-rol-ver",
-  code: `
-**\`$roleName[$mentionedRoles[1]]\`** Adlı Rol Herkese Veriliyor Bu İşlem Biraz Sürebilir
-$forEachMember[rolver]
-$onlyIf[$rolePosition[$mentionedRoles[1]]>=$rolePosition[$highestRole[$clientID]];Rolümden Üstte Bir Rolü Herkese Veremem]
-$onlyIf[$mentionedRoles[1]!=;Bir Rol Etiketle]
-$onlyIf[$authorID==$ownerID;Sadece Sunucu Sahibi Herkese Rol Verebilir]
-`
-});
-bot.awaitedCommand({
-  name: "rolver",
-  code: `
-$giveRole[$authorID;$mentionedRoles[1]]
-`
-});
+
 
 bot.command({
   name: "aekle",
