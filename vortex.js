@@ -110,9 +110,14 @@ bot.variables({
   aboner: "",
   meslek: "İşsiz",
   saas: "kapalı",
-  dboteklemesayı: "0",
-  dbotlistsistemdurum: "0",
-  dbotlistsistemaktifsayı: "0"
+  log:"",
+  sahip:"",
+  rsayı:"0",
+  osayı:"0",
+  bprefix:"",
+  btarih:"",
+  bekleyen:"0",
+  bliste:"",
 });
 
 bot.joinCommand({
@@ -583,3 +588,163 @@ $argsCheck[>1; <@$authorID>, doğum yılını yaz.] 
 
 `
 });
+
+bot.command({
+
+name:"bot-ekle",
+
+code:`
+
+$useChannel[$getServerVar[log]]
+
+$authorIcon[$authorAvatar]
+
+$thumbnail[$authorAvatar]
+
+$author[$username[$authorID]#$discriminator[$authorID]]
+
+$description[Sisteme bir bot eklendi, şu anda sırada $calculate[$getServerVar[bekleyen]+1] bot bekliyor.]
+
+$addField[Ekleyen Hakkında;<@$authorID> **($authorID)**]
+
+$addField[Bot Hakkında;<@$message[1]> **($message[1]) / ($message[2])**]
+
+$color[FFFFFF]
+
+$setServerVar[bekleyen;$calculate[$getServerVar[bekleyen]+1]]
+
+$setUserVar[sahip;$authorID;$message[1]]
+
+$setUserVar[bprefix;$message[2];$message[1]]
+
+$setUserVar[btarih;$replaceText[$date;-;/;-1] - $calculate[$hour+3].$minute;$message[1]]
+
+$setServerVar[bliste;$getServerVar[bliste]
+
+**$username[$message[1]] ($message[1]) / ($message[2])**]
+
+$addTimestamp
+
+$onlyIf[$message[1]!=;ID girmelisin.]
+
+$onlyIf[$message[2]!=;Prefix girmelisin.]
+
+$onlyIf[$getServerVar[log]!=;Bot list sistemi bu sunucuda açık değil.]
+
+$onlyIf[$isBot[$message[1]]!=false;Bu ID bir bota ait değil.] 
+
+$suppressErrors[ID girmelisin.]
+
+$onlyIf[$message[1]!=$botID;Beni sisteme ekleyemezsin.]
+
+`
+
+}) 
+
+bot.command({
+
+name:"bot-log",
+
+code:`
+
+$onlyIf[$mentionedChannels[1]!=;Kanal etiketlemelisin.]
+
+$onlyPerms[admin;Bu komutu kullanabilmek için **Yönetici** iznine sahip olman gerek.]
+
+Bot log kanalı <#$mentionedChannels[1]> kanalına ayarlandı.
+
+$setServerVar[log;$mentionedChannels[1]]
+
+$onlyIf[$getServerVar[log]!=$mentionedChannels[1];Bot log kanalı zaten etiketlediğin kanala ayarlı.]
+
+`
+
+}) 
+
+bot.command({
+
+name:"onayla",
+
+code:`
+$useChannel[$getServerVar[log]]
+
+<@$getUserVar[sahip;$message]>
+
+$authorIcon[$userAvatar[$getUserVar[sahip;$message]]]
+
+$thumbnail[$userAvatar[$getUserVar[sahip;$message]]]
+
+$author[$username[$getUserVar[sahip;$message]]#$discriminator[$getUserVar[sahip;$message]]]
+
+$description[:tada: **$username[$message] ($message)** adlı bot onaylandı.]
+
+$addField[Ekleyen Hakkında;<@$getUserVar[sahip;$message]> **($getUserVar[sahip;$message])**]
+
+$addField[Bot Hakkında;**$username[$message] ($message) / ($getUserVar[bprefix;$message])**]
+
+$color[FFFFFF]
+
+$setServerVar[bekleyen;$calculate[$getServerVar[bekleyen]-1]]
+
+$setServerVar[osayı;$calculate[$getServerVar[osayı]+1]]
+
+$setServerVar[bliste;$replaceText[$getServerVar[bliste];**$username[$message] ($message) / ($getUserVar[bprefix;$message])**;;-1]]
+
+$addTimestamp
+
+$onlyIf[$message!=;ID girmelisin.]
+
+$onlyIf[$getUserVar[sahip;$message]!=;Sistemimde böyle bir bot bulamadım.]
+
+$onlyAdmin[Bu komutu kullanabilmek için **Yönetici** iznine sahip olman gerek.]
+
+$onlyIf[$getServerVar[log]!=;Bot list sistemi bu sunucuda açık değil.]
+
+`
+
+}) 
+
+bot.command({
+
+name:"reddet",
+
+code:`
+
+$useChannel[$getServerVar[log]]
+
+<@$getUserVar[sahip;$message]>
+
+$author[$userTag[$getUserVar[sahip]];userAvatar[$getUserVar[sahip;$message]]]
+
+$thumbnail[$userAvatar[$getUserVar[sahip;$message]]]
+
+$author[$username[$getUserVar[sahip;$message]]#$discriminator[$getUserVar[sahip;$message]]]
+
+$description[🗑️ **$username[$message] ($message)** adlı bot reddedildi.]
+
+$addField[Ekleyen Hakkında;<@$getUserVar[sahip;$message]> **($getUserVar[sahip;$message])**]
+
+$addField[Bot Hakkında;**$username[$message] ($message) / ($getUserVar[bprefix;$message])**]
+
+$color[FFFFFF]
+
+$setServerVar[bekleyen;$calculate[$getServerVar[bekleyen]-1]]
+
+$setServerVar[rsayı;$calculate[$getServerVar[rsayı]+1]]
+
+$setServerVar[bliste;$replaceText[$getServerVar[bliste];**$username[$message] ($message) / ($getUserVar[bprefix;$message])**;;-1]]
+
+$addTimestamp
+
+$onlyIf[$message!=;ID girmelisin.]
+
+$onlyIf[$getUserVar[sahip;$message]!=;Sistemimde böyle bir bot bulamadım.]
+
+$onlyAdmin[Bu komutu kullanabilmek için **Yönetici** iznine sahip olman gerek.]
+
+$onlyIf[$getServerVar[log]!=;Bot list sistemi bu sunucuda açık değil.]
+
+`
+
+}) 
+
