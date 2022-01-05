@@ -366,7 +366,7 @@ $description[
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\` TL
 --------------------------------------------
-<a:emoji_45:92700164497199166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
+<a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` TL
 
