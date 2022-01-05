@@ -7,7 +7,7 @@ const bot = new vortex.Bot({
 
   prefix: "?",
   mobile: true,
-  fetchInvites: true
+  fetchInvites: true,
 });
 
 bot.onBanAdd();
@@ -27,7 +27,9 @@ bot.onRoleUpdate();
 
 bot.onMessage();
 
-var reader = fs.readdirSync("./komutlar/").filter(file => file.endsWith(".js"));
+var reader = fs
+  .readdirSync("./komutlar/")
+  .filter((file) => file.endsWith(".js"));
 
 for (const file of reader) {
   const command = require(`./komutlar/${file}`);
@@ -36,7 +38,7 @@ for (const file of reader) {
     name: command.name,
     aliases: command.aliases,
     bkz: command.bkz,
-    code: command.code
+    code: command.code,
   });
 }
 
@@ -64,7 +66,7 @@ __Kategoriler__
 $thumbnail[$userAvatar[$clientID]]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
 
-`
+`,
 });
 
 bot.variables({
@@ -117,7 +119,7 @@ bot.variables({
   bprefix: "",
   btarih: "",
   bekleyen: "0",
-  bliste: ""
+  bliste: "",
 });
 
 bot.joinCommand({
@@ -127,7 +129,7 @@ $description[📥・[$userTag[$authorID]](https://discord.com/users/$authorID) S
 $footer[]
 $thumbnail[$authorAvatar]
 $color[RANDOM]
-`
+`,
 });
 
 bot.leaveCommand({
@@ -136,7 +138,7 @@ bot.leaveCommand({
 $description[📤・[$userTag[$authorID]](https://discord.com/users/$authorID) Adlı Üye Ayrıldı Umarım Güzel Zaman Geçirmiştir]
 $thumbnail[$authorAvatar]
 $color[RANDOM] 
-  `
+  `,
 });
 bot.command({
   name: "davet",
@@ -153,11 +155,8 @@ $thumbnail[$authorAvatar]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
     
 
-`
+`,
 });
-
-
-
 
 bot.command({
   name: "abone-rol",
@@ -177,7 +176,7 @@ bot.command({
   $onlyBotPerms[manageroles;<:emoji_71:917309220687314966> | <@$authorID> Botun **Rolleri Yönet** yetkisi bulunmamakta]
   $onlyPerms[admin;<:emoji_71:917309220687314966> | <@$authorID> Bu komutu sadece **Yönetici** yetkisine sahip kişiler kullanabilir]
  $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
- `
+ `,
 });
 
 bot.command({
@@ -196,7 +195,7 @@ bot.command({
   $onlyBotPerms[manageroles;<:emoji_71:917309220687314966> | Botun **Rolleri Yönet** İznine Sahip Olmam Gerek]
   $onlyPerms[manageroles;]
   
-  `
+  `,
 });
 
 bot.command({
@@ -236,7 +235,7 @@ $description[
 ]
 $footer[Komut,$userTag[$authorID] Tarafından Kullanıldı $addTimestamp]
 $thumbnail[$userAvatar[$clientID]]
-`
+`,
 });
 
 bot.command({
@@ -263,7 +262,7 @@ $deletecommand
 
 $onlyPerms[admin;]
 
-`
+`,
 });
 
 bot.status({
@@ -273,7 +272,7 @@ bot.status({
 
   status: "online", //buraya status kısmı dnd idle online şeklinde yapabilirsiniz
 
-  time: 12 //buraya ellemeyin
+  time: 12, //buraya ellemeyin
 });
 
 bot.command({
@@ -297,7 +296,7 @@ $footer[Yetkili - $username#$discriminator[$authorID]]
 
 $onlyPerms[manageroles;]
 
-`
+`,
 });
 
 bot.command({
@@ -321,7 +320,7 @@ bot.command({
   $color[RANDOM]
   $deletecommand
   $onlyForIDs[$botOwnerID;]
-  `
+  `,
 });
 
 bot.command({
@@ -349,7 +348,7 @@ $description[
 
 
 
-`
+`,
 });
 
 bot.command({
@@ -367,7 +366,7 @@ $description[
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\` TL
 --------------------------------------------
-<a:emoji_45:9270016449719916 | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
+<a:emoji_45:92700164497199166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` TL
 
@@ -376,7 +375,7 @@ $description[
 $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
 
 
-`
+`,
 });
 bot.command({
   name: "bug-bildir",
@@ -408,15 +407,14 @@ $description[$thumbnail[$userAvatar[$authorID]]
   
 
 
-`
+`,
 });
 
 bot.status({
-  text:
-    "$serverCount Sunucu | $allMembersCount Kullanıcı | Geliştiricim : $userTag[$botOwnerID]",
+  text: "$serverCount Sunucu | $allMembersCount Kullanıcı | Geliştiricim : $userTag[$botOwnerID]",
   type: "PLAYING",
   status: "online",
-  time: 12
+  time: 12,
 });
 
 bot.command({
@@ -448,7 +446,7 @@ $color[RED]
 $endelseif
 $endif
 
- `
+ `,
 });
 
 bot.readyCommand({
@@ -463,7 +461,7 @@ $description[
 ・ Toplam Kanal Sayım : \`$allChannelsCount\`
 ]
 $color[45EE00]
-`
+`,
 });
 
 bot.command({
@@ -491,10 +489,8 @@ Gelen Giden Kanalı : $replaceText[<#$getServerVar[hgbb]>
 
 
 
-`
+`,
 });
-
-
 
 bot.command({
   name: "aekle",
@@ -520,7 +516,7 @@ $deletecommand
 
 $onlyPerms[admin;]
 
-`
+`,
 });
 
 bot.command({
@@ -539,5 +535,5 @@ $addTimestamp
 
 $argsCheck[>1; <@$authorID>, doğum yılını yaz.] 
 
-`
+`,
 });

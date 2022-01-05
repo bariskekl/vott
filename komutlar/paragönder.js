@@ -1,5 +1,4 @@
 module.exports = {
-
   name: "para-gönder",
 
   aliases: "para-gönder",
@@ -10,11 +9,11 @@ $onlyIf[$mentioned[1]!=$authorID;<:emoji_71:917309220687314966> | Kendine Para Y
 
 $onlyIf[$noMentionMessage>1;<:emoji_71:917309220687314966> | Düzgün Para Miktarı Gir]
 
-$argsCheck[2;<:emoji_71:917309220687314966> | Doğru Kullanım $getServerVar[prefix]para-gönder @etiket Miktar]
+$argsCheck[2;<:emoji_71:917309220687314966> | Doğru Kullanım ?para-gönder @etiket Miktar]
 
-$setGlobalUserVar[para;$sub[$getGlobalUserVar[para;$authorID];$noMentionMessage];$authorID]
+$setGlobalUserVar[param;$sub[$getGlobalUserVar[param;$authorID];$noMentionMessage];$authorID]
 
-$setGlobalUserVar[param;$sum[$getVar[param;$mentioned[<]];$noMentionMessage];$mentioned[<]]
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$mentioned[1]];$noMentionMessage];$mentioned[1]]
 
 $description[
 
@@ -24,7 +23,5 @@ $color[RANDOM] 
 
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
-`
-
+`,
 };
-
