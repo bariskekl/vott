@@ -200,41 +200,44 @@ bot.command({
 bot.command({
   name: "istatistik",
   code: `
-$color[RANDOM]
-$title[$userTag[$clientID] in İstatistikleri]
+
+$title[İstatistik]
+
 $description[
-<:emoji_72:917309261661491241> | Bot Sahibi / Geliştirici
-[$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
+Bot Owner / Geliştirici : [$userTag[$botOwnerID](https://discord.com/users/$botOwnerID)
 
-<:emoji_72:917309261661491241> | Bot Verileri
+Botumuzun Adı : | <@$clientID>
 
-<:developerr:910821172877344778>  | Sunucu Sayısı | $serverCount
+Botumuzun ID'si : | ** $clientID**
 
-<:developerr:910821172877344778> | Kullanıcı Sayısı | $allMembersCount
+Botumuzun Kurulduğu Tarih :  **$creationDate[$clientID]**
 
-<:developerr:910821172877344778>  | Toplam Kanal Sayısı | $allChannelsCount
+Botumuzu Kullanan Kişi Sayısı :  | **$allMembersCount**
 
-<:developerr:910821172877344778> | Kullanılan Ram | $ram
+**__Botumuzun Bulunduğu Sunucu Sayısı : __** | **$serverCount**
 
-<:developerr:910821172877344778> | Kullanılan Cpu | $cpu
+**__Botumuzda Bulunan Toplam Komut Sayısı : __** | **$commandsCount**
 
-<:emoji_72:917309261661491241> | Gecikmeler
+**__Botumuzun Pingi : __** | **$botPing**
 
-<:developerr:910821172877344778> | Bot Pingi | $botPing
+**__Son Güncellenme Zamanı : __** | **$uptime**
 
-<:developerr:910821172877344778> | Uptime Süresi | $replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$replaceText[$parseDate[$djseval[client.uptime;yes];time];hours;saat;-1];minutes;dakika;-1];seconds;saniye;-1];hour;saat;-1];minute;dakika;-1];second;saniye;-1];and;ve;-1]
+**__Linkler__**
 
-<:developerr:910821172877344778> | Database Ping | $dbPing
+**__Botumuzu Davet Etmek İçin [Tıkla]($getBotInvite[admin])
 
-<:emoji_72:917309261661491241> | Linkler
-
-<:developerr:910821172877344778> | Beni Davet İçin [Tıkla]($getBotInvite[admin])
-
-<:developerr:910821172877344778> | Destek Sunucuma Gelmek İçin [Tıkla](https://discord.gg/NNpYhyrzEx)
 ]
-$footer[Komut,$userTag[$authorID] Tarafından Kullanıldı $addTimestamp]
-$thumbnail[$userAvatar[$clientID]]
-`,
+
+$color[0F0FFF]
+
+$footer[İstatistik]
+
+$footerIcon[$authorID]
+
+$addTimestamp
+
+
+`
 });
 
 bot.command({
