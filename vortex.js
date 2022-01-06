@@ -200,44 +200,44 @@ bot.command({
 bot.command({
   name: "istatistik",
   code: `
-
-$title[İstatistik]
-
+$author[$userTag[$clientID];$userAvatar[$clientID]]
 $description[
-Bot Owner / Geliştirici : [$userTag[$botOwnerID](https://discord.com/users/$botOwnerID)
 
-Botumuzun Adı : | <@$clientID>
+**__Bot Bilgileri__**
 
-Botumuzun ID'si : | ** $clientID**
+・Bot Owner / Geliştirici : [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
 
-Botumuzun Kurulduğu Tarih :  **$creationDate[$clientID]**
+・Botumuzun Adı : $userTag[$clientID]
 
-Botumuzu Kullanan Kişi Sayısı :  | **$allMembersCount**
+・Botumuzun ID'si : **$clientID**
 
-**__Botumuzun Bulunduğu Sunucu Sayısı : __** | **$serverCount**
+・Botumuzun Kurulduğu Tarih :  **$creationDate[$clientID]**
 
-**__Botumuzda Bulunan Toplam Komut Sayısı : __** | **$commandsCount**
+**__Bot Verileri_**
 
-**__Botumuzun Pingi : __** | **$botPing**
+・Botumuzu Kullanan Kişi Sayısı : **$allMembersCount**
 
-**__Son Güncellenme Zamanı : __** | **$uptime**
+・Botumuzun Bulunduğu Sunucu Sayısı : **$serverCount**
+
+・Botumuzda Bulunan Toplam Komut Sayısı : **$commandsCount**
+
+・Botumuzun Pingi : **$botPing**
+
+・Son Güncellenme Zamanı : **$uptime**
 
 **__Linkler__**
 
-**__Botumuzu Davet Etmek İçin [Tıkla]($getBotInvite[admin])
+・Botumuzu Davet Etmek İçin : [Tıkla]($getBotInvite[admin])
 
+・Botumuzun Destek Sunucusu İçin : [Tıkla](https://discord.gg/NNpYhyrzEx)
 ]
 
-$color[0F0FFF]
+$color[RANDOM]
 
-$footer[İstatistik]
-
-$footerIcon[$authorID]
-
-$addTimestamp
+$footer[$addTimestamp]
 
 
-`
+`,
 });
 
 bot.command({
