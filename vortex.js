@@ -537,3 +537,12 @@ $argsCheck[>1; <@$authorID>, doğum yılını yaz.] 
 
 `,
 });
+
+
+bot.ReadyCommand({
+name:"",
+channel:"",
+code:`
+
+`
+  })
