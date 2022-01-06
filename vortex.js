@@ -7,7 +7,6 @@ const bot = new vortex.Bot({
 
   prefix: "?",
   mobile: true,
-  fetchInvites: true,
 });
 
 bot.onBanAdd();
