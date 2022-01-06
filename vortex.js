@@ -538,11 +538,10 @@ $argsCheck[>1; <@$authorID>, doğum yılını yaz.] 
 `,
 });
 
+bot.joinCommand({
+  channel: "928374626998968362",
+  code: `
+<:tatlimisir:908393466847985726>・<@$authorID> Sunucuya Hoşgeldin Knks
 
-bot.ReadyCommand({
-name:"",
-channel:"",
-code:`
-
-`
-  })
+`,
+});
