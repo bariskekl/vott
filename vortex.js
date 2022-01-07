@@ -23,7 +23,8 @@ bot.onChannelUpdate();
 bot.onRoleCreate();
 bot.onRoleDelete();
 bot.onRoleUpdate();
-
+bot.onGuildJoin();
+bot.onGuildLeave();
 bot.onMessage();
 
 var reader = fs
@@ -525,7 +526,7 @@ bot.joinCommand({
 bot.botJoinCommand({
   channel: "922002749804118036",
   code: `
-$author[$userAvatar[$clientID];Bir Sunucuya Katıldım]
+$author[$userAvatar[$clientID]Bir Sunucuya Katıldım;$serverIcon]
 $description[
 **・Sunucu Adı:** _\`$serverName\`_
 **・Sunucu ID:** _\`$guildID\`_
@@ -535,7 +536,6 @@ $description[
 $color[RANDOM]
 `,
 });
-bot.onGuildJoin();
 
 bot.botLeaveCommand({
   channel: "922002749804118036",
@@ -549,4 +549,3 @@ $description[
 $color[RANDOM]
 `,
 });
-bot.onGuildLeave();
