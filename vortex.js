@@ -523,29 +523,3 @@ bot.joinCommand({
 `,
 });
 
-bot.botJoinCommand({
-  channel: "922002749804118036",
-  code: `
-$author[$userAvatar[$clientID]Bir Sunucuya Katıldım;$serverIcon]
-$description[
-**・Sunucu Adı:** _\`$serverName\`_
-**・Sunucu ID:** _\`$guildID\`_
-**・Üye Sayısı:** _\`$membersCount\`_
-**・Davet Linki:** **[TIKLA]($getServerInvite)**
-]
-$color[RANDOM]
-`,
-});
-
-bot.botLeaveCommand({
-  channel: "922002749804118036",
-  code: `
-$author[$userAvatar[$clientID];Bir Sunucudan Çıktım]
-$description[
-**・Sunucu Adı:** _\`$serverName\`_
-**・Sunucu ID:** _\`$guildID\`_
-**・Üye Sayısı:** _\`$membersCount\`_
-]
-$color[RANDOM]
-`,
-});
