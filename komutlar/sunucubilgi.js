@@ -21,19 +21,19 @@ $serverName[$guildID]
 
 $guildID
 
-🔔・Sunucu Oluşturma Tarihi
+<a:LASRP_Notify:875491455974637628>・Sunucu Oluşturma Tarihi
 
 $creationDate[$guildID]
 
-🔔・Üye Sayısı [$membersCount]
+<:tatlimisir:908393466847985726>・Üye Sayısı [$membersCount]
 
 $membersCount 🎁 | $botCount 🤖
 
-🌞・Kanal Sayısı
+<a:patpat:875491388039524352>・Kanal Sayısı
 
 $channelCount[text] 💭 | $channelCount[voice] 🔊 | $channelCount[category] 💎
 
-📚・Toplam Yasaklı
+<a:emoji_56:929028007748857906>・Toplam Yasaklı
 
 $banCount
 
@@ -43,7 +43,7 @@ $banCount
 
 <a:boost:920308527308886057>・Boost Level : $serverBoostLevel
 
-🌟・Sunucudaki Roller
+<a:emoji_54:928670862134112286>・Sunucudaki Roller
 $guildRoles[mention]
 
 ]
