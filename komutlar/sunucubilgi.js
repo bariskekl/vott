@@ -1,57 +1,34 @@
 module.exports = {
   name: "sunucu-bilgi",
 
-  code: `
+  code: ` $thumbnail[$serverIcon]
 
-$author[$serverName[$guildID];$serverIcon]
+  $color[RANDOM]
 
-$color[RANDOM]
+  $description[
+$addField[**Sunucu Bilgileri**;**Kanal Sayısı** \`[$channelCount]\`
 
-$description[
+:loud_sound: $channelCount[voice] | :speech_balloon: $channelCount[text]
 
-🚀・ Sunucu Adı
+Rol Sayısı - \`$roleCount\`
 
-$serverName[$guildID]
+Üye Sayısı - \`$membersCount\`
 
-👑・Sunucu Owner
+Boost Sayısı - \`$serverBoostCount\`
 
-<@$ownerID> | $userTag[$ownerID] 
+Boost Seviyesi - \`$serverBoostLevel\`]
 
-🆔️・Sunucu ID
+$addField[Temel Bilgiler; Sunucu İsmi: 
 
-$guildID
+\`$serverName[$guildID]\`
 
-🔔・Sunucu Oluşturma Tarihi
+Sunucu Sahibi: 
 
-$creationDate[$guildID]
+\`$username[$ownerID]#$discriminator[$ownerID]\` | <@$ownerID>
 
-🔔・Üye Sayısı [$membersCount]
+Sunucu Oluşturulma Tarihi:
 
-$membersCount 🎁 | $botCount 🤖
-
-🌞・Kanal Sayısı
-
-$channelCount[text] 🌞 | $channelCount[voice]
-
-📚・Toplam Yasaklı
-
-$banCount
-
-🤝・Sunucu Seviyesi
-
-$serverBoostCount
-
-$serverBoostLevel
-
-
-]
+\`$replaceText[$replaceText[$creationDate[$guildID];AM; ;1];PM; ;1]\`]]
 
 `
 };
-erverBoostLevel
-
-]
-
-`
-
-}
