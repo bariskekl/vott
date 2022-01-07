@@ -1,34 +1,55 @@
-module.exports = {
   name: "sunucu-bilgi",
+module.exports = {
 
-  code: ` $thumbnail[$serverIcon]
+name:"sunucu-bilgi",
 
-  $color[RANDOM]
+code:`
 
-  $description[
-$addField[**Sunucu Bilgileri**;**Kanal Sayısı** \`[$channelCount]\`
+$au]thor[$serverNme[$guildID;$serverIcon]]
 
-:loud_sound: $channelCount[voice] | :speech_balloon: $channelCount[text]
+$color[RANDOM]
 
-Rol Sayısı - \`$roleCount\`
+$description[
 
-Üye Sayısı - \`$membersCount\`
+🚀・ Sunucu Adı
 
-Boost Sayısı - \`$serverBoostCount\`
+$serverName[$guildID]
 
-Boost Seviyesi - \`$serverBoostLevel\`]
+👑・Sunucu Owner
 
-$addField[Temel Bilgiler; Sunucu İsmi: 
+<@$ownerID> | $userTag[$ownerID] 
 
-\`$serverName[$guildID]\`
+🆔️・Sunucu ID
 
-Sunucu Sahibi: 
+$guildID
 
-\`$username[$ownerID]#$discriminator[$ownerID]\` | <@$ownerID>
+🔔・Sunucu Oluşturma Tarihi
 
-Sunucu Oluşturulma Tarihi:
+$creationDate[$guildID]
 
-\`$replaceText[$replaceText[$creationDate[$guildID];AM; ;1];PM; ;1]\`]]
+🔔・Üye Sayısı [$membersCount]
+
+$membersCount 🎁 | $botCount 🤖
+
+🌞・Kanal Sayısı
+
+$channelCount[text] 🌞 | $channelCount[voice]
+
+📚・Toplam Yasaklı
+
+$banCount
+
+🤝・Sunucu Seviyesi
+
+$serverBoos
+
+🌟・Sunucudaki Roller
+tCount
+
+$serverBoostLevel
+
+]
 
 `
-};
+
+}
