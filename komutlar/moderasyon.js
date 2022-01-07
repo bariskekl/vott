@@ -41,6 +41,10 @@ __Moderasyon Menüsü__
 
 » | \`?abone\` → Etiket Attığınız Kişiye Abone Verirsiniz.
 
+» | \`?abone-yetkilisi\` → Abone Yetkilisini Ayarlarsınız.
+
+» | \`?abone-log\` → Birisine Abone Rol Verince Log a Atar.
+
 ]
 
 $thumbnail[$authorAvatar]
@@ -49,5 +53,5 @@ $footer[Komut,$username Tarafından Kullanıldı $addTimesTamp]
 
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
-`
+`,
 };

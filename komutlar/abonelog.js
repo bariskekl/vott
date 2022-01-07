@@ -16,6 +16,6 @@ $description[<:emoji_70:917309183341236244> | Abone log kanalı sıfırlandı.]
 $color[RANDOM]
 $onlyIf[$getServerVar[abonelog]!=;{description:<:emoji_71:917309220687314966> | Abone log kanalı zaten ayarlanmamış.}{color:RANDOM}]
 $endif
-$onlyIf[$checkContains[$toLowercase[$message];ayarla;sıfırla]==true;{color:RANDOM}{description:Lütfen \`ayarla\` veya \`sıfırla\` seçeneklerinden birini seçin.}]
+$onlyIf[$checkContains[$toLowercase[$message];ayarla;sıfırla]==true;{color:RANDOM}{description:<:emoji_71:917309220687314966> | Lütfen \`ayarla\` veya \`sıfırla\` seçeneklerinden birini seçin.}]
 $onlyPerms[admin;{description:<:emoji_71:917309220687314966> | Bu komutu kullanmak için \`YÖNETİCİ\` iznine sahip olmalısın.}{color:RANDOM}]
 `} 

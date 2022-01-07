@@ -1,6 +1,6 @@
 module.exports = {
-  name:'abone-yetkilisi',
-  code:`
+  name: "abone-yetkilisi",
+  code: `
   $if[$message[1]==ayarla]
   $setServerVar[aboneyt;$mentionedRoles[1]]
   $author[Başarılı!]
@@ -19,8 +19,7 @@ module.exports = {
   $addTimestamp
   $onlyIf[$getServerVar[aboneyt]!=;{description:<:emoji_71:917309220687314966> | Abone yetkilisi zaten ayarlanmamış.}{color:RANDOM}]
   $endif
-  $onlyIf[$checkContains[$toLowercase[$message];ayarla;sıfırla]==true;{color:RANDOM}{description:Lütfen \`ayarla\` veya \`sıfırla\` seçeneklerinden birini seçin.}]
+  $onlyIf[$checkContains[$toLowercase[$message];ayarla;sıfırla]==true;{color:RANDOM}{description:<:emoji_71:917309220687314966> | Lütfen \`ayarla\` veya \`sıfırla\` seçeneklerinden birini seçin.}]
   $onlyPerms[admin;{color:RANDOM}{description:<:emoji_71:917309220687314966> | Bu komutu kullanabilmek için \`Yönetici\` iznine sahip olman gerekmekte.}]
-  $onlyIf[$getServerVar[ksistemi]==açık;{description:<:emoji_71:917309220687314966> | Bu komutu kullanmak için önce kayıt sistemini açmalısın.}{color:RANDOM}]
-  `
-} 
+  `,
+};
