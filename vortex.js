@@ -46,7 +46,6 @@ bot.command({
   aliases: [`yardım`, `help`],
   code: `
 $title[Yardım Menüsü]
-$reply[$messageID;
 $description[
 
 
