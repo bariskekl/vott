@@ -45,10 +45,10 @@ bot.command({
   name: "yardım",
   aliases: [`yardım`, `help`],
   code: `
-
-$color[RANDOM]
-$description[
 $title[Yardım Menüsü]
+$reply[$messageID;
+$description[
+
 
  __Bilgilendirme__
 » | \`Bot Dili\` <:emoji_83:917308699524079637>  Türkçe 🇹🇷
@@ -61,8 +61,9 @@ __Kategoriler__
 » | \`$getServerVar[prefix]moderasyon\` <:emoji_83:917308699524079637> Moderasyon Komutlarını Gösterir.
 » | \`$getServerVar[prefix]kullanıcı\` <:emoji_83:917308699524079637>  Kullanıcı Komutlarını Gösterir.
 » | \`$getServerVar[prefix]müzik-sistemi\` <:emoji_83:917308699524079637>  Müzik Komutlarını Gösterir.
-]
+]]
 $thumbnail[$userAvatar[$clientID]]
+$color[RANDOM]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
 
 `,
