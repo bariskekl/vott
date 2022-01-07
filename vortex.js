@@ -158,27 +158,19 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 });
 
 bot.variables({
+  aboneyt: "",
 
-  aboneyt:"",
+  abonerol: "",
 
-  abonerol:"",
-
-  abonelog:""
-
-}) 
-
+  abonelog: "",
+});
 bot.variables({
+  aboneyt: "",
 
-  aboneyt:"",
+  abonerol: "",
 
-  abonerol:"",
-
-  abonelog:""
-
-}) 
-
-
-
+  abonelog: "",
+});
 bot.command({
   name: "istatistik",
   aliases: [`i`, `istatistik`],
@@ -437,7 +429,6 @@ $endif
 bot.readyCommand({
   channel: "922002749804118036",
   code: `
-$joinVc[$voiceID]
 $suppressErrors
 $description[
 ・ $userTag[$clientID] İsmiyle Başarıyla Giriş Yaptım
@@ -530,3 +521,32 @@ bot.joinCommand({
 
 `,
 });
+
+bot.botJoinCommand({
+  channel: "922002749804118036",
+  code: `
+$author[$userAvatar[$clientID];Bir Sunucuya Katıldım]
+$description[
+**・Sunucu Adı:** _\`$serverName\`_
+**・Sunucu ID:** _\`$guildID\`_
+**・Üye Sayısı:** _\`$membersCount\`_
+**・Davet Linki:** **[TIKLA]($getServerInvite)**
+]
+$color[RANDOM]
+`,
+});
+bot.onGuildJoin();
+
+bot.botLeaveCommand({
+  channel: "922002749804118036",
+  code: `
+$author[$userAvatar[$clientID];Bir Sunucudan Çıktım]
+$description[
+**・Sunucu Adı:** _\`$serverName\`_
+**・Sunucu ID:** _\`$guildID\`_
+**・Üye Sayısı:** _\`$membersCount\`_
+]
+$color[RANDOM]
+`,
+});
+bot.onGuildLeave();
