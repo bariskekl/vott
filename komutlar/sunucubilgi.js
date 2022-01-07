@@ -1,11 +1,9 @@
-  name: "sunucu-bilgi",
 module.exports = {
+  name: "sunucu-bilgi",
 
-name:"sunucu-bilgi",
+  code: `
 
-code:`
-
-$au]thor[$serverNme[$guildID;$serverIcon]]
+$author[$serverName[$guildID];$serverIcon]
 
 $color[RANDOM]
 
@@ -41,12 +39,16 @@ $banCount
 
 🤝・Sunucu Seviyesi
 
-$serverBoos
-
-🌟・Sunucudaki Roller
-tCount
+$serverBoostCount
 
 $serverBoostLevel
+
+
+]
+
+`
+};
+erverBoostLevel
 
 ]
 
