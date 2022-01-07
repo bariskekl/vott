@@ -157,45 +157,27 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 `,
 });
 
-bot.command({
-  name: "abone-rol",
-  code: `
-  $onlyIf[$checkContains[$message[1];ayarla;sıfırla]==true;<:emoji_71:917309220687314966> | <@$authorID> Ayarla ve ya sıfırla ile belirtmelisin]
-  $onlyIf[$message!=;<:emoji_71:917309220687314966> | Ayarla ve ya sıfırla yazmalısın]
-  $if[$message[1]==ayarla]
-  <:emoji_70:917309183341236244> | <@$authorID> Abone rol $mentionedRoles[1] ID li rol olarak ayarlandı
-  $setServerVar[aboner;$mentionedRoles[1]]
-  $onlyIf[$mentionedRoles[1]!=;<:emoji_71:917309220687314966> | <@$authorID> Bir rol etiketlemelisin]
-  $endif
-  $if[$message[1]==sıfırla]
-  <:emoji_70:917309183341236244> | Abone rol sıfırlandı
-  $setServerVar[aboner;]
-  $onlyIf[$getServerVar[aboner]!=;<:emoji_71:917309220687314966> | <@$authorID> Zaten ayarlanmamış]
-  $endif
-  $onlyBotPerms[manageroles;<:emoji_71:917309220687314966> | <@$authorID> Botun **Rolleri Yönet** yetkisi bulunmamakta]
-  $onlyPerms[admin;<:emoji_71:917309220687314966> | <@$authorID> Bu komutu sadece **Yönetici** yetkisine sahip kişiler kullanabilir]
- $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
- `,
-});
+bot.variables({
 
-bot.command({
-  name: "abone",
-  code: `
-  $title[]
-  $description[
-  
- <:emoji_70:917309183341236244> | Abone Rolü Verilen = <@$mentioned[1]>
- 
- <:emoji_70:917309183341236244> | Abone Rolü Veren = <@$authorID>
-  ]
-  $giveRole[$mentioned[1];$getServerVar[aboner]]
-  $color[RANDOM]
-  $argsCheck[>1;<:emoji_71:917309220687314966> | Birini etiketlemelisin]
-  $onlyBotPerms[manageroles;<:emoji_71:917309220687314966> | Botun **Rolleri Yönet** İznine Sahip Olmam Gerek]
-  $onlyPerms[manageroles;]
-  
-  `,
-});
+  aboneyt:"",
+
+  abonerol:"",
+
+  abonelog:""
+
+}) 
+
+bot.variables({
+
+  aboneyt:"",
+
+  abonerol:"",
+
+  abonelog:""
+
+}) 
+
+
 
 bot.command({
   name: "istatistik",
