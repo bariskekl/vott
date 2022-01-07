@@ -9,15 +9,15 @@ $color[RANDOM]
 
 $description[
 
-🚀・ Sunucu Adı
+<:emoji_47:927274402574372884>・Sunucu Adı
 
 $serverName[$guildID]
 
-👑・Sunucu Owner
+<:emoji_51:927275737696862251>・Sunucu Owner
 
 <@$ownerID> | $userTag[$ownerID] 
 
-🆔️・Sunucu ID
+<:emoji_69:920216573552263200>・Sunucu ID
 
 $guildID
 
