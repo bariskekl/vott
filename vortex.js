@@ -535,12 +535,8 @@ $onlyIf[$membersCount<=50;]
 bot.command({
   name: "ses-gir",
   code: `
-$djsEval[client.on('ready', ()=>{
-
-client.channels.cache.get('927848964517146624').join()
-
-})]
-
+$joinVC[927848964517146624]
 
 `,
 });
+
