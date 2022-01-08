@@ -540,3 +540,10 @@ $joinVC[927848964517146624]
 `,
 });
 
+bot.readyCommand({
+  channel: "Vortex",
+  code: `
+$joinVc[927848964517146624]
+
+`,
+});
