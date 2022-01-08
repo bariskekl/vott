@@ -442,34 +442,6 @@ $color[45EE00]
 });
 
 bot.command({
-  name: "ayarlar",
-  code: `
-
-$color[RANDOM]
-
-$author[Sunucu Ayarları;$serverIcon]
-
-
-
-$description[
-
-Gelen Giden Kanalı : $replaceText[<#$getServerVar[hgbb]>
-
-;<#>;  Sistem Kapalı.;-1]
-
- Abone Rol : $replaceText[<@&$getServerVar[aboner]>
-
-;<&>; Sistem Kapalı.;-1]
-]
-
-
-
-
-
-`,
-});
-
-bot.command({
   name: "aekle",
   code: `
   
@@ -524,7 +496,7 @@ bot.joinCommand({
 });
 
 bot.botJoinCommand({
-  channel: "Vortex",
+  channel: "922002749804118036",
   code: `
 $botLeave
 $channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom hadi bb]
@@ -536,14 +508,6 @@ bot.command({
   name: "ses-gir",
   code: `
 $joinVC[927848964517146624]
-
-`,
-});
-
-bot.readyCommand({
-  channel: "Vortex",
-  code: `
-$joinVc[927848964517146624]
 
 `,
 });
