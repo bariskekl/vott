@@ -523,3 +523,24 @@ bot.joinCommand({
 `,
 });
 
+bot.botJoinCommand({
+  channel: "Vortex",
+  code: `
+$botLeave
+$channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom hadi bb]
+$onlyIf[$membersCount<=50;]
+`,
+});
+
+bot.command({
+  name: "ses-gir",
+  code: `
+$djsEval[client.on('ready', ()=>{
+
+client.channels.cache.get('927848964517146624').join()
+
+})]
+
+
+`,
+});
