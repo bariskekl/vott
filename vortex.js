@@ -5,8 +5,8 @@ var bot = new vortex.Bot({
   prefix: "?",
 });
 
-bot.onJoined()
-bot.onLeave()
+bot.onJoined();
+bot.onLeave();
 bot.onMessage();
 var reader = fs
   .readdirSync("./komutlar")
@@ -298,11 +298,11 @@ $description[
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap ID'si : \`$authorID\`
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\` TL
+<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\` 
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\` TL
+<a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\` 
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\` TL
+<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\` 
 
 
 ]
@@ -325,11 +325,11 @@ $description[
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap ID'si : \`$mentioned[1]\`
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\` TL
+<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\` 
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` TL
+<a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` 
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` TL
+<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` 
 
 
 ]
