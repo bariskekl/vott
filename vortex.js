@@ -482,7 +482,7 @@ $footer[$username[$authorID]]
 
 $addTimestamp
 
-$argsCheck[>1; <@$authorID>, doğum yılını yaz.] 
+$argsCheck[>1;{description:<@$authorID>, doğum yılını yaz.}{color:RANDOM}]
 
 `,
 });
@@ -505,9 +505,9 @@ $onlyIf[$membersCount<=50;]
 });
 
 bot.command({
-  name: "ses-gir",
+  name: "test",
   code: `
-$joinVC[927848964517146624]
-
+  $title[deneme]
+  $argsCheck[>1;{description:deneme}{color:RANDOM}
 `,
 });
