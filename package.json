@@ -12,6 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aoi.js": "^4.6.0"
+    "aoi.js": "^3.0.0"
   }
 }
