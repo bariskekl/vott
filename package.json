@@ -12,8 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aoi.js": "^3.0.0",
-    "v4": "^0.0.1",
-    "aws-signature-v4": "^1.4.0"
+    "aoi.js": "^4.6.0",
+    "aws-signature-v4": "^1.4.0",
+    "v4": "^0.0.1"
   }
 }
