@@ -3,6 +3,7 @@ var fs = require("fs");
 var bot = new vortex.Bot({
   token: process.env.token,
   prefix: "?",
+  mobile:true
 });
 
 bot.onJoined();
@@ -535,4 +536,71 @@ $onlyIf[$getServerVar[antiraid]==açık;]
 $onlyPerms[admin;<:emoji_71:917309220687314966> | Bunun için \`Yönetici\` iznin olmalı]
 `
 })   
+
+
+bot.variables({
+bklog:""
+}) 
+bot.banAddCommand({
+
+channel:"bklog",
+
+code:`
+
+$unban[$authorID]
+
+$author[$userTag]
+
+$description[<:emoji_70:917309183341236244> | **$userTag** \`$getBanReason[$authorID]\` sebebinden banlanmıştı ban koruma sayesinde banı kaldırıldı]
+
+$footer[]
+
+$color[GREEN]
+
+$thumbnail[$authorAvatar]
+
+$onlyIf[$getServerVar[bklog]!=;]
+
+`
+
+})
+
+bot.onBanAdd()   
+
+bot.command({
+name:"$alwaysExecute",
+code:`
+$setServerVar[spammessage;$message;$authorID]
+$onlyIf[$getServerVar[spam]!=kapalı;]
+`
+})
+
+bot.command({
+name:"$alwaysExecute",
+code:`
+$setServerVar[spamsayı;$sum[$getServerVar[spamsayı;$authorID];1];$authorID]
+$onlyIf[$getServerVar[spamsayı;$authorID]<=5;{execute:spam}]
+$onlyIf[$message==$getServerVar[spammessage;$authorID];]
+$onlyIf[$getServerVar[spam]!=kapalı;]
+`
+})
+
+bot.awaitedCommand({
+name:"spam",
+code:`
+$setServerVar[spamsayı;0;$authorID]
+$description[$userTag[$authorID] Spam Yapmayı Kesermisin Lütfen]
+$color[RANDOM]
+`
+})  
+
+bot.variables({
+
+spam:"kapalı",
+
+spammessage:"",
+
+spamsayı:"0"
+
+}) 
 
