@@ -338,6 +338,12 @@ $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
 
 `,
 });
+
+bot.variables({
+kklog:""
+}) 
+
+
 bot.command({
   name: "bug-bildir",
 
@@ -496,3 +502,37 @@ bot.command({
  $deletecommand
  `,
 });
+bot.channelDeleteCommand({
+channel:"$getServerVar[kklog]",
+code:`
+$createChannel[$oldChannel[name];$oldChannel[type];yes;$oldChannel[categoryID]]
+$author[$oldChannel[name];$serverIcon]
+$description[**<:emoji_70:917309183341236244> | $oldChannel[name]** kanalı silinmişti kanal koruma sayesinde tekrardan kuruldu]
+$footer[]
+$color[RANDOM]
+$thumbnail[$serverIcon]
+$onlyIf[$getServerVar[kklog]!=;]
+`
+})
+bot.onChannelDelete()   
+
+bot.variables({
+atlog:"",
+antiraid:"kapalı",
+botizin:""
+})  
+
+bot.joinCommand({
+channel:"$getServerVar[atlog]",
+code:`
+$author[$userTag;$authorAvatar]
+$description[\`$userTag\` ( \`$authorID\` ) adlı bot sunucuya eklendi ve banladım]
+$color[GREEN]
+$ban[$authorID;Vortex Bot Engel]
+$onlyIf[$authorID!=$getServerVar[botizin];{author:$userTag:$authorAvatar}{description:\`$userTag\` ( \`$authorID\` ) adlı bot sunucuya eklendi ama bota izin verildiği için banlanmadı}{color:ORANGE}]
+$onlyIf[$isBot[$authorID]==true;]
+$onlyIf[$getServerVar[antiraid]==açık;]
+$onlyPerms[admin;<:emoji_71:917309220687314966> | Bunun için \`Yönetici\` iznin olmalı]
+`
+})   
+
