@@ -3,7 +3,7 @@ var fs = require("fs");
 var bot = new vortex.Bot({
   token: process.env.token,
   prefix: "?",
-  mobile:true
+  mobile: true,
 });
 
 bot.onJoined();
@@ -342,10 +342,8 @@ $argsCheck[>1;<:emoji_71:917309220687314966> | Birini Etiketlemelisin]
 });
 
 bot.variables({
-kklog:""
-}) 
-
-
+  kklog: "",
+});
 bot.command({
   name: "bug-bildir",
 
@@ -492,7 +490,7 @@ bot.botJoinCommand({
 $botLeave
 $channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom hadi bb]
 $onlyIf[$membersCount<=50;]
-`
+`,
 });
 
 bot.command({
@@ -505,8 +503,8 @@ bot.command({
  `,
 });
 bot.channelDeleteCommand({
-channel:"$getServerVar[kklog]",
-code:`
+  channel: "$getServerVar[kklog]",
+  code: `
 $createChannel[$oldChannel[name];$oldChannel[type];yes;$oldChannel[categoryID]]
 $author[$oldChannel[name];$serverIcon]
 $description[**<:emoji_70:917309183341236244> | $oldChannel[name]** kanalı silinmişti kanal koruma sayesinde tekrardan kuruldu]
@@ -514,19 +512,17 @@ $footer[]
 $color[RANDOM]
 $thumbnail[$serverIcon]
 $onlyIf[$getServerVar[kklog]!=;]
-`
-})
-bot.onChannelDelete()   
-
+`,
+});
+bot.onChannelDelete();
 bot.variables({
-atlog:"",
-antiraid:"kapalı",
-botizin:""
-})  
-
+  atlog: "",
+  antiraid: "kapalı",
+  botizin: "",
+});
 bot.joinCommand({
-channel:"$getServerVar[atlog]",
-code:`
+  channel: "$getServerVar[atlog]",
+  code: `
 $author[$userTag;$authorAvatar]
 $description[\`$userTag\` ( \`$authorID\` ) adlı bot sunucuya eklendi ve banladım]
 $color[GREEN]
@@ -535,18 +531,15 @@ $onlyIf[$authorID!=$getServerVar[botizin];{author:$userTag:$authorAvatar}{descri
 $onlyIf[$isBot[$authorID]==true;]
 $onlyIf[$getServerVar[antiraid]==açık;]
 $onlyPerms[admin;<:emoji_71:917309220687314966> | Bunun için \`Yönetici\` iznin olmalı]
-`
-})   
-
-
+`,
+});
 bot.variables({
-bklog:""
-}) 
+  bklog: "",
+});
 bot.banAddCommand({
+  channel: "bklog",
 
-channel:"bklog",
-
-code:`
+  code: `
 
 $unban[$authorID]
 
@@ -562,76 +555,64 @@ $thumbnail[$authorAvatar]
 
 $onlyIf[$getServerVar[bklog]!=;]
 
-`
+`,
+});
 
-})
-
-bot.onBanAdd()   
-
+bot.onBanAdd();
 bot.command({
-name:"$alwaysExecute",
-code:`
+  name: "$alwaysExecute",
+  code: `
 $setServerVar[spammessage;$message;$authorID]
 $onlyIf[$getServerVar[spam]!=kapalı;]
-`
-})
+`,
+});
 
 bot.command({
-name:"$alwaysExecute",
-code:`
+  name: "$alwaysExecute",
+  code: `
 $setServerVar[spamsayı;$sum[$getServerVar[spamsayı;$authorID];1];$authorID]
 $onlyIf[$getServerVar[spamsayı;$authorID]<=5;{execute:spam}]
 $onlyIf[$message==$getServerVar[spammessage;$authorID];]
 $onlyIf[$getServerVar[spam]!=kapalı;]
-`
-})
+`,
+});
 
 bot.awaitedCommand({
-name:"spam",
-code:`
+  name: "spam",
+  code: `
 $setServerVar[spamsayı;0;$authorID]
 $description[$userTag[$authorID] Spam Yapmayı Kesermisin Lütfen]
 $color[RANDOM]
-`
-})  
-
+`,
+});
 bot.variables({
+  spam: "kapalı",
 
-spam:"kapalı",
+  spammessage: "",
 
-spammessage:"",
-
-spamsayı:"0"
-
-}) 
-
+  spamsayı: "0",
+});
 bot.variables({
-rklog:""
-}) 
-
+  rklog: "",
+});
 bot.variables({
-kengel:"kapalı"
-}) 
-
+  kengel: "kapalı",
+});
 bot.command({
+  name: "$alwaysExecute",
 
-name:"$alwaysExecute",
-
-code:`
+  code: `
 
 <@$authorID>, Bu sunucuda küfür yasak!
 
 $deletecommand
 
-$onlyIf[$checkContains[$toLowercase[$message];amk;oç;sg;piç;ananı sikim]==true;]
+$onlyIf[$checkContains[$toLowercase[$message];amk;oç;sg;piç;ananı sikim;am;orospu:orospu çocuğu;türeme piç;7 ceddini sikerim;ananı skm;skrm]==true;]
 
 $onlyIf[$getServerVar[kengel]==açık;]
 
-`
-
-})  
-
-
+`,
+});
 bot.command({
   name: "koruma-sistemi",
   code: `
@@ -644,6 +625,8 @@ __Koruma Sistemi__
 » | \`$getServerVar[prefix]kanal-koruma\` → Kanal Koruma İle Kanal Silinirse Geri Açar.
 » | \`$getServerVar[prefix]spam-engel\` → Spam Yapanları Uyarır.
 » | \`$getServerVar[prefix]küfür-engel\` → Küfür Edenlerı Uyarır.
+» | \`$getServerVar[prefix]link-engel\` → Link Spamı Yapanları Uyarır.
+
 ]
 $thumbnail[$userAvatar[$clientID]]
 $color[RANDOM]
@@ -653,20 +636,17 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 });
 
 bot.command({
-name:"$alwaysExecute",
-code:`
+  name: "$alwaysExecute",
+  code: `
 <@$authorID>, Bu sunucuda link yasak!
 
 $deletecommand
 
 $onlyIf[$checkContains[$toLowercase[$message];https://;discord.gg/;.gg;.com;.net;.xyz]==true;]
 $onlyIf[$getServerVar[lengel]==açık;]
-`
-})
+`,
+});
 
 bot.variables({
-
-lengel:"kapalı"
-
-}) 
-
+  lengel: "kapalı",
+});
