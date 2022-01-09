@@ -20,7 +20,7 @@ for (const file of reader) {
 }
 
 bot.status({
-  text: "Ben Yeni Bir Botum",
+  text: "$userTag[$botOwnerID] ❤",
   type: "PLAYING",
   time: 12,
 });
