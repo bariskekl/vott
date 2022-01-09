@@ -507,6 +507,9 @@ $onlyIf[$membersCount<=50;]
 bot.command({
   name: "lisans",
   code: `
-  Bu Komut \`$serverName\` Sunucusuna Aittir Paylaşılmas
-  `
-  })
+  Bu Komut \`$serverName\` Sunucusuna Aittir Çalınması Ve Paylaşılması Kesinlikle Yasaktır.
+  $onlyForServers[875458725115224175;{description:.}{color:RANDOM}
+ $onlyPerms[admin;]
+ $deletecommand
+ `,
+});
