@@ -1,5 +1,5 @@
 {
-  "name": "vortex",
+  "name": "-asdf",
   "version": "1.0.0",
   "description": "",
   "main": "vortex.js",
@@ -7,13 +7,10 @@
     "start": "node vortex.js"
   },
   "engines": {
-    "node": "12.x"
+    "node": "16.x"
   },
   "author": "",
-  "license": "ISC",
   "dependencies": {
-    "aoi.js": "^4.5.0",
-    "v4": "^0.0.1",
-    "aws-signature-v4": "^1.4.0"
+    "aoi.js": "^3.0.0"
   }
 }
