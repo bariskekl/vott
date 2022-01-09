@@ -491,7 +491,7 @@ bot.botJoinCommand({
 $botLeave
 $channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom hadi bb]
 $onlyIf[$membersCount<=50;]
-`,
+`
 });
 
 bot.command({
@@ -604,3 +604,25 @@ spamsayı:"0"
 
 }) 
 
+bot.variables({
+rklog:""
+}) 
+
+bot.command({
+  name: "koruma-sistemi",
+  code: `
+$title[Koruma Sistemi Menüsü]
+$description[
+__Koruma Sistemi__
+» | \`$getServerVar[prefix]bot-koruma\` <:emoji_83:917308699524079637>  Sunucunuzu Güvene Almak İçin Bot Koruma Açarsınız.
+» | \`$getServerVar[prefix]bot-izni-ver\` <:emoji_83:917308699524079637>  Eklediğiniz Bot'a İzin Verirsiniz.
+» | \`$getServerVar[prefix]ban-koruma\` <:emoji_83:917308699524079637> Ban Koruma İle Sunucunuzdan Banlanan Kişinin Banını Açar ve Banlayan Kişiyi Yasaklar.
+» | \`$getServerVar[prefix]kanal-koruma\` <:emoji_83:917308699524079637>  Kanal Koruma İle Kanal Silinirse Geri Açar.
+» | \`$getServerVar[prefix]spam-engel\` <:emoji_83:917308699524079637>  Spam Yapanları Belirtiğiniz Sayıda.
+]]
+$thumbnail[$userAvatar[$clientID]]
+$color[RANDOM]
+$onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
+
+`,
+});
