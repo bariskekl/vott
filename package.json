@@ -1,7 +1,7 @@
 {
   "name": "-asdf",
   "version": "1.0.0",
-  "description": "",
+  "description": "vortexl",
   "main": "vortex.js",
   "scripts": {
     "start": "node vortex.js"
@@ -12,6 +12,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "aoi.js": "^4.5.0"
+    "aoi.js": "^3.0.0"
   }
 }
