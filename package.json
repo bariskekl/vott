@@ -1,7 +1,7 @@
 {
   "name": "-asdf",
   "version": "1.0.0",
-  "description": "vortexl",
+  "description": "vortex",
   "main": "vortex.js",
   "scripts": {
     "start": "node vortex.js"

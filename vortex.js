@@ -1,6 +1,6 @@
 var vortex = require(`aoi.js`);
 var fs = require("fs");
-var bot = new vortex.Bot({
+var bot = new vortex.bot({
   token: process.env.token,
   prefix: "?",
 });
