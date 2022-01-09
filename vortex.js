@@ -40,12 +40,13 @@ $description[
 » | \`Prefix\` <:emoji_83:917308699524079637>  ?
 
 __Kategoriler__
-» | \`$getServerVar[prefix]eğlence\` <:emoji_83:917308699524079637>  Eğlence Komutlarını Gösterir.
-» | \`$getServerVar[prefix]ekonomi\` <:emoji_83:917308699524079637>  Ekonomi Komutlarını Gösterir.
-» | \`$getServerVar[prefix]moderasyon\` <:emoji_83:917308699524079637> Moderasyon Komutlarını Gösterir.
-» | \`$getServerVar[prefix]kullanıcı\` <:emoji_83:917308699524079637>  Kullanıcı Komutlarını Gösterir.
-» | \`$getServerVar[prefix]müzik-sistemi\` <:emoji_83:917308699524079637>  Müzik Komutlarını Gösterir.
-]]
+» | \`$getServerVar[prefix]eğlence\` → Eğlence Komutlarını Gösterir.
+» | \`$getServerVar[prefix]ekonomi\` → Ekonomi Komutlarını Gösterir.
+» | \`$getServerVar[prefix]moderasyon\` → Moderasyon Komutlarını Gösterir.
+» | \`$getServerVar[prefix]kullanıcı\` → Kullanıcı Komutlarını Gösterir.
+» | \`$getServerVar[prefix]müzik-sistemi\` → Müzik Komutlarını Gösterir.
+» | \`$getServerVar[prefix]koruma-sistemi\` → Koruma Sistemi Komutlarını Gösterir.
+]
 $thumbnail[$userAvatar[$clientID]]
 $color[RANDOM]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
@@ -608,21 +609,64 @@ bot.variables({
 rklog:""
 }) 
 
+bot.variables({
+kengel:"kapalı"
+}) 
+
+bot.command({
+
+name:"$alwaysExecute",
+
+code:`
+
+<@$authorID>, Bu sunucuda küfür yasak!
+
+$deletecommand
+
+$onlyIf[$checkContains[$toLowercase[$message];amk;oç;sg;piç;ananı sikim]==true;]
+
+$onlyIf[$getServerVar[kengel]==açık;]
+
+`
+
+})  
+
+
 bot.command({
   name: "koruma-sistemi",
   code: `
 $title[Koruma Sistemi Menüsü]
 $description[
 __Koruma Sistemi__
-» | \`$getServerVar[prefix]bot-koruma\` <:emoji_83:917308699524079637>  Sunucunuzu Güvene Almak İçin Bot Koruma Açarsınız.
-» | \`$getServerVar[prefix]bot-izni-ver\` <:emoji_83:917308699524079637>  Eklediğiniz Bot'a İzin Verirsiniz.
-» | \`$getServerVar[prefix]ban-koruma\` <:emoji_83:917308699524079637> Ban Koruma İle Sunucunuzdan Banlanan Kişinin Banını Açar ve Banlayan Kişiyi Yasaklar.
-» | \`$getServerVar[prefix]kanal-koruma\` <:emoji_83:917308699524079637>  Kanal Koruma İle Kanal Silinirse Geri Açar.
-» | \`$getServerVar[prefix]spam-engel\` <:emoji_83:917308699524079637>  Spam Yapanları Belirtiğiniz Sayıda.
-]]
+» | \`$getServerVar[prefix]bot-koruma\` → Sunucunuzu Güvene Almak İçin Bot Koruma Açarsınız.
+» | \`$getServerVar[prefix]bot-izni-ver\` → Eklediğiniz Bot'a İzin Verirsiniz.
+» | \`$getServerVar[prefix]ban-koruma\` → Ban Koruma İle Sunucunuzdan Banlanan Kişinin Banını Açar ve Banlayan Kişiyi Yasaklar.
+» | \`$getServerVar[prefix]kanal-koruma\` → Kanal Koruma İle Kanal Silinirse Geri Açar.
+» | \`$getServerVar[prefix]spam-engel\` → Spam Yapanları Uyarır.
+» | \`$getServerVar[prefix]küfür-engel\` → Küfür Edenlerı Uyarır.
+]
 $thumbnail[$userAvatar[$clientID]]
 $color[RANDOM]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
 
 `,
 });
+
+bot.command({
+name:"$alwaysExecute",
+code:`
+<@$authorID>, Bu sunucuda link yasak!
+
+$deletecommand
+
+$onlyIf[$checkContains[$toLowercase[$message];https://;discord.gg/;.gg;.com;.net;.xyz]==true;]
+$onlyIf[$getServerVar[lengel]==açık;]
+`
+})
+
+bot.variables({
+
+lengel:"kapalı"
+
+}) 
+
