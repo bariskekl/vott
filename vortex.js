@@ -505,9 +505,8 @@ $onlyIf[$membersCount<=50;]
 });
 
 bot.command({
-  name: "test",
+  name: "lisans",
   code: `
-  $title[deneme]
-  $argsCheck[>1;{description:deneme}{color:RANDOM}
-`,
-});
+  Bu Komut \`$serverName\` Sunucusuna Aittir Paylaşılmas
+  `
+  })
