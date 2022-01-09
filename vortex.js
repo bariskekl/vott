@@ -1,46 +1,25 @@
-const vortex = require("aoi.js");
-
+var dbd = require(`aoi.js`);
 var fs = require("fs");
-
-const bot = new vortex.Bot({
-  token: process.env.token, //.env dosyasında token yazan variablenin değerine tokeninizi yazın
-
-  prefix: "?",
-  mobile: true,
+var bot = new vortex.Bot({
+  token: process.env.token,
+  prefix: "?"
 });
 
-bot.onBanAdd();
-bot.onBanRemove();
-bot.onMessageDelete();
-bot.onMessageUpdate();
-bot.onLeave();
-bot.onJoined();
-bot.onInviteCreate();
-bot.onInviteDelete();
-bot.onChannelCreate();
-bot.onChannelDelete();
-bot.onChannelUpdate();
-bot.onRoleCreate();
-bot.onRoleDelete();
-bot.onRoleUpdate();
-bot.onGuildJoin();
-bot.onGuildLeave();
 bot.onMessage();
-
-var reader = fs
-  .readdirSync("./komutlar/")
-  .filter((file) => file.endsWith(".js"));
-
+var reader = fs.readdirSync("./komutlar").filter(file => file.endsWith(".js"));
 for (const file of reader) {
   const command = require(`./komutlar/${file}`);
-
   bot.command({
     name: command.name,
-    aliases: command.aliases,
-    bkz: command.bkz,
-    code: command.code,
+    code: command.code
   });
 }
+
+bot.status({
+  text: "Ben Yeni Bir Botum",
+  type: "PLAYING",
+  time: 12
+});
 
 bot.command({
   name: "yardım",
