@@ -513,60 +513,10 @@ $thumbnail[$serverIcon]
 $onlyIf[$getServerVar[kklog]!=;]
 `,
 });
-bot.onChannelDelete();
-bot.variables({
-  atlog: "",
-  antiraid: "kapalı",
-  botizin: "",
-});
-bot.joinCommand({
-  channel: "$getServerVar[atlog]",
-  code: `
-$author[$userTag;$authorAvatar]
-$description[\`$userTag\` ( \`$authorID\` ) adlı bot sunucuya eklendi ve banladım]
-$color[GREEN]
-$ban[$authorID;Vortex Bot Engel]
-$onlyIf[$authorID!=$getServerVar[botizin];{author:$userTag:$authorAvatar}{description:\`$userTag\` ( \`$authorID\` ) adlı bot sunucuya eklendi ama bota izin verildiği için banlanmadı}{color:ORANGE}]
-$onlyIf[$isBot[$authorID]==true;]
-$onlyIf[$getServerVar[antiraid]==açık;]
-$onlyPerms[admin;<:emoji_71:917309220687314966> | Bunun için \`Yönetici\` iznin olmalı]
-`,
-});
-bot.variables({
-  bklog: "",
-});
-bot.banAddCommand({
-  channel: "bklog",
-
-  code: `
-
-$unban[$authorID]
-
-$author[$userTag]
-
-$description[<:emoji_70:917309183341236244> | **$userTag** \`$getBanReason[$authorID]\` sebebinden banlanmıştı ban koruma sayesinde banı kaldırıldı]
-
-$footer[]
-
-$color[GREEN]
-
-$thumbnail[$authorAvatar]
-
-$onlyIf[$getServerVar[bklog]!=;]
-
-`,
-});
-
-bot.onBanAdd();
-bot.command({
+bot.onChannelDelete
+   bot.command({
   name: "$alwaysExecute",
-  code: `
-$setServerVar[spammessage;$message;$authorID]
-$onlyIf[$getServerVar[spam]!=kapalı;]
-`,
-});
-
-bot.command({
+  code: bot.command({
   name: "$alwaysExecute",
   code: `
 $setServerVar[spamsayı;$sum[$getServerVar[spamsayı;$authorID];1];$authorID]
