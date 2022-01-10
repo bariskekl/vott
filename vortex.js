@@ -45,7 +45,6 @@ __Kategoriler__
 » | \`$getServerVar[prefix]moderasyon\` → Moderasyon Komutlarını Gösterir.
 » | \`$getServerVar[prefix]kullanıcı\` → Kullanıcı Komutlarını Gösterir.
 » | \`$getServerVar[prefix]müzik-sistemi\` → Müzik Komutlarını Gösterir.
-» | \`$getServerVar[prefix]koruma-sistemi\` → Koruma Sistemi Komutlarını Gösterir.
 ]
 $thumbnail[$userAvatar[$clientID]]
 $color[RANDOM]
@@ -598,54 +597,33 @@ bot.variables({
 bot.variables({
   kengel: "kapalı",
 });
-bot.command({
-  name: "koruma-sistemi",
-  code: `
-$title[Koruma Sistemi Menüsü]
-$description[
-__Koruma Sistemi__
-» | \`$getServerVar[prefix]bot-koruma\` → Sunucunuzu Güvene Almak İçin Bot Koruma Açarsınız.
-» | \`$getServerVar[prefix]bot-izni-ver\` → Eklediğiniz Bot'a İzin Verirsiniz.
-» | \`$getServerVar[prefix]ban-koruma\` → Ban Koruma İle Sunucunuzdan Banlanan Kişinin Banını Açar ve Banlayan Kişiyi Yasaklar.
-» | \`$getServerVar[prefix]kanal-koruma\` → Kanal Koruma İle Kanal Silinirse Geri Açar.
-» | \`$getServerVar[prefix]spam-engel\` → Spam Yapanları Uyarır.
-» | \`$getServerVar[prefix]küfür-engel\` → Küfür Edenlerı Uyarır.
-» | \`$getServerVar[prefix]link-engel\` → Link Spamı Yapanları Uyarır.
-
-]
-$thumbnail[$userAvatar[$clientID]]
-$color[RANDOM]
-$onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
-
-`,
-});
-
 
 bot.variables({
+  küfür: "kapalı",
 
-  küfür:"kapalı",
+  küfürayarlayan: "",
 
-  küfürayarlayan:"",
+  küfürs: "1",
 
-  küfürs:"1",
+  link: "kapalı",
 
-  link:"kapalı",
+  linkayarlayan: "",
 
-  linkayarlayan:"",
+  rick_tick: "", /// tik emoji id
 
-  rick_tick:"", /// tik emoji id
+  rick_carpi: "", //carpi emiji id
 
-   rick_carpi:"",//carpi emiji id 
+  footer: "",
 
-   footer:"Rick Code"
+  renk: "",
 
-  })
+  admin: "",
+});
 
 bot.command({
+  name: "$alwaysExecute",
 
-  name:"$alwaysExecute",
-
-  code:`
+  code: `
 
   $color[$getServerVar[renk]]
 
@@ -655,7 +633,7 @@ bot.command({
 
   $description[
 
-  $getServerVar[rick_carpi] | <@$authorID> Küfür Etmek Kesinlikle Yasak
+  <:emoji_71:917309220687314966> | <@$authorID> Küfür Etmek Kesinlikle Yasak
 
   ]
 
@@ -671,15 +649,13 @@ bot.command({
 
   $addReactions[😳]
 
-   `
-
-})
+   `,
+});
 
 bot.command({
+  name: "$alwaysExecute",
 
-  name:"$alwaysExecute",
-
-  code:`
+  code: `
 
   $color[$getServerVar[renk]]
 
@@ -689,7 +665,7 @@ bot.command({
 
   $description[
 
-  $getServerVar[rick_carpi] | <@$authorID> Link Atmak Kesinlikle Yasak
+  <:emoji_71:917309220687314966> | <@$authorID> Link Atmak Kesinlikle Yasak
 
   ]
 
@@ -705,7 +681,5 @@ $onlyIf[$checkContains[$tolowerCase[$message];https://;discord.gg;.gg;.com;.co;.
 
   $addReactions[😳]
 
-`
-
-})  
-
+`,
+});
