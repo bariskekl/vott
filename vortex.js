@@ -599,21 +599,6 @@ bot.variables({
   kengel: "kapalı",
 });
 bot.command({
-  name: "$alwaysExecute",
-
-  code: `
-
-<@$authorID>, Bu sunucuda küfür yasak!
-
-$deletecommand
-
-$onlyIf[$checkContains[$toLowercase[$message];amk;oç;sg;piç;ananı sikim;am;orospu:orospu çocuğu;türeme piç;7 ceddini sikerim;ananı skm;skrm]==true;]
-
-$onlyIf[$getServerVar[kengel]==açık;]
-
-`,
-});
-bot.command({
   name: "koruma-sistemi",
   code: `
 $title[Koruma Sistemi Menüsü]
@@ -635,18 +620,92 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 `,
 });
 
-bot.command({
-  name: "$alwaysExecute",
-  code: `
-<@$authorID>, Bu sunucuda link yasak!
-
-$deletecommand
-
-$onlyIf[$checkContains[$toLowercase[$message];https://;discord.gg/;.gg;.com;.net;.xyz]==true;]
-$onlyIf[$getServerVar[lengel]==açık;]
-`,
-});
 
 bot.variables({
-  lengel: "kapalı",
-});
+
+  küfür:"kapalı",
+
+  küfürayarlayan:"",
+
+  küfürs:"1",
+
+  link:"kapalı",
+
+  linkayarlayan:"",
+
+  rick_tick:"", /// tik emoji id
+
+   rick_carpi:"",//carpi emiji id 
+
+   footer:"Rick Code"
+
+  })
+
+bot.command({
+
+  name:"$alwaysExecute",
+
+  code:`
+
+  $color[$getServerVar[renk]]
+
+  $thumbnail[$userAvatar]
+
+  $footer[$getServerVar[footer]]
+
+  $description[
+
+  $getServerVar[rick_carpi] | <@$authorID> Küfür Etmek Kesinlikle Yasak
+
+  ]
+
+  $clear[1]
+
+  $deleteIn[5s]
+
+  $onlyIf[$hasAnyPerm[admin;manageserver]==false;]
+
+  $onlyIf[$checkContains[$message;amk;aq;amq;am;amck;amcik;amcık;sik;skm;göt;oc;oç;orspu;orusbu;oruzbu;orospu;orzbu;yarrak;yarak;sikerim;wtf;fk;fck;fuck;stfu]==true;] 
+
+  $onlyIf[$getServerVar[küfür]!=kapalı;]
+
+  $addReactions[😳]
+
+   `
+
+})
+
+bot.command({
+
+  name:"$alwaysExecute",
+
+  code:`
+
+  $color[$getServerVar[renk]]
+
+  $thumbnail[$userAvatar]
+
+  $footer[$getServerVar[footer]]
+
+  $description[
+
+  $getServerVar[rick_carpi] | <@$authorID> Link Atmak Kesinlikle Yasak
+
+  ]
+
+  $clear[1]
+
+  $deleteIn[5s]
+
+$onlyIf[$checkContains[$tolowerCase[$message];https://;discord.gg;.gg;.com;.co;.go;.lyx]==true;]
+
+  $onlyIf[$getServerVar[link]!=kapalı;]
+
+  $onlyIf[$hasAnyPerm[admin;manageserver]==false;]
+
+  $addReactions[😳]
+
+`
+
+})  
+

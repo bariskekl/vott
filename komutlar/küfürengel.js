@@ -1,15 +1,31 @@
 module.exports = {
-name:"küfür-engel",
-code:`
-$if[$message[1]==aç]
-<:emoji_70:917309183341236244> | Küfür engel açıldı!
-$setServerVar[kengel;açık]
-$endif
-$if[$message[1]==kapat]
-<:emoji_70:917309183341236244> | Küfür engel kapatıldı!
-$setServerVar[kengel;kapalı]
-$endif
-$onlyIf[$checkContains[$toLowercase[$message[1]];aç;kapat]==true;<:emoji_71:917309220687314966> | **aç** veya **kapat** argumanlarını kullanın!]
-$onlyPerms[admin;<:emoji_71:917309220687314966> | Bunun için yetkin yok!]
-`
-}  
+
+  name:"küfür-engel",
+
+  code:`
+
+  $if[$message[1]==aç]
+
+  $channelSendMessage[$channelID;{color:$getServerVar[renk]}{description:<:emoji_70:917309183341236244> | Başarıyla Küfür-Engel Sistemi Açıldı}{footer:$getServerVar[footer]}{thumbnail:$userAvatar}]
+
+  $setServerVar[küfür;açık]
+
+  $setServerVar[küfürayarlayan;$authorID]
+
+  $endif
+
+  $if[$message[1]==kapat]
+
+  $channelSendMessage[$channelID;{color:$getServerVar[renk]}{description:<:emoji_70:917309183341236244> | Başarıyla Küfür-Engel Sistemi Kapatıldı}{footer:$getServerVar[footer]}{thumbnail:$userAvatar}]
+
+  $setServerVar[küfür;kapalı]
+
+  $endif
+
+  $onlyPerms[admin;$getServerVar[admin]]
+
+  $onlyIf[$checkContains[$tolowerCase[$message[1]];aç;kapat]==true;{color:$getServerVar[renk]}{footer:$getServerVar[footer]}{description:<:emoji_71:917309220687314966> | Lütfen Bir Argüman Kullan : \`\aç,kapat\`\}{thumbnail:$userAvatar}]
+
+  `} 
+
+ 
