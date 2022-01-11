@@ -1,24 +1,34 @@
-var vortex = require(`aoi.js`);
-var fs = require("fs");
-var bot = new vortex.Bot({
-  token: process.env.token,
-  prefix: "?",
-  mobile: true,
-});
-
-bot.onJoined();
-bot.onLeave();
-bot.onMessage();
-var reader = fs
-  .readdirSync("./komutlar")
-  .filter((file) => file.endsWith(".js"));
-for (const file of reader) {
-  const command = require(`./komutlar/${file}`);
-  bot.command({
+const vortex = require("aoi.js")
+var fs = require('fs');
+const bot = new vortex.Bot({
+  token: process.env.token, //.env'de token diye degişken açın sonra değeri tokeni yaz
+  prefix: "!",
+  mobile: true, //Bu botu mobil duruma almak için gerekli
+  fetchInvites: true //Bunu elleme
+})
+bot.onJoined()
+bot.onLeave()
+bot.onMessage()
+bot.loadCommands('./komutlar/')
+bot.command({
     name: command.name,
-    code: command.code,
+    aliases: command.aliases,
+    bkz: command.bkz,
+    code: command.code
   });
 }
+
+bot.command({
+        name: "eval",
+        code: `$eval[$message]
+$onlyForIDs[$botOwnerID;{title:Hata}
+{description:**Hey bunu sadece geliştiricim kullanabilir!**}
+{color:RANDOM}]`
+}) 
+
+
+
+
 
 bot.status({
   text: "$userTag[$botOwnerID] ❤",
