@@ -20,6 +20,16 @@ for (const file of reader) {
   });
 }
 
+bot.command({
+  name: "eval",
+  code: `
+$eval[$message]
+$onlyForIDs[$botOwnerID;{description:<:emoji_71:917309220687314966> | Bu Komut Sadece \`$userTag[$botOwnerID]\` a Özeldir}{color:RANDOM}]
+$deletecommand
+$argsCheck[>1;{description:<:emoji_71:917309220687314966> | Birşey Belirtin Geliştiricim}{color:RANDOM}]
+`,
+});
+
 bot.status({
   text: "$userTag[$botOwnerID] ❤",
   type: "PLAYING",
