@@ -1,5 +1,4 @@
 module.exports = {
-
   name: "türk",
 
   aliases: "türk",
@@ -7,7 +6,7 @@ module.exports = {
   code: `
 
 $color[RANDOM]
-
+$author[$userTag[$authorID];$userAvatar[$authorID]]
 $title[]
 
 $description[🇹🇷・<@$authorID>  **__%$random[0;100]__** Türk]
@@ -18,7 +17,5 @@ $addReactions[🇹🇷]
 
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
 
-`
-
+`,
 };
-
