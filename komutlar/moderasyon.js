@@ -6,7 +6,7 @@ module.exports = {
   code: `
 
 $color[RANDOM]
-$author[$userTag[$clientID];$userAvatar[$clientID]]
+
 $description[
 
 __Moderasyon Menüsü__
@@ -18,7 +18,6 @@ __Moderasyon Menüsü__
 » | \`?sil\` → Belirtilen Miktarda Mesaj Silersiniz.
 » | \`?ban\` → Etiketlediğiniz Kişiyi Banlarsınız.
 » | \`?unban\` → ID sini Girdiğiniz Kişinin Banını Açar.
-» | \`?force-ban\` → ID sini Girdiğiniz Kişiyi Banlar.
 » | \`?mute\` → Etiketlediğiniz Kişiye Mute Atat.
 » | \`?mute-rol\` → Mute Rol Ayarlarsınız.
 » | \`?unmute\` → Etiketlediğiniz Kişinin Mutesini Açarsınız.
@@ -35,6 +34,7 @@ __Moderasyon Menüsü__
 
 ]
 
+$thumbnail[$authorAvatar]
 
 $footer[Komut,$username Tarafından Kullanıldı $addTimesTamp]
 
