@@ -10,7 +10,7 @@
     "node": "12.x"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "aoi.js": "^3.0.0"
   }
