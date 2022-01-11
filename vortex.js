@@ -637,3 +637,33 @@ $onlyIf[$checkContains[$tolowerCase[$message];https://;discord.gg;.gg;.com;.co;.
 
 `,
 });
+bot.command({
+name:"komut adı",
+code:`
+$nomention
+
+$color[$random[0;999999]]
+
+$author[$username[$mentioned[1;yes]]Kişisinin Profili]
+
+$authorIcon[$authorAvatar[$mentioned[1;yes]]]
+
+$description[
+
+👥 Kişinin İsmi : $username[$mentioned[1;yes]]
+
+🆔 Kişinin ID'si : $mentioned[1;yes]
+
+📆 Hesap Kuruluş Tarihi : $creationDate[$mentioned[1;yes]]
+
+🤖 Kişi Botmu : $isBot[$mentioned[1;yes]]]
+
+$footer[ Sorgulayan Kişi • $username]
+
+$footerIcon[$authorAvatar]
+
+$addTimestamp 
+
+
+`
+}) 
