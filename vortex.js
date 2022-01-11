@@ -638,15 +638,12 @@ $onlyIf[$checkContains[$tolowerCase[$message];https://;discord.gg;.gg;.com;.co;.
 `,
 });
 bot.command({
-name:"komut adı",
-code:`
-$nomention
+  name: "test",
+  code: `
 
 $color[$random[0;999999]]
 
-$author[$username[$mentioned[1;yes]]Kişisinin Profili]
-
-$authorIcon[$authorAvatar[$mentioned[1;yes]]]
+$author[$username[$mentioned[1;yes]] Kişisinin Profili;$userAvatar[$mentioned[1;yes]]]
 
 $description[
 
@@ -656,14 +653,11 @@ $description[
 
 📆 Hesap Kuruluş Tarihi : $creationDate[$mentioned[1;yes]]
 
-🤖 Kişi Botmu : $isBot[$mentioned[1;yes]]]
+🤖 Kişi Botmu : $isBot[$mentioned[1;yes]]
+]
 
 $footer[ Sorgulayan Kişi • $username]
+$thumbnail[$userAvatar[$authorID]]
 
-$footerIcon[$authorAvatar]
-
-$addTimestamp 
-
-
-`
-}) 
+`,
+});
