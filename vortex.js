@@ -547,3 +547,19 @@ bot.variables({
 
   admin: "",
 });
+
+bot.command({
+  name: "rob",
+  code: `
+$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>0;Adamın Parası yok lan!]
+
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$random[50000;1000000];$mentioned[1]];$getGlobalUserVar[param;$authorID]];$authorID]
+
+$setGlobalUserVar[param;$random[50000;1000000];$mentioned[1]]
+
+$description[<:emoji_70:917309183341236244> | \`$userTag[$mentioned[1]]\` Kişini Soydun Kazandığın Para \`$getGlobalUserVar[param;$authorID]\`]
+$argsCheck[>1;{description:<:emoji_71:917309220687314966>  Birini Etiketlemelisin Knks}{color:RANDOM}]
+
+
+`,
+});
