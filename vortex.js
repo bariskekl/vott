@@ -549,31 +549,6 @@ bot.variables({
 });
 
 bot.command({
-  name: "hçek",
-
-  code: `
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVarVar[banka;$authorID]];$authorID]
-
-$setGlobalUserVar[banka;$sub[$getGlobalUserVar[banka;$authorID];$getGlobalUserVarVar[banka;$authorID]];$authorID]
-
-<:emoji_70:917309183341236244> | Çekilen miktar $getGlobalUserVar[banka;$authorID]
-`,
-});
-
-bot.command({
-  name: "yhepsi",
-
-  code: `
-$setGlobalUseeVar[param;$sub[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[param;$authorID]];$authorID]
-
-$setGlobalUserVar[banka;$sum[$getGlobalUserVar[banka;$authorID];$getGlobalUserVarVar[param;$authorID]];$authorID]
-
-<:emoji_70:917309183341236244> | Yatırılan miktar $getGlobalUserVar[param;$authorID]
-
-`,
-});
-
-bot.command({
   name: "rob",
   code: `
 $onlyIf[$getGlobalUserVar[param;$mentioned[1]]>0;Adamın Parası yok lan!]
@@ -582,7 +557,7 @@ $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$random[50000;1000000];$men
 
 $setGlobalUserVar[param;$random[50000;1000000];$mentioned[1]]
 
-$description[<@$mentioned[1]> Kişini Soydun Kazandığın Para \`$getGlobalUserVar[param;$random[50000;100000];$authorID]\` Kazandın]
+$description[<@$mentioned[1]> Kişini Soydun Kazandığın Para \`$getGlobalUserVar[param;$authorID]\` Kazandın]
 
 
 
