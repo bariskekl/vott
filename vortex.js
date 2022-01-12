@@ -549,47 +549,38 @@ bot.variables({
 });
 
 bot.command({
+  name: "hçek",
 
-name:"hçek",
-
-code:`
+  code: `
 $setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVarVar[banka;$authorID]];$authorID]
 
 $setGlobalUserVar[banka;$sub[$getGlobalUserVar[banka;$authorID];$getGlobalUserVarVar[banka;$authorID]];$authorID]
 
 <:emoji_70:917309183341236244> | Çekilen miktar $getGlobalUserVar[banka;$authorID]
-`
-
-})
-
+`,
+});
 
 bot.command({
+  name: "yhepsi",
 
-name:"yhepsi",
-
-code:`
+  code: `
 $setGlobalUseeVar[param;$sub[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[param;$authorID]];$authorID]
 
 $setGlobalUserVar[banka;$sum[$getGlobalUserVar[banka;$authorID];$getGlobalUserVarVar[param;$authorID]];$authorID]
 
 <:emoji_70:917309183341236244> | Yatırılan miktar $getGlobalUserVar[param;$authorID]
 
-`
-
-})
-
-
+`,
+});
 
 bot.variables({
-soy:"belirsiz",
-soy2:"0",
-  
-  })
+  soy: "belirsiz",
+  soy2: "0",
+});
 bot.command({
+  name: "rob",
 
-name:"rob",
-
-code:`
+  code: `
 
 $cooldown[1m;**<@$authorID>, bu komutu 1 dakika içerisinde sadece bir kez kullanabilirsin.**]
 
@@ -597,41 +588,58 @@ $deleteIn[7s]
 
 $description[**<@$authorID>, şuan <@$mentioned[1]> adlı kişiyi soyuyorsun.**]
 
-$setVar[soy2;$random[100;500];$authorID]
+$setGlobalUserVar[soy2;$random[100;500];$authorID]
 
-$setVar[soy;$replaceText[$replaceText[$randomText[evet; hayır];evet;evet;40];hayır;hayır;65];$authorID]
+$setGlobalUserVar[soy;$replaceText[$replaceText[$randomText[evet; hayır];evet;evet;40];hayır;hayır;65];$authorID]
 
 $onlyIf[$mentioned[1]!=$authorID;**<@$authorID>, kendini soyamazsın!**]
 
 $onlyIf[$mentioned[1]!=;**<@$authorID>, birini soymak için önce onu etiketlemelisin!**]
-`
-
-})
+`,
+});
 bot.command({
+  name: "rob",
 
-name:"rob",
-
-code:`
-$cooldown[1m;w]
+  code: `
+$cooldown[1m;]
 
 
 $onlyIf[$getGlobalUserVar[soy;$authorID]!=belirsiz;]
 
 $onlyIf[$getGlobalUserVar[soy;$authorID]!=hayır;]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[soy2;$authorID];$getGlobalUseVar[param;$authorID]];$authorID]
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[soy2;$authorID];$getGlobalUserVar[param;$authorID]];$authorID]
 
-**<@$authorID>, soyduğun para miktarı** __$getVar[soy2;$authorID]__ 
+**<@$authorID>, soyduğun para miktarı** __$getGlobalUserVar[soy2;$authorID]__ 
 
-$setVar[soy;belirsiz;$authorID]
+$setGlobalUserVar[soy;belirsiz;$authorID]
 
-$setVar[para;$sub[$getVar[para;$mentioned[1]];$getVar[soy2;$authorID]];$mentioned[1]]
+$setGlobalUserVar[param;$sub[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[soy2;$authorID]];$mentioned[1]]
 
 $onlyIf[$mentioned[1]!=$authorID;]
 
-$onlyIf[$getVar[para;$mentioned[1]]>$getVar[soy2;$authorID];**<@$authorID>, soymaya çalıştığınız kişinin cebinde para yok.**]
+$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>$getGlobalUserVar[soy2;$authorID];**<@$authorID>, soymaya çalıştığınız kişinin cebinde para yok.**]
 
 $onlyIf[$mentioned[1]!=;]
-`
+`,
+});
 
-})
+bot.command({
+  name: "rob",
+
+  code: `
+$cooldown[1m;]
+
+$onlyIf[$getGlobalUserVar[soy;$authorID]!=belirsiz;]
+
+$onlyIf[$getGlobalUserVar[soy;$authorID]!=evet;]
+
+**<@$authorID>, yaptığın soygun başarısız.**
+
+$setGlobalUserVar[soy;belirsiz;$authorID]
+
+$onlyIf[$mentioned[1]!=$authorID;]
+
+$onlyIf[$mentioned[1]!=;]
+`,
+});
