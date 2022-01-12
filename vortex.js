@@ -547,3 +547,17 @@ bot.variables({
 
   admin: "",
 });
+
+bot.command({
+
+name:"çek hepsi",
+
+code:`
+$setVar[param;$sum[$getVar[param;$authorID];$getVar[banka;$authorID]];$authorID]
+
+$setVar[banka;$sub[$getVar[banka;$authorID];$getVar[banka;$authorID]];$authorID]
+
+<a:tick:850368426450092072> | Çekilen miktar $getVar[banka;$authorID]
+`
+
+})
