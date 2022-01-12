@@ -548,16 +548,6 @@ bot.variables({
   admin: "",
 });
 
-bot.command({
-  name: "rob",
-  code: `
-  $author[$userTag[$mentioned[1]];$userAvatar[$mentioned[1]]]
-$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>0;\`$userTag[$authorID]\` Etiketlediğin Kişinin Parası Yok]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[param;$authorID]]
 
-$getGlobalUserVar[param;$sub[$setGlobalUserVar[param;$mentioned[1]];$setGlobalUserVar[param;$mentioned[1]]]
-
-$description[<:emoji_70:917309183341236244> | \`$userTag[$mentioned[1]]\` Kişini Soydun Kazandığın Para \`$getGlobalUserVar[param;$authorID]\`]
-`,
-});
+ 
