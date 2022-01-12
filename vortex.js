@@ -551,14 +551,15 @@ bot.variables({
 bot.command({
   name: "rob",
   code: `
-$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>0;Adamın Parası yok lan!]
+  $author[$userTag[$mentioned[1]];$userAvatar[$mentioned[1]]]
+$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>0;\`$userTag[$authorID]\` Etiketlediğin Kişinin Parası Yok]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$random[50000;1000000];$mentioned[1]];$getGlobalUserVar[param;$authorID]];$authorID]
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$random[500;100000];$mentioned[1]];$getGlobalUserVar[param;$random[500;100000];$authorID]];$authorID]
 
-$setGlobalUserVar[param;$random[50000;1000000];$mentioned[1]]
+$setGlobalUserVar[param;$random[500;100000];$mentioned[1]]
 
 $description[<:emoji_70:917309183341236244> | \`$userTag[$mentioned[1]]\` Kişini Soydun Kazandığın Para \`$getGlobalUserVar[param;$authorID]\`]
-$argsCheck[>1;{description:<:emoji_71:917309220687314966>  Birini Etiketlemelisin Knks}{color:RANDOM}]
+$argsCheck[>1;{description:<:emoji_71:917309220687314966> | \`$userTag[$authorID]\` Birini Etiketlemelisin Knks}{color:RANDOM}]
 
 
 `,
