@@ -550,14 +550,88 @@ bot.variables({
 
 bot.command({
 
-name:"çek hepsi",
+name:"hçek",
 
 code:`
-$setVar[param;$sum[$getVar[param;$authorID];$getVar[banka;$authorID]];$authorID]
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVarVar[banka;$authorID]];$authorID]
 
-$setVar[banka;$sub[$getVar[banka;$authorID];$getVar[banka;$authorID]];$authorID]
+$setGlobalUserVar[banka;$sub[$getGlobalUserVar[banka;$authorID];$getGlobalUserVarVar[banka;$authorID]];$authorID]
 
-<a:tick:850368426450092072> | Çekilen miktar $getVar[banka;$authorID]
+<:emoji_70:917309183341236244> | Çekilen miktar $getGlobalUserVar[banka;$authorID]
+`
+
+})
+
+
+bot.command({
+
+name:"yhepsi",
+
+code:`
+$setGlobalUseeVar[param;$sub[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[param;$authorID]];$authorID]
+
+$setGlobalUserVar[banka;$sum[$getGlobalUserVar[banka;$authorID];$getGlobalUserVarVar[param;$authorID]];$authorID]
+
+<:emoji_70:917309183341236244> | Yatırılan miktar $getGlobalUserVar[param;$authorID]
+
+`
+
+})
+
+
+
+bot.variables({
+soy:"belirsiz",
+soy2:"0",
+  
+  })
+bot.command({
+
+name:"rob",
+
+code:`
+
+$cooldown[1m;**<@$authorID>, bu komutu 1 dakika içerisinde sadece bir kez kullanabilirsin.**]
+
+$deleteIn[7s]
+
+$description[**<@$authorID>, şuan <@$mentioned[1]> adlı kişiyi soyuyorsun.**]
+
+$setVar[soy2;$random[100;500];$authorID]
+
+$setVar[soy;$replaceText[$replaceText[$randomText[evet; hayır];evet;evet;40];hayır;hayır;65];$authorID]
+
+$onlyIf[$mentioned[1]!=$authorID;**<@$authorID>, kendini soyamazsın!**]
+
+$onlyIf[$mentioned[1]!=;**<@$authorID>, birini soymak için önce onu etiketlemelisin!**]
+`
+
+})
+bot.command({
+
+name:"rob",
+
+code:`
+$cooldown[1m;w]
+
+
+$onlyIf[$getGlobalUserVar[soy;$authorID]!=belirsiz;]
+
+$onlyIf[$getGlobalUserVar[soy;$authorID]!=hayır;]
+
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[soy2;$authorID];$getGlobalUseVar[param;$authorID]];$authorID]
+
+**<@$authorID>, soyduğun para miktarı** __$getVar[soy2;$authorID]__ 
+
+$setVar[soy;belirsiz;$authorID]
+
+$setVar[para;$sub[$getVar[para;$mentioned[1]];$getVar[soy2;$authorID]];$mentioned[1]]
+
+$onlyIf[$mentioned[1]!=$authorID;]
+
+$onlyIf[$getVar[para;$mentioned[1]]>$getVar[soy2;$authorID];**<@$authorID>, soymaya çalıştığınız kişinin cebinde para yok.**]
+
+$onlyIf[$mentioned[1]!=;]
 `
 
 })
