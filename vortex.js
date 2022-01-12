@@ -512,8 +512,6 @@ bot.command({
  `,
 });
 
-
-
 bot.variables({
   spam: "kapalı",
 
@@ -549,67 +547,3 @@ bot.variables({
 
   admin: "",
 });
-
-bot.command({
-  name: "$alwaysExecute",
-
-  code: `
-
-  $color[$getServerVar[renk]]
-
-  $thumbnail[$userAvatar]
-
-  $footer[$getServerVar[footer]]
-
-  $description[
-
-  <:emoji_71:917309220687314966> | <@$authorID> Küfür Etmek Kesinlikle Yasak
-
-  ]
-
-  $clear[1]
-
-  $deleteIn[5s]
-
-  $onlyIf[$hasAnyPerm[admin;manageserver]==false;]
-
-  $onlyIf[$checkContains[$message;amk;aq;amq;am;amck;amcik;amcık;sik;skm;göt;oc;oç;orspu;orusbu;oruzbu;orospu;orzbu;yarrak;yarak;sikerim;wtf;fk;fck;fuck;stfu]==true;] 
-
-  $onlyIf[$getServerVar[küfür]!=kapalı;]
-
-  $addReactions[😳]
-
-   `,
-});
-
-bot.command({
-  name: "$alwaysExecute",
-
-  code: `
-
-  $color[$getServerVar[renk]]
-
-  $thumbnail[$userAvatar]
-
-  $footer[$getServerVar[footer]]
-
-  $description[
-
-  <:emoji_71:917309220687314966> | <@$authorID> Link Atmak Kesinlikle Yasak
-
-  ]
-
-  $clear[1]
-
-  $deleteIn[5s]
-
-$onlyIf[$checkContains[$tolowerCase[$message];https://;discord.gg;.gg;.com;.co;.go;.lyx]==true;]
-
-  $onlyIf[$getServerVar[link]!=kapalı;]
-
-  $onlyIf[$hasAnyPerm[admin;manageserver]==false;]
-
-  $addReactions[😳]
-
-`,
-})

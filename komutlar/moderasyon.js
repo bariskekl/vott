@@ -28,9 +28,6 @@ __Moderasyon Menüsü__
 » | \`?abone\` → Etiket Attığınız Kişiye Abone Verirsiniz.
 » | \`?abone-yetkilisi\` → Abone Yetkilisini Ayarlarsınız.
 » | \`?abone-log\` → Birisine Abone Rol Verince Log a Atar.
-» | \`?küfür-engel\` → Küfür Edenleri Uyarır Ve Mesajını Siler.
-» | \`?link-engel\` → Reklam Yapanları Uyarır Ve Mesajını Siler.
-
 ]
 
 $thumbnail[$authorAvatar]
