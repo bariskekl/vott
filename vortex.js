@@ -520,24 +520,8 @@ $onlyIf[$getServerVar[spam]!=kapalı;]
 `,
 });
 
-bot.command({
-  name: "$alwaysExecute",
-  code: `
-$setServerVar[spamsayı;$sum[$getServerVar[spamsayı;$authorID];1];$authorID]
-$onlyIf[$getServerVar[spamsayı;$authorID]<=5;{execute:spam}]
-$onlyIf[$message==$getServerVar[spammessage;$authorID];]
-$onlyIf[$getServerVar[spam]!=kapalı;]
-`,
-});
 
-bot.awaitedCommand({
-  name: "spam",
-  code: `
-$setServerVar[spamsayı;0;$authorID]
-$description[$userTag[$authorID] Spam Yapmayı Kesermisin Lütfen]
-$color[RANDOM]
-`,
-});
+
 bot.variables({
   spam: "kapalı",
 
@@ -636,28 +620,4 @@ $onlyIf[$checkContains[$tolowerCase[$message];https://;discord.gg;.gg;.com;.co;.
   $addReactions[😳]
 
 `,
-});
-bot.command({
-  name: "test",
-  code: `
-
-$color[$random[0;999999]]
-
-$author[$username[$mentioned[1;yes]] Kişisinin Profili;$userAvatar[$mentioned[1;yes]]]
-
-$description[
-
-👥 Kişinin İsmi : $username[$mentioned[1;yes]]
-
-🆔 Kişinin ID'si : $mentioned[1;yes]
-
-📆 Hesap Kuruluş Tarihi : $creationDate[$mentioned[1;yes]]
-
-🤖 Kişi Botmu : $isBot[$mentioned[1;yes]]
-]
-
-$footer[ Sorgulayan Kişi • $username]
-$thumbnail[$userAvatar[$authorID]]
-
-`,
-});
+})
