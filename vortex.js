@@ -512,14 +512,6 @@ bot.command({
  `,
 });
 
-bot.command({
-  name: "$alwaysExecute",
-  code: `
-$setServerVar[spammessage;$message;$authorID]
-$onlyIf[$getServerVar[spam]!=kapalı;]
-`,
-});
-
 
 
 bot.variables({
