@@ -573,73 +573,18 @@ $setGlobalUserVar[banka;$sum[$getGlobalUserVar[banka;$authorID];$getGlobalUserVa
 `,
 });
 
-bot.variables({
-  soy: "belirsiz",
-  soy2: "0",
-});
 bot.command({
   name: "rob",
-
   code: `
+$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>0;Adamın Parası yok lan!]
 
-$cooldown[1m;**<@$authorID>, bu komutu 1 dakika içerisinde sadece bir kez kullanabilirsin.**]
+$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$random[50000;1000000];$mentioned[1]];$getGlobalUserVar[param;$authorID]];$authorID]
 
-$deleteIn[7s]
+$setGlobalUserVar[param;$random[50000;1000000];$mentioned[1]]
 
-$description[**<@$authorID>, şuan <@$mentioned[1]> adlı kişiyi soyuyorsun.**]
-
-$setGlobalUserVar[soy2;$random[100;500];$authorID]
-
-$setGlobalUserVar[soy;$replaceText[$replaceText[$randomText[evet; hayır];evet;evet;40];hayır;hayır;65];$authorID]
-
-$onlyIf[$mentioned[1]!=$authorID;**<@$authorID>, kendini soyamazsın!**]
-
-$onlyIf[$mentioned[1]!=;**<@$authorID>, birini soymak için önce onu etiketlemelisin!**]
-`,
-});
-bot.command({
-  name: "rob",
-
-  code: `
-$cooldown[1m;]
+$description[<@$mentioned[1]> Kişini Soydun Kazandığın Para \`$getGlobalUserVar[param;$random[50000;100000];$authorID]\` Kazandın]
 
 
-$onlyIf[$getGlobalUserVar[soy;$authorID]!=belirsiz;]
 
-$onlyIf[$getGlobalUserVar[soy;$authorID]!=hayır;]
-
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[soy2;$authorID];$getGlobalUserVar[param;$authorID]];$authorID]
-
-**<@$authorID>, soyduğun para miktarı** __$getGlobalUserVar[soy2;$authorID]__ 
-
-$setGlobalUserVar[soy;belirsiz;$authorID]
-
-$setGlobalUserVar[param;$sub[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[soy2;$authorID]];$mentioned[1]]
-
-$onlyIf[$mentioned[1]!=$authorID;]
-
-$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>$getGlobalUserVar[soy2;$authorID];**<@$authorID>, soymaya çalıştığınız kişinin cebinde para yok.**]
-
-$onlyIf[$mentioned[1]!=;]
-`,
-});
-
-bot.command({
-  name: "rob",
-
-  code: `
-$cooldown[1m;]
-
-$onlyIf[$getGlobalUserVar[soy;$authorID]!=belirsiz;]
-
-$onlyIf[$getGlobalUserVar[soy;$authorID]!=evet;]
-
-**<@$authorID>, yaptığın soygun başarısız.**
-
-$setGlobalUserVar[soy;belirsiz;$authorID]
-
-$onlyIf[$mentioned[1]!=$authorID;]
-
-$onlyIf[$mentioned[1]!=;]
 `,
 });
