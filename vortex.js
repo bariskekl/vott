@@ -547,19 +547,3 @@ bot.variables({
 
   admin: "",
 });
-
-bot.command({
-  name: "rob",
-  code: `
-$onlyIf[$getGlobalUserVar[param;$mentioned[1]]>0;Adamın Parası yok lan!]
-
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$random[50000;1000000];$mentioned[1]];$getGlobalUserVar[param;$authorID]];$authorID]
-
-$setGlobalUserVar[param;$random[50000;1000000];$mentioned[1]]
-
-$description[<@$mentioned[1]> Kişini Soydun Kazandığın Para \`$getGlobalUserVar[param;$authorID]\` Kazandın]
-
-
-
-`,
-});
