@@ -12,7 +12,7 @@ $if[$replaceText[$replaceText[$randomText[1;2];1;1;100];2;2;100]==1]
 
 $editIn[3s;:coin: Kazandın! $message[1] Adet Para Hesabına Yatırılıyor.]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$message[1]];$authorID]
+$setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$authorID];$message[1]];$authorID]
 
 $else
 
@@ -20,7 +20,7 @@ $else
 
 $editIn[3s;<:dcoin:899365278780096524>  Kaybettin! $message[1] Adet Para Hesabından Çekiliyor.]
 
-$setGlobalUserVar[param;$sub[$getGlobalUserVar[param;$authorID];$message[1]];$authorID]
+$setGlobalUserVar[para;$sub[$getGlobalUserVar[para;$authorID];$message[1]];$authorID]
 
 $endif
 
@@ -28,7 +28,7 @@ $onlyIf[$isNumber[$message[1]]!=false;<:emoji_71:917309220687314966> | Bir Sayı
 
 $argsCheck[>1;<:emoji_71:917309220687314966> | Bir Sayı Gir!]
 
-$onlyIf[$message[1]<=$getGlobalUserVar[param;$authorID];<:emoji_71:917309220687314966> | Cüzdanında Bu Kadar Para Yok!]
+$onlyIf[$message[1]<=$getGlobalUserVar[para;$authorID];<:emoji_71:917309220687314966> | Cüzdanında Bu Kadar Para Yok!]
 
 $onlyIf[$noMentionMessage>=0;<:emoji_71:917309220687314966> | Sayıyı düzgün yaz.]
 

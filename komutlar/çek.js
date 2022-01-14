@@ -3,7 +3,7 @@ module.exports = {
 
   code: `
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$message];$authorID]
+$setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$authorID];$message];$authorID]
 
 $setGlobalUserVar[banka;$sub[$getGlobalUserVar[banka;$authorID];$message];$authorID]
 
@@ -21,5 +21,5 @@ $onlyIf[$noMentionMessage>=0;<:emoji_71:917309220687314966> | Sayıyı düzgün 
 
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\`  sebebinden karalistedesiniz.] 
 
-`
+`,
 };

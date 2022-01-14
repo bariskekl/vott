@@ -66,6 +66,7 @@ $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$aut
 bot.variables({
   asaat: "0",
   param: "0",
+  para: "0",
   banka: "0",
   bilgisiyar: "0",
   telefon: "0",
@@ -309,11 +310,11 @@ $description[
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap ID'si : \`$authorID\`
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\` 
+<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[para;$authorID]\` 
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$authorID]\` 
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$authorID];$getGlobalUserVar[banka;$authorID]]\` 
+<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[para;$authorID];$getGlobalUserVar[banka;$authorID]]\` 
 
 
 ]
@@ -336,11 +337,11 @@ $description[
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Hesap ID'si : \`$mentioned[1]\`
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[param;$mentioned[1]]\` 
+<a:emoji_45:927001644971995166> | Şuanki Paran : \`$getGlobalUserVar[para;$mentioned[1]]\` 
 --------------------------------------------
 <a:emoji_45:927001644971995166> | Bankadaki Paran : \`$getGlobalUserVar[banka;$mentioned[1]]\` 
 --------------------------------------------
-<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[param;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` 
+<a:emoji_45:927001644971995166> | Toplam Paran : \`$sum[$getGlobalUserVar[para;$mentioned[1]];$getGlobalUserVar[banka;$mentioned[1]]]\` 
 
 
 ]

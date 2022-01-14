@@ -11,9 +11,9 @@ $onlyIf[$noMentionMessage>1;<:emoji_71:917309220687314966> | Düzgün Para Mikta
 
 $argsCheck[2;<:emoji_71:917309220687314966> | Doğru Kullanım ?para-gönder @etiket Miktar]
 
-$setGlobalUserVar[param;$sub[$getGlobalUserVar[param;$authorID];$noMentionMessage];$authorID]
+$setGlobalUserVar[para;$sub[$getGlobalUserVar[para;$authorID];$noMentionMessage];$authorID]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$mentioned[1]];$noMentionMessage];$mentioned[1]]
+$setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$mentioned[1]];$noMentionMessage];$mentioned[1]]
 
 $description[
 

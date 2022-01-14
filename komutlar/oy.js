@@ -20,7 +20,7 @@ $color[RANDOM]
 
 $setGlobalUserVar[oy;$sum[$getGlobalUserVar[oy;$authorID];1];$authorID]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[250;750]];$authorID]
+$setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$authorID];$random[250;750]];$authorID]
 
 $cooldown[1h;<:emoji_71:917309220687314966> | <@$authorID>,Sadece 1 Saatte Bir Oy Verebilirsin | **__%time%__**]
 

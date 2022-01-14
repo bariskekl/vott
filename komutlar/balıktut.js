@@ -7,7 +7,7 @@ module.exports = {
 
 $color[RANDOM]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$authorID];$random[120;210]];$authorID]
+$setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$authorID];$random[120;210]];$authorID]
 
 $description[<@$authorID> 🐬 Balık tuttun ve $random[120;210] 💵 kazandın.]
 

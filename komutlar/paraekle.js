@@ -17,7 +17,7 @@ $description[
 ** <a:emoji_45:927001644971995166> | Para Eklenen Kişi** : [$userTag[$mentioned[1]]](https://discord.com/users/$mentioned[1])
 ]
 
-$setGlobalUserVar[param;$sum[$getGlobalUserVar[param;$mentioned[1]];$noMentionMessage];$mentioned[1]]
+$setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$mentioned[1]];$noMentionMessage];$mentioned[1]]
 $footer[$addTimestamp]
 
 `

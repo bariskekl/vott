@@ -6,7 +6,7 @@ module.exports = {
 
   code: `
 
-$setGlobalUserVar[param;$sub[$getGlobalUserVar[param;$authorID];$message];$authorID]
+$setGlobalUserVar[para;$sub[$getGlobalUserVar[para;$authorID];$message];$authorID]
 
 $setGlobalUserVar[banka;$sum[$getGlobalUserVar[banka;$authorID];$message];$authorID]
 
@@ -16,7 +16,7 @@ $onlyIf[$isNumber[$message]!=false;<:emoji_71:917309220687314966> | Lütfen Say�
 
 $argsCheck[>1;<:emoji_71:917309220687314966> | Yatıracağın Miktarı Yazarmısın]
 
-$onlyIf[$message<=$getGlobalUserVar[param;$authorID];Cebinde Para Yok]
+$onlyIf[$message<=$getGlobalUserVar[para;$authorID];Cebinde Para Yok]
 
 <:emoji_70:917309183341236244> | <@$authorID> Başarıyla Bankanıza $message 💵 Para Yatırdınız
 

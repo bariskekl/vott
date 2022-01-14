@@ -12,7 +12,7 @@ $title[<:8564blurplegift:894092745961009173>・Envanter]
 
 $description[
 
-<:8564blurplegift:894092745961009173>・Şuanki Paran : \`$getGlobalUserVar[param;$authorID]\`
+<:8564blurplegift:894092745961009173>・Şuanki Paran : \`$getGlobalUserVar[para;$authorID]\`
 
 <:8564blurplegift:894092745961009173>・Telefon Adet'in : \`$getGlobalUserVar[telefon;$authorID]\`
 
