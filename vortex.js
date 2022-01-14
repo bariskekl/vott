@@ -555,8 +555,8 @@ bot.command({
   $author[$userTag[$authorID];$userAvatar[$authorID]]
   $thumbnail[$userAvatar[$message[1]]]
   $description[
-  <:emoji_70:917309183341236244> | \`$userTag[$message[1]]\` İsimli Kullanıcı Başarıyla Banlandı]
-  $footer[Kullanıcı ID'si : **$message[1]**;$userAvatar[$message[1]]]
+  <:emoji_70:917309183341236244> | \`$userTag[$message[1]]\` **İsimli Kullanıcı Başarıyla Banlandı ^^**]
+  $footer[Kullanıcı ID'si : $message[1];$userAvatar[$message[1]]]
   $onlyPerms[ban;{description:<:emoji_71:917309220687314966> | \`$userTag[$authorID]\` Bunu Kullanmak İçin \`Üyeleri Banla İznin\` Olmalı}{color:RANDOM}]
    $argsCheck[>1;{description:<:emoji_71:917309220687314966> | Bir Kullanıcı ID'si Girmelisin Dostum}{color:RANDOM}]
    
