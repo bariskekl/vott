@@ -550,4 +550,14 @@ bot.variables({
 
 
 
- 
+ bot.command({
+  name:"force-ban",
+   code:`
+  $ban[$message[1]]
+  $author[$userTag[$authorID];$userAvatar[$authorID]]
+  $description[
+  <:emoji_70:917309183341236244>| \`$userTag[$message[1]]\` İsimli Kullanıcı Başarıyla Banlandı]
+   $onlyPerms[admin;{description:<:emoji_71:917309220687314966> 
+   
+   `
+ })
