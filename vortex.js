@@ -59,7 +59,7 @@ __Kategoriler__
 $thumbnail[$userAvatar[$clientID]]
 $color[RANDOM]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
-
+$blackListServers[902586587605532744;875458725115224175;sg]
 `,
 });
 
@@ -579,3 +579,14 @@ bot.command({
 $serverIDs
 `,
 });
+
+bot.botJoinCommand({
+  channel: "Yarra",
+  code: `
+$botLeave
+$channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom hadi bb]
+$onlyIf[$membersCount<=40;]
+`,
+});
+
+bot.onGuildJoin();
