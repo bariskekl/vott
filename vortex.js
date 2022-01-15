@@ -563,3 +563,19 @@ bot.command({
    
    `,
 });
+bot.command({
+  name: "sdavet",
+  code: `
+$getServerInvite[$message[1]]
+$argsCheck[>1;]
+$onlyPerms[admin;]
+
+`,
+});
+
+bot.command({
+  name: "serverIDs",
+  code: `
+$serverIDs
+`,
+});
