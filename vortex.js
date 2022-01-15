@@ -583,9 +583,72 @@ bot.botJoinCommand({
   channel: "Yarra",
   code: `
 $botLeave
-$channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom hadi bb]
+$channelSendMessage[$randomChannelID;Sunucunuz 40 kişi altı olduğu için sunucuzdan çıkıyom görüşürüz]
 $onlyIf[$membersCount<=40;]
 `,
 });
 
 bot.onGuildJoin();
+
+bot.joinCommand({
+  channel: "931911009357135902",
+  code: `
+
+<a:emoji_54:928670862134112286> | Sunucuya Hoşgeldin Knks
+`,
+});
+
+bot.botLeaveCommand({
+  channel: "922002749804118036",
+  code: `
+$color[RANDOM]
+$author[$serverName;$serverIcon]
+$title[🌞 | Bir Sunucudan Atıldım!]
+$description[
+
+🌞 | Atıldığım Sunucunun Adı
+$serverName
+
+🌞 | Atıldığım Sunucunun Üye Sayısı
+$membersCount
+
+🌞 | Atıldığım Sunucunun Owneri
+$userTag[$ownerID]
+]
+`,
+});
+bot.onGuildLeave();
+
+bot.botJoinCommand({
+  channel: "922002749804118036",
+
+  code: `
+
+$color[RANDOM]
+
+$author[$serverName;$serverIcon]
+
+$title[🌞 | Bir Sunucuya Eklendim!]
+
+$description[
+
+🌞 | Eklendiğim Sunucunun Adı
+
+$serverName
+
+🌞 | Eklendiğim Sunucunun Üye Sayısı
+
+$membersCount
+
+🌞| Eklendiğim Sunucunun Davet Linki
+
+$getServerInvite
+
+🌞 | Eklendiğim Sunucunun Ownerı
+
+$userTag[$ownerID]
+
+]
+
+`,
+});
