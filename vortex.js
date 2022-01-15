@@ -5,7 +5,8 @@ var bot = new vortex.Bot({
   prefix: "?",
   mobile: true,
 });
-
+bot.onGuildJoin();
+bot.onGuildLeave();
 bot.onJoined();
 bot.onLeave();
 bot.onMessage();
@@ -572,13 +573,6 @@ $onlyPerms[admin;]
 `,
 });
 
-bot.command({
-  name: "serverIDs",
-  code: `
-$serverIDs
-`,
-});
-
 bot.botJoinCommand({
   channel: "Yarra",
   code: `
@@ -587,8 +581,6 @@ $channelSendMessage[$randomChannelID;Sunucunuz 40 kişi altı olduğu için sunu
 $onlyIf[$membersCount<=40;]
 `,
 });
-
-bot.onGuildJoin();
 
 bot.joinCommand({
   channel: "931911009357135902",
@@ -603,7 +595,6 @@ bot.botLeaveCommand({
   code: `
 $color[RANDOM]
 $author[$serverName;$serverIcon]
-$title[🌞 | Bir Sunucudan Atıldım!]
 $description[
 
 🌞 | Atıldığım Sunucunun Adı
@@ -611,13 +602,9 @@ $serverName
 
 🌞 | Atıldığım Sunucunun Üye Sayısı
 $membersCount
-
-🌞 | Atıldığım Sunucunun Owneri
-$userTag[$ownerID]
 ]
 `,
 });
-bot.onGuildLeave();
 
 bot.botJoinCommand({
   channel: "922002749804118036",
@@ -627,8 +614,6 @@ bot.botJoinCommand({
 $color[RANDOM]
 
 $author[$serverName;$serverIcon]
-
-$title[🌞 | Bir Sunucuya Eklendim!]
 
 $description[
 
