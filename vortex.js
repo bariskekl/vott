@@ -59,7 +59,6 @@ __Kategoriler__
 $thumbnail[$userAvatar[$clientID]]
 $color[RANDOM]
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;**_\`$getGlobalUserVar[ksebep;$authorID]\`_ sebebinden karalistedesiniz.**] 
-$blackListServers[902586587605532744;875458725115224175;sg]
 `,
 });
 
