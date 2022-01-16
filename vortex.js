@@ -591,10 +591,31 @@ bot.joinCommand({
 });
 
 bot.botJoinCommand({
-channel:"Yarra",
-code:`
+  channel: "Yarra",
+  code: `
 $dm[$botOwnerID]
-$author[$userTag[$》[
+$author[$userTag[$botOwnerID];$userAvatar[$botOwnerID]]
+$description[
+🚀 |\`$userTag[$botOwner]\` Sahibim Bir Sunucuya Eklendim 
 
-`
-  })
+🚀 | Sunucunun Adı : \`$serverName\`
+🚀 | Sunucunun Davet Linki : $getServerInvite
+🚀 | Sunucunun Üye Sayısı : \`$serverCount
+]
+
+`,
+});
+
+bot.botLeaveCommand({
+  channe: "Yarra",
+  code: `
+$dm[$botOwnerID]
+$author[$userTag[$botOwnerID];$userAvatar[$botOwnerID]]
+$description[
+🚀 | \`$userTag[$botOwnerID]\` Sahibim Bir Sunucudan Atıldım
+
+🚀 | Sunucunun Adı : \`$serverName\`
+🚀 | Sunucunun Üye Sayısı : \`$membersCount\`
+]
+`,
+});
