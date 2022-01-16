@@ -590,50 +590,11 @@ bot.joinCommand({
 `,
 });
 
-bot.botLeaveCommand({
-  channel: "922002749804118036",
-  code: `
-$color[RANDOM]
-$author[$serverName;$serverIcon]
-$description[
-
-🌞 | Atıldığım Sunucunun Adı
-$serverName
-
-🌞 | Atıldığım Sunucunun Üye Sayısı
-$membersCount
-]
-`,
-});
-
 bot.botJoinCommand({
-  channel: "922002749804118036",
+channel:"Yarra",
+code:`
+$dm[$botOwnerID]
+$author[$userTag[$》[
 
-  code: `
-
-$color[RANDOM]
-
-$author[$serverName;$serverIcon]
-
-$description[
-
-🌞 | Eklendiğim Sunucunun Adı
-
-$serverName
-
-🌞 | Eklendiğim Sunucunun Üye Sayısı
-
-$membersCount
-
-🌞| Eklendiğim Sunucunun Davet Linki
-
-$getServerInvite
-
-🌞 | Eklendiğim Sunucunun Ownerı
-
-$userTag[$ownerID]
-
-]
-
-`,
-});
+`
+  })
