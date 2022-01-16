@@ -494,15 +494,6 @@ bot.joinCommand({
 `,
 });
 
-bot.botJoinCommand({
-  channel: "922002749804118036",
-  code: `
-$botLeave
-$channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom hadi bb]
-$onlyIf[$membersCount<=50;]
-`,
-});
-
 bot.command({
   name: "lisans",
   code: `
