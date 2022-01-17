@@ -91,7 +91,7 @@ bot.variables({
   karaliste: "$authorID",
   afk: "",
   afkl: "",
-  prefix: "?",
+  prefix: "+",
   saas: "kapalı",
   mrol: "",
   modlog: "",
@@ -580,7 +580,6 @@ bot.joinCommand({
 <a:emoji_54:928670862134112286> |<@authorID> Sunucuya Hoşgeldin Knks
 `,
 });
-
 
 bot.command({
   name: "devpara",

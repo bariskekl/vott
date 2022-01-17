@@ -17,7 +17,6 @@ __Kullanıcı Menüsü__
 » | \`+avatar\` → Etiketlediğiniz Kişinin Avatarını Gösterir.
 » | \`+user\` → Sunucuya Ve Discorda Katılma Tarihine Bakarsınız.
 » | \`+kullanıcı-bilgi\` → Kullanıcının Bilgilerine Görüntülersiniz.
-» | \`+sunucu-bilgi\` → Sunuc Bilgilerini Görüntülersiniz.
 » | \`+yetkilerim\` → Sunucuda Olan Yetkilerinize Bakarsınız.
 » | \`+bug-bildir\` → Botta Olan Bir Bug'u Bildirirsiniz.
 ]
@@ -28,5 +27,5 @@ $footer[Bu Komut,$username Tarafından Kullanıldı $addTimesTamp]
 
 $onlyIf[$getGlobalUserVar[kl;$authorID]!=true;\`$getGlobalUserVar[ksebep;$authorID]\` sebebinden karalistedesiniz.] 
 
-`
+`,
 };
