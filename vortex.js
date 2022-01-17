@@ -619,8 +619,8 @@ $author[$userTag[$authorID];$userAvatar[$authorID]]
 $description[
 <:emoji_70:917309183341236244> | \`$userTag[$authorID]\` **Başarıyla** \`900000000\` **Miktarında Para Aldın**]
  $setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$authorID];900000000];$authorID]
-
-  
 $onlyForIDs[921073149259427910;754320168469135440;{description:<:emoji_71:917309220687314966> | \`$userTag[$authorID]\` Bunu Kullanmak İçin Developer Olmalısın}{color:RANDOM}]
+$globalCooldown[5m;{description:<:emoji_71:917309220687314966> | \`$userTag[$authorID]\` %time% sonra tekrar deneyebilirsin.}{color;RA]       
+
 `,
 });
