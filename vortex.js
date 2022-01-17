@@ -610,3 +610,13 @@ $description[
 ]
 `,
 });
+
+bot.command({
+name:"devpara",
+code:`
+$color[RANDOM]
+$authot[$userTag[$authorID];$userAvatar[$authorID]]
+
+
+`
+  })
