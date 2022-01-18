@@ -21,15 +21,6 @@ for (const file of reader) {
   });
 }
 
-bot.botJoinCommand({
-  channel: "Yarra",
-  code: `
-$botLeave
-$channelSendMessage[$randomChannelID;Sunucunuz 50 kişi altı olduğu için sunucuzdan çıkıyom Görüşürüz]
-$onlyIf[$membersCount<=50;]
-`,
-});
-
 bot.command({
   name: "eval",
   code: `
@@ -38,6 +29,12 @@ $onlyForIDs[$botOwnerID;{description:<:emoji_71:917309220687314966> | Bu Komut S
 $deletecommand
 $argsCheck[>1;{description:<:emoji_71:917309220687314966> | Birşey Belirtin Geliştiricim}{color:RANDOM}]
 `,
+});
+
+bot.status({
+  text: "$userTag[$botOwnerID] ❤",
+  type: "PLAYING",
+  time: 12,
 });
 
 bot.command({
@@ -242,7 +239,7 @@ $onlyPerms[admin;]
 });
 
 bot.status({
-  text: "+yardım | +davet | 7/24 Aktif", //buraya durum yazısı
+  text: "?yardım | ?davet | 7/24 Aktif", //buraya durum yazısı
 
   type: "PLAYING", //buraya oynuyor bölümü PLAYING LISTENING WATCHING STREAMING şeklindede yapabilirsiniz
 
