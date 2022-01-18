@@ -100,7 +100,7 @@ bot.variables({
   modlog: "",
   arol: "",
   ayetkili: "",
-  prefix: "+",
+  prefix: "?",
   otorol: "",
   otorollog: "",
   meslek: "Yok",
@@ -567,11 +567,20 @@ $onlyPerms[admin;]
 `,
 });
 
+bot.botJoinCommand({
+  channel: "Yarra",
+  code: `
+$botLeave
+$channelSendMessage[$randomChannelID;Sunucunuz 40 kişi altı olduğu için sunucuzdan çıkıyom görüşürüz]
+$onlyIf[$membersCount<=40;]
+`,
+});
+
 bot.joinCommand({
   channel: "931911009357135902",
   code: `
 
-<a:emoji_54:928670862134112286> | <@$authorID> Sunucuya Hoşgeldin Knks
+<a:emoji_54:928670862134112286> |<@authorID> Sunucuya Hoşgeldin Knks
 `,
 });
 
@@ -587,4 +596,3 @@ $onlyForIDs[921073149259427910;754320168469135440;{description:<:emoji_71:917309
 
 `,
 });
- 
