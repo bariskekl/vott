@@ -2,7 +2,7 @@ var vortex = require(`aoi.js`);
 var fs = require("fs");
 var bot = new vortex.Bot({
   token: process.env.token,
-  prefix: "+",
+  prefix: "?",
   mobile: true,
 });
 bot.onGuildJoin();
@@ -91,7 +91,7 @@ bot.variables({
   karaliste: "$authorID",
   afk: "",
   afkl: "",
-  prefix: "+",
+  prefix: "?",
   saas: "kapalı",
   mrol: "",
   modlog: "",
@@ -577,19 +577,36 @@ bot.joinCommand({
   channel: "931911009357135902",
   code: `
 
-<a:emoji_54:928670862134112286> |<@authorID> Sunucuya Hoşgeldin Knks
+<a:emoji_54:928670862134112286> | Sunucuya Hoşgeldin Knks
 `,
 });
 
-bot.command({
-  name: "devpara",
+bot.botJoinCommand({
+  channel: "Yarra",
   code: `
-$color[RANDOM]
-$author[$userTag[$authorID];$userAvatar[$authorID]]
+$dm[$botOwnerID]
+$author[$userTag[$botOwnerID];$userAvatar[$botOwnerID]]
 $description[
-<:emoji_70:917309183341236244> | \`$userTag[$authorID]\` **Başarıyla** \`900000000\` **Miktarında Para Aldın**]
- $setGlobalUserVar[para;$sum[$getGlobalUserVar[para;$authorID];900000000];$authorID]
-$onlyForIDs[921073149259427910;754320168469135440;{description:<:emoji_71:917309220687314966> | \`$userTag[$authorID]\` Bunu Kullanmak İçin Developer Olmalısın}{color:RANDOM}]     
+🚀 |\`$userTag[$botOwner]\` Sahibim Bir Sunucuya Eklendim 
 
+🚀 | Sunucunun Adı : \`$serverName\`
+🚀 | Sunucunun Davet Linki : $getServerInvite
+🚀 | Sunucunun Üye Sayısı : \`$serverCount
+]
+
+`,
+});
+
+bot.botLeaveCommand({
+  channe: "Yarra",
+  code: `
+$dm[$botOwnerID]
+$author[$userTag[$botOwnerID];$userAvatar[$botOwnerID]]
+$description[
+🚀 | \`$userTag[$botOwnerID]\` Sahibim Bir Sunucudan Atıldım
+
+🚀 | Sunucunun Adı : \`$serverName\`
+🚀 | Sunucunun Üye Sayısı : \`$membersCount\`
+]
 `,
 });
