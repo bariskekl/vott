@@ -581,9 +581,7 @@ bot.joinCommand({
 `,
 });
 
-
-  bot.joinCommand({
-
+bot.joinCommand({
   channel: "931911009357135902",
 
   code: `
@@ -591,11 +589,9 @@ bot.joinCommand({
 <a:emoji_54:928670862134112286> | <@$authorID> Sunucuya Hoşgeldin Knks
 
 `,
-
 });
 
 bot.command({
-
   name: "devpara",
 
   code: `
@@ -613,5 +609,4 @@ $description[
 $onlyForIDs[921073149259427910;754320168469135440;{description:<:emoji_71:917309220687314966> | \`$userTag[$authorID]\` Bunu Kullanmak İçin Developer Olmalısın}{color:RANDOM}]     
 
 `,
-
 });
