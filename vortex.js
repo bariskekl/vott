@@ -100,7 +100,7 @@ bot.variables({
   modlog: "",
   arol: "",
   ayetkili: "",
-  prefix: "?",
+  prefix: "+",
   otorol: "",
   otorollog: "",
   meslek: "Yok",
