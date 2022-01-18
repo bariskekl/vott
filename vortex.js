@@ -171,6 +171,7 @@ bot.command({
   name: "istatistik",
   aliases: [`i`, `istatistik`],
   code: `
+  $editIn[5s;İstatistikler Yükleniyor]
 $author[$userTag[$clientID];$userAvatar[$clientID]]
 $description[
 
