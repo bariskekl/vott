@@ -167,6 +167,8 @@ bot.variables({
 
   abonelog: "",
 });
+
+
 bot.command({
   name: "istatistik",
   aliases: [`i`, `istatistik`],
@@ -193,7 +195,75 @@ $description[
 
 <a:emoji_55:928760319021555744> ・ Botumuzda Bulunan Toplam Komut Sayısı : **$commandsCount**
 
+  $editIn[5s;İstatistikler Yükleniyor]
+$author[$userTag[$clientID];$userAvatar[$clientID]]
+$description[
+
+**__Bot Bilgileri__**
+
+<a:emoji_55:928760319021555744> ・ Bot Owner / Geliştirici : [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Adı : $userTag[$clientID]
+
+<a:emoji_55:928760319021555744> ・ Botumuzun ID'si : **$clientID**
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Kurulduğu Tarih :  **$creationDate[$clientID]**
+
+**__Bot Verileri__**
+
+<a:emoji_55:928760319021555744> ・ Botumuzu Kullanan Kişi Sayısı : **$allMembersCount**
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Bulunduğu Sunucu Sayısı : **$serverCount**
+
+<a:emoji_55:928760319021555744> ・ Botumuzda Bulunan Toplam Komut Sayısı : **$commandsCount**
+
 <a:emoji_55:928760319021555744> ・ Botumuzun Pingi : **$botPing**
+
+<a:emoji_55:928760319021555744> ・ Son Güncellenme Zamanı : **$uptime**
+
+**__Linkler__**bot.command({
+  name: "istatistik",
+  aliases: [`i`, `istatistik`],
+  code: `
+  $editIn[5s;İstatistikler Yükleniyor]
+$author[$userTag[$clientID];$userAvatar[$clientID]]
+$description[
+
+**__Bot Bilgileri__**
+
+<a:emoji_55:928760319021555744> ・ Bot Owner / Geliştirici : [$userTag[$botOwnerID]](https://discord.com/users/$botOwnerID)
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Adı : $userTag[$clientID]
+
+<a:emoji_55:928760319021555744> ・ Botumuzun ID'si : **$clientID**
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Kurulduğu Tarih :  **$creationDate[$clientID]**
+
+**__Bot Verileri__**
+
+<a:emoji_55:928760319021555744> ・ Botumuzu Kullanan Kişi Sayısı : **$allMembersCount**
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Bulunduğu Sunucu Sayısı : **$serverCount**
+
+<a:emoji_55:928760319021555744> ・ Botumuzda Bulunan Toplam Komut Sayısı : **$commandsCount**
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Pingi : **$botPing**
+
+<a:emoji_55:928760319021555744> ・ Son Güncellenme Zamanı : **$uptime**
+
+**__Linkler__**
+
+<a:emoji_55:928760319021555744> ・ Botumuzu Davet Etmek İçin : [Tıkla]($getBotInvite[admin])
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Destek Sunucusu İçin : [Tıkla](https://discord.gg/NNpYhyrzEx)
+]
+
+
+<a:emoji_55:928760319021555744> ・ Botumuzu Davet Etmek İçin : [Tıkla]($getBotInvite[admin])
+
+<a:emoji_55:928760319021555744> ・ Botumuzun Destek Sunucusu İçin : [Tıkla](https://discord.gg/NNpYhyrzEx)
+]
+744> ・ Botumuzun Pingi : **$botPing**
 
 <a:emoji_55:928760319021555744> ・ Son Güncellenme Zamanı : **$uptime**
 
